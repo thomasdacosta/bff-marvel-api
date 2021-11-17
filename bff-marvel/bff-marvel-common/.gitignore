@@ -2,6 +2,8 @@
 # Created by https://www.gitignore.io/api/java,maven,eclipse,intellij,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=java,maven,eclipse,intellij,visualstudiocode
 
+.DS_Store
+
 ### Eclipse ###
 obj/**
 .metadata
@@ -16,6 +18,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.classpath
+.project
 
 # External tool builders
 .externalToolBuilders/
