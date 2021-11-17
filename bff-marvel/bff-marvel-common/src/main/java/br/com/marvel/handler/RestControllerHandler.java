@@ -1,4 +1,4 @@
-package br.com.thomasdacosta.handler;
+package br.com.marvel.handler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.com.thomasdacosta.dto.BffMarvelError;
-import br.com.thomasdacosta.exception.NotFoundException;
-import br.com.thomasdacosta.exception.OperationException;
+import br.com.marvel.dto.BffMarvelError;
+import br.com.marvel.exception.NotFoundException;
+import br.com.marvel.exception.OperationException;
 
 @RestControllerAdvice
 public class RestControllerHandler extends ResponseEntityExceptionHandler {

@@ -1,4 +1,4 @@
-package br.com.thomasdacosta.dto;
+package br.com.marvel.dto;
 
 import java.io.Serializable;
 

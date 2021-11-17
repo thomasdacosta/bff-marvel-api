@@ -1,4 +1,4 @@
-package br.com.thomasdacosta.exception;
+package br.com.marvel.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
