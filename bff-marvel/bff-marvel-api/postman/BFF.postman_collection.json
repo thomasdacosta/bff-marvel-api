@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "f17e0140-2462-4d12-9b0b-b1917d08198b",
+		"name": "BFF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/marvel/heros/{name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/marvel/heros/iron man",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"marvel",
+						"heros",
+						"iron man"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

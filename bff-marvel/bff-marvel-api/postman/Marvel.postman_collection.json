@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "11aa2360-1335-4e15-95ee-9f2ab5243e6d",
+		"name": "Marvel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1/public/characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9&name=iron man",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "f59dbe01285f1d360542b5c47a9516e3"
+						},
+						{
+							"key": "hash",
+							"value": "0ea6be79e04ac1b0400d65ffc11088f9"
+						},
+						{
+							"key": "name",
+							"value": "iron man"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/public/characters/1009327",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters/1009327?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters",
+						"1009327"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "f59dbe01285f1d360542b5c47a9516e3"
+						},
+						{
+							"key": "hash",
+							"value": "0ea6be79e04ac1b0400d65ffc11088f9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/public/characters/1009327/comics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters/1009327/comics?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9&orderBy=-focDate",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters",
+						"1009327",
+						"comics"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "f59dbe01285f1d360542b5c47a9516e3"
+						},
+						{
+							"key": "hash",
+							"value": "0ea6be79e04ac1b0400d65ffc11088f9"
+						},
+						{
+							"key": "orderBy",
+							"value": "-focDate"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/public/characters/1009327/events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters/1009327/events?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters",
+						"1009327",
+						"events"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "f59dbe01285f1d360542b5c47a9516e3"
+						},
+						{
+							"key": "hash",
+							"value": "0ea6be79e04ac1b0400d65ffc11088f9"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "v1/public/characters/1009327/stories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://gateway.marvel.com/v1/public/characters/1009327/stories?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9",
+					"protocol": "http",
+					"host": [
+						"gateway",
+						"marvel",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"characters",
+						"1009327",
+						"stories"
+					],
+					"query": [
+						{
+							"key": "ts",
+							"value": "1"
+						},
+						{
+							"key": "apikey",
+							"value": "f59dbe01285f1d360542b5c47a9516e3"
+						},
+						{
+							"key": "hash",
+							"value": "0ea6be79e04ac1b0400d65ffc11088f9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
