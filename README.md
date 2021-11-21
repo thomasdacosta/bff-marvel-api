@@ -1,6 +1,6 @@
 # BFF Marvel API
 
-
+API desenvolvida em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem,, HQ´s e eventos de acordo com o nome pesquisado.
 
 ## Gerando o client da API da Marvel
 
@@ -18,5 +18,9 @@ Com o Swagger, gerar o código da aplicação através do Swagger:
 wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.29/swagger-codegen-cli-3.0.29.jar -O swagger-codegen-cli.jar
 java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json -l spring --library spring-cloud -o marvel
 ```
+## Diretórios
+
+- **bff-marvel:** aplicação Maven multi-module com as chamadas da API da Marvel
+- **marvel:** exemplo de código gerado a partir do Swagger da API da Marvel
 
 
