@@ -89,7 +89,7 @@
 	</profiles>
 
 	<build>
-		<finalName>twitter-api</finalName>
+		<finalName>bff-marvel-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

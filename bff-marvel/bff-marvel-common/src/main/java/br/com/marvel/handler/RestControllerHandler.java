@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import br.com.marvel.dto.BffMarvelError;
 import br.com.marvel.exception.NotFoundException;
 import br.com.marvel.exception.OperationException;
+import feign.FeignException;
 
 @RestControllerAdvice
 public class RestControllerHandler extends ResponseEntityExceptionHandler {
@@ -48,6 +49,12 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	 */
 	@ExceptionHandler(OperationException.class)
 	public ResponseEntity<Object> handleThrowable(final Exception ex) {
+		logger.error(ex.getMessage(), ex);
+		return new ResponseEntity<>(BffMarvelError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(FeignException.class)
+	public ResponseEntity<Object> handleFeignException(final Exception ex) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(BffMarvelError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
 	}

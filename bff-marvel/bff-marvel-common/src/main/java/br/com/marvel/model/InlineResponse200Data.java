@@ -1,6 +1,7 @@
 package br.com.marvel.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
 import javax.validation.Valid;
@@ -32,8 +33,12 @@ public class InlineResponse200Data {
 	@JsonProperty("count")
 	private BigDecimal count = null;
 
+//	@JsonProperty("results")
+//	private Object results = null;
+
 	@JsonProperty("results")
-	private Object results = null;
+	@Valid
+	private List<Character> results = null;	
 
 	public InlineResponse200Data offset(BigDecimal offset) {
 		this.offset = offset;
@@ -119,23 +124,11 @@ public class InlineResponse200Data {
 		this.count = count;
 	}
 
-	public InlineResponse200Data results(Object results) {
-		this.results = results;
-		return this;
-	}
-
-	/**
-	 * The list of entities returned by the call
-	 * 
-	 * @return results
-	 **/
-	@ApiModelProperty(value = "The list of entities returned by the call")
-
-	public Object getResults() {
+	public List<Character> getResults() {
 		return results;
 	}
 
-	public void setResults(Object results) {
+	public void setResults(List<Character> results) {
 		this.results = results;
 	}
 
