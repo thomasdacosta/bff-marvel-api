@@ -1,10 +1,10 @@
 package br.com.marvel.client;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.math.BigDecimal;
@@ -29,6 +29,7 @@ import br.com.marvel.configuration.BffConfiguration;
 import br.com.marvel.model.ComicDataWrapper;
 import br.com.marvel.model.EventDataWrapper;
 import br.com.marvel.model.InlineResponse200;
+import br.com.marvel.utills.Constants;
 import br.com.marvel.utils.ResourceUtils;
 import feign.FeignException.InternalServerError;
 import feign.FeignException.NotFound;
@@ -38,9 +39,6 @@ import feign.FeignException.NotFound;
 @TestPropertySource(locations = "classpath:application-marvelApiClientTest.properties")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MarvelApiClientTest {
-	
-	private static final String CHARACTERS_NAME = "thor";
-	private static final String CHARACTERS_ID = "1009664";
 	
 	@Autowired
 	private MarvelApiClient client;
@@ -63,22 +61,22 @@ public class MarvelApiClientTest {
 	public void testGetCharacter_200() {
 		try {
 			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s",
-					configuration.getTs(), configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME))
+					configuration.getTs(), configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
 					.willReturn(WireMock.aResponse()
 							.withStatus(200)
 							.withHeader("Content-Type", "application/json")
 							.withBody(ResourceUtils.getContentFile(listCharactersOK))));
 			
 			ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(configuration.getTs(),
-					configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME, null, null, null, null, null, null, null,
+					configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME, null, null, null, null, null, null, null,
 					null, null);
 			
 			assertTrue(listCharacters.hasBody());
 			assertNotNull(listCharacters.getBody().getData());
 			assertEquals(BigDecimal.valueOf(1), listCharacters.getBody().getData().getCount());
 			assertFalse(listCharacters.getBody().getData().getResults().isEmpty());
-			assertEquals(BigDecimal.valueOf(1009664), listCharacters.getBody().getData().getResults().get(0).getId());
-			assertEquals(CHARACTERS_NAME.toLowerCase(), listCharacters.getBody().getData().getResults().get(0).getName().toLowerCase());
+			assertEquals(BigDecimal.valueOf(Long.parseLong(Constants.CHARACTERS_ID)), listCharacters.getBody().getData().getResults().get(0).getId());
+			assertEquals(Constants.CHARACTERS_NAME.toLowerCase(), listCharacters.getBody().getData().getResults().get(0).getName().toLowerCase());
 		} catch (Exception ex) {
 			fail(ex.getMessage());
 		}
@@ -90,17 +88,20 @@ public class MarvelApiClientTest {
 	public void testGetComicsByCharacter_200() {
 		try {
 			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters/%s/comics?ts=%s&apikey=%s&hash=%s&orderBy=-focDate",
-					CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
+					Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
 					.willReturn(WireMock.aResponse()
 							.withStatus(200)
 							.withHeader("Content-Type", "application/json")
 							.withBody(ResourceUtils.getContentFile(characterComicsOK))));			
 			
 			ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(configuration.getTs(),
-					configuration.getApiKey(), configuration.getHash(), CHARACTERS_ID, null, null, null, null, null, null, null, null,
+					configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_ID, null, null, null, null, null, null, null, null,
 					null, null, null, null, null, null, null, null, null, null, null, "-focDate", null, null);			
 			
-			System.out.println(characterComics);
+			assertTrue(characterComics.hasBody());
+			assertNotNull(characterComics.getBody().getData());
+			assertEquals(BigDecimal.valueOf(20), characterComics.getBody().getData().getCount());
+			assertFalse(characterComics.getBody().getData().getResults().isEmpty());
 		} catch (Exception ex) {
 			fail(ex.getMessage());
 		}
@@ -112,17 +113,20 @@ public class MarvelApiClientTest {
 	public void testGetEventsByCharacter_200() {
 		try {
 			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters/%s/events?ts=%s&apikey=%s&hash=%s",
-					CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
+					Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
 					.willReturn(WireMock.aResponse()
 							.withStatus(200)
 							.withHeader("Content-Type", "application/json")
 							.withBody(ResourceUtils.getContentFile(characterEventsOK))));			
 			
 			ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(configuration.getTs(),
-					configuration.getApiKey(), configuration.getHash(), CHARACTERS_ID, null, null, null, null, null, null, null, null,
+					configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_ID, null, null, null, null, null, null, null, null,
 					null, null);			
 			
-			System.out.println(characterEvents);
+			assertTrue(characterEvents.hasBody());
+			assertNotNull(characterEvents.getBody().getData());
+			assertEquals(BigDecimal.valueOf(20), characterEvents.getBody().getData().getCount());
+			assertFalse(characterEvents.getBody().getData().getResults().isEmpty());
 		} catch (Exception ex) {
 			fail(ex.getMessage());
 		}
@@ -133,7 +137,7 @@ public class MarvelApiClientTest {
 	@DisplayName("4 - Retornando um erro 404 do Client da API")	
 	public void testGetCharacter_404() {
 		WireMock.stubFor(WireMock.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s",
-				configuration.getTs(), configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME))
+				configuration.getTs(), configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
 				.willReturn(WireMock.aResponse()
 						.withStatus(404)
 						.withHeader("Content-Type", "application/json")
@@ -141,7 +145,7 @@ public class MarvelApiClientTest {
 		
 		assertThrows(NotFound.class, () -> {
 			client.listCharacters(configuration.getTs(),
-					configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME, null, null, null, null, null, null, null,
+					configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME, null, null, null, null, null, null, null,
 					null, null);			
 		});
 	}
@@ -151,7 +155,7 @@ public class MarvelApiClientTest {
 	@DisplayName("5 - Retornando um erro 500 do Client da API")	
 	public void testGetCharacter_500() {
 		WireMock.stubFor(WireMock.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s",
-				configuration.getTs(), configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME))
+				configuration.getTs(), configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
 				.willReturn(WireMock.aResponse()
 						.withStatus(500)
 						.withHeader("Content-Type", "application/json")
@@ -159,7 +163,7 @@ public class MarvelApiClientTest {
 		
 		assertThrows(InternalServerError.class, () -> {
 			client.listCharacters(configuration.getTs(),
-					configuration.getApiKey(), configuration.getHash(), CHARACTERS_NAME, null, null, null, null, null, null, null,
+					configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME, null, null, null, null, null, null, null,
 					null, null);			
 		});
 	}	
