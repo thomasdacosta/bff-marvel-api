@@ -1,6 +1,6 @@
 # BFF Marvel API
 
-API desenvolvida em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
+BFF (Backends For Frontends) desenvolvida em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
 ## Gerando o client da API da Marvel
 
