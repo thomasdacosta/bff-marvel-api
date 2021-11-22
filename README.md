@@ -12,7 +12,7 @@ Baixar o Swagger do site abaixo:
 
 - https://speca.io/speca/marvel-public-api-v1
 
-Com o Swagger, gerar o código da aplicação através do Swagger:
+Com o Swagger, gerar o código da aplicação através dos seguintes comandos:
 
 ```sh
 wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.29/swagger-codegen-cli-3.0.29.jar -O swagger-codegen-cli.jar
