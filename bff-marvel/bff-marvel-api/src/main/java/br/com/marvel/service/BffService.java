@@ -27,7 +27,7 @@ public class BffService {
 	@Autowired
 	private BffConfiguration configuration;
 
-	public List<MarvelCharacter> findHeros(String name) {
+	public List<MarvelCharacter> findCharacters(String name) {
 		List<MarvelCharacter> marvelCharacters = new ArrayList<>();
 		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(configuration.getTs(),
 				configuration.getApiKey(), configuration.getHash(), name, null, null, null, null, null, null, null,
@@ -40,13 +40,14 @@ public class BffService {
 				marvelCharacter.setDescription(c.getDescription());
 				marvelCharacter.setId(c.getId());
 				marvelCharacter.setName(c.getName());
+				
 				marvelCharacter.setComics(findComicsByCharacter(String.valueOf(c.getId())));
 				marvelCharacter.setEvents(findEventsByCharacter(String.valueOf(c.getId())));
 
 				marvelCharacters.add(marvelCharacter);
 			});
 		} else {
-			throw new NotFoundException("Heróis não encontrados. Deve ser da concorrente!!!");
+			throw new NotFoundException("Personagens não encontrados. Deve ser da concorrente!!!");
 		}
 
 		return marvelCharacters;

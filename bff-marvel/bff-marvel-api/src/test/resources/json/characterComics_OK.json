@@ -1,0 +1,3292 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2021 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2021 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
+    "etag": "1af79cf97f51d3686a24f3c8b2e714e165960942",
+    "data": {
+        "offset": 0,
+        "limit": 20,
+        "total": 1783,
+        "count": 20,
+        "results": [
+            {
+                "id": 93332,
+                "digitalId": 0,
+                "title": "Shang-Chi (2021) #6",
+                "issueNumber": 6,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-07-23T09:11:10-0400",
+                "isbn": "",
+                "upc": "75960620101300611",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/93332",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/93332/shang-chi_2021_6?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Shang-Chi-6/digital-comic/57922?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/31902",
+                    "name": "Shang-Chi (2021 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94603",
+                        "name": "Shang-Chi (2021) #6 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/99036",
+                        "name": "Shang-Chi (2021) #6 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-11-17T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-10-11T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/80/6151f8ee70bd5",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/80/6151f8ee70bd5",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93332/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13518",
+                            "name": "Triona Farrell",
+                            "role": "colorist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11579",
+                            "name": "Sunny Gho",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12993",
+                            "name": "Vc Travis Lanham",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13932",
+                            "name": "Dike Ruan",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13027",
+                            "name": "Darren Shan",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14041",
+                            "name": "Gene Yang",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/758",
+                            "name": "Leinil Francis Yu",
+                            "role": "penciler (cover)"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93332/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009577",
+                            "name": "Shang-Chi"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93332/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/207776",
+                            "name": "cover from Shang-Chi (2021) #6",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/207777",
+                            "name": "story from Shang-Chi (2021) #6",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93332/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89738,
+                "digitalId": 0,
+                "title": "Thor (2020) #18",
+                "issueNumber": 18,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-08-10T09:09:44-0400",
+                "isbn": "",
+                "upc": "75960609539101811",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89738",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89738/thor_2020_18?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-18/digital-comic/57818?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94715",
+                        "name": "Thor (2020) #18 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/98568",
+                        "name": "Thor (2020) #18 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-10-20T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-09-27T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/60/6169ef1c47b12",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/60/6169ef1c47b12",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89738/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/365",
+                            "name": "Pasqual Ferry",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13539",
+                            "name": "Robert Quinn",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89738/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011389",
+                            "name": "Frog Thor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89738/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199794",
+                            "name": "cover from Thor (2020) #18",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199795",
+                            "name": "story from Thor (2020) #18",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89738/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89737,
+                "digitalId": 0,
+                "title": "Thor (2020) #17",
+                "issueNumber": 17,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-06-15T09:11:43-0400",
+                "isbn": "",
+                "upc": "75960609539101711",
+                "diamondCode": "JUL210711",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89737",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89737/thor_2020_17?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-17/digital-comic/57693?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94714",
+                        "name": "Thor (2020) #17 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/96650",
+                        "name": "Thor (2020) #17 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-09-29T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-09-06T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/90/614b40283a3e1",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/90/614b40283a3e1",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89737/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13141",
+                            "name": "Michele Bandini",
+                            "role": "penciler"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13174",
+                            "name": "Elisabetta D'AMICO",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89737/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89737/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199792",
+                            "name": "cover from Thor (2020) #17",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199793",
+                            "name": "story from Thor (2020) #17",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89737/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89736,
+                "digitalId": 0,
+                "title": "Thor (2020) #16",
+                "issueNumber": 16,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-03-27T09:04:40-0400",
+                "isbn": "",
+                "upc": "75960609539101611",
+                "diamondCode": "JUN210711",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89736",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89736/thor_2020_16?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-16/digital-comic/57209?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-08-25T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-08-02T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/e0/60e5e21008edd",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/e0/60e5e21008edd",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89736/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13141",
+                            "name": "Michele Bandini",
+                            "role": "penciler"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13174",
+                            "name": "Elisabetta D'AMICO",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89736/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010329",
+                            "name": "Jane Foster"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009480",
+                            "name": "Odin"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89736/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199790",
+                            "name": "cover from Thor (2020) #16",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199791",
+                            "name": "story from Thor (2020) #16",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89736/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 93340,
+                "digitalId": 57074,
+                "title": "The Mighty Valkyries (2021) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-04-02T09:09:01-0400",
+                "isbn": "",
+                "upc": "75960620098600411",
+                "diamondCode": "MAY210654",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/93340",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/93340/the_mighty_valkyries_2021_4?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/The-Mighty-Valkyries-4/digital-comic/57074?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=57074&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/57074?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/31903",
+                    "name": "The Mighty Valkyries (2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/95653",
+                        "name": "The Mighty Valkyries (2021) #4 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/96170",
+                        "name": "The Mighty Valkyries (2021) #4 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-07-28T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-07-05T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-11-01T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-07-28T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/30/60fad327953a3",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/30/60fad327953a3",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93340/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11463",
+                            "name": "Jason Aaron",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14017",
+                            "name": "Torunn Gronbekk",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13595",
+                            "name": "Erica D'URSO",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13413",
+                            "name": "Mattia De Iulis",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13058",
+                            "name": "Marcio Menyz",
+                            "role": "colorist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93340/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010329",
+                            "name": "Jane Foster"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93340/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/207792",
+                            "name": "cover from Valkyrie (2021) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/207793",
+                            "name": "story from Valkyrie (2021) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/93340/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89746,
+                "digitalId": 0,
+                "title": "Thor & Loki: Double Trouble (Trade Paperback)",
+                "issueNumber": 0,
+                "variantDescription": "",
+                "description": "Collects Thor & Loki: Double Trouble (2021) #1-4.  They're brothers, gods and sons of Odin - but Thor and Loki just don't get along! Especially since Loki keeps tricking Thor into doing things that will get him in trouble. Even so, when Loki dares Thor to steal a powerful relic from Odin's vault, how can the God of Thunder say nay? As Loki summons a serpent set on city-smashing, Thor has to clean up his mess...again! But when the feuding siblings are transported to an alternate universe, they meet a very different Thor: Jane Foster! Can the Goddess of Thunder help these misbehaving brothers find their way home? Mariko Tamaki and Gurihiru - the fan-favorite team that brought you SPIDER-MAN & VENOM: DOUBLE TROUBLE - return to unleash anarchy in Asgard!",
+                "modified": "2021-09-10T15:11:22-0400",
+                "isbn": "978-1-302-92625-0",
+                "upc": "",
+                "diamondCode": "MAY210727",
+                "ean": "9781302 926250 51399",
+                "issn": "",
+                "format": "Trade Paperback",
+                "pageCount": 96,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89746",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/collection/89746/thor_loki_double_trouble_trade_paperback?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-Loki-Double-Trouble-0/digital-comic/57717?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30891",
+                    "name": "Thor & Loki: Double Trouble (2021)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-09-15T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-06-28T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 13.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/c0/613b7e84c3665",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/c0/613b7e84c3665",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89746/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14063",
+                            "name": "G Gurihiru",
+                            "role": "colorist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12945",
+                            "name": "Mariko Tamaki",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4430",
+                            "name": "Jeff Youngquist",
+                            "role": "editor"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89746/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009407",
+                            "name": "Loki"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89746/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199810",
+                            "name": "cover from THOR & LOKI: DOUBLE TROUBLE TPB (2029) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199811",
+                            "name": "story from THOR & LOKI: DOUBLE TROUBLE TPB (2029) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89746/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 90388,
+                "digitalId": 57078,
+                "title": "Thor Annual (2021) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-07-19T12:31:13-0400",
+                "isbn": "",
+                "upc": "75960609953500111",
+                "diamondCode": "MAY210556",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 40,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/90388",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/90388/thor_annual_2021_1?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/THOR-ANNUAL-1-1/digital-comic/57078?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=57078&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/57078?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/31105",
+                    "name": "Thor Annual (2021)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-07-21T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-06-28T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-10-25T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-07-21T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 4.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 4.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/a0/60fad35ec2778",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/a0/60fad35ec2778",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 10,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/90388/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/5251",
+                            "name": "Vc Joe Caramagna",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13137",
+                            "name": "Clay Chapman",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13471",
+                            "name": "Jed Mackay",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13558",
+                            "name": "Juan Ferreyra",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/480",
+                            "name": "Cam Smith",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8003",
+                            "name": "Alex Garner",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12979",
+                            "name": "Aaron Kuder",
+                            "role": "inker (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 10
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/90388/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009338",
+                            "name": "Hawkeye"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/90388/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/201824",
+                            "name": "cover from Thor Annual (2020) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/201825",
+                            "name": "story from Thor Annual (2020) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/90388/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89735,
+                "digitalId": 56919,
+                "title": "Thor (2020) #15",
+                "issueNumber": 15,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-02-26T09:07:49-0500",
+                "isbn": "",
+                "upc": "75960609539101511",
+                "diamondCode": "APR210931",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89735",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89735/thor_2020_15?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-15/digital-comic/56919?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56919&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56919?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/95500",
+                        "name": "Thor (2020) #15 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94712",
+                        "name": "Thor (2020) #15 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94999",
+                        "name": "Thor (2020) #15 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-07-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-06-21T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-10-18T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-07-14T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/60/60e72a554a6b9",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/60/60e72a554a6b9",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 9,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89735/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13141",
+                            "name": "Michele Bandini",
+                            "role": "penciler"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13174",
+                            "name": "Elisabetta D'AMICO",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10124",
+                            "name": "Alessandro Vitti",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4306",
+                            "name": "Laura Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        }
+                    ],
+                    "returned": 9
+                },
+                "characters": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89735/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009165",
+                            "name": "Avengers"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009220",
+                            "name": "Captain America"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89735/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199788",
+                            "name": "cover from Thor (2020) #15",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199789",
+                            "name": "story from Thor (2020) #15",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89735/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89749,
+                "digitalId": 57077,
+                "title": "Thor & Loki: Double Trouble (2021) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-06-09T10:03:21-0400",
+                "isbn": "",
+                "upc": "75960609924500411",
+                "diamondCode": "MAY210649",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89749",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89749/thor_loki_double_trouble_2021_4?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-Loki-Double-Trouble-4/digital-comic/57077?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=57077&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/57077?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30890",
+                    "name": "Thor & Loki: Double Trouble (2021)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-07-07T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-06-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-10-11T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-07-07T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/50/60e72a9ce7e0b",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/50/60e72a9ce7e0b",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89749/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14063",
+                            "name": "G Gurihiru",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13046",
+                            "name": "Alanna Smith",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12945",
+                            "name": "Mariko Tamaki",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89749/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009407",
+                            "name": "Loki"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89749/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199816",
+                            "name": "cover from Thor & Loki: Double Trouble (2029) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199817",
+                            "name": "story from Thor & Loki: Double Trouble (2029) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89749/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89748,
+                "digitalId": 56832,
+                "title": "Thor & Loki: Double Trouble (2021) #3",
+                "issueNumber": 3,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-01-28T09:06:59-0500",
+                "isbn": "",
+                "upc": "75960609924500311",
+                "diamondCode": "MAR210575",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89748",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89748/thor_loki_double_trouble_2021_3?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-Loki-Double-Trouble-3/digital-comic/56832?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56832&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56832?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30890",
+                    "name": "Thor & Loki: Double Trouble (2021)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-05-05T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-04-12T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-08-09T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-05-05T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/a0/608990b337ee0",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/a0/608990b337ee0",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89748/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14063",
+                            "name": "G Gurihiru",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13046",
+                            "name": "Alanna Smith",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12945",
+                            "name": "Mariko Tamaki",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89748/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009407",
+                            "name": "Loki"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89748/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199814",
+                            "name": "cover from Thor & Loki: Double Trouble (2029) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199815",
+                            "name": "story from Thor & Loki: Double Trouble (2029) #3",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89748/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89734,
+                "digitalId": 56526,
+                "title": "Thor (2020) #14",
+                "issueNumber": 14,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2020-07-01T09:05:04-0400",
+                "isbn": "",
+                "upc": "75960609539101411",
+                "diamondCode": "FEB210636",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89734",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89734/thor_2020_14?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-14/digital-comic/56526?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56526&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56526?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94041",
+                        "name": "Thor (2020) #14 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94042",
+                        "name": "Thor (2020) #14 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-04-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-03-22T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-07-19T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-04-14T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/606f6203ac20e",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/606f6203ac20e",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 6,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89734/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4989",
+                            "name": "Nic Klein",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 6
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89734/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010330",
+                            "name": "Donald Blake"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89734/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199786",
+                            "name": "cover from Thor (2020) #14",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199787",
+                            "name": "story from Thor (2020) #14",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89734/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89747,
+                "digitalId": 56527,
+                "title": "Thor & Loki: Double Trouble (2021) #2",
+                "issueNumber": 2,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-05-13T09:27:51-0400",
+                "isbn": "",
+                "upc": "75960609924500211",
+                "diamondCode": "FEB210565",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89747",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89747/thor_loki_double_trouble_2021_2?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-Loki-Double-Trouble-2/digital-comic/56527?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56527&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56527?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30890",
+                    "name": "Thor & Loki: Double Trouble (2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/94043",
+                        "name": "Thor & Loki: Double Trouble (2021) #2 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-04-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-03-22T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-07-19T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-04-14T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/a0/606f61e85bd26",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/a0/606f61e85bd26",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89747/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14063",
+                            "name": "G Gurihiru",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13046",
+                            "name": "Alanna Smith",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12945",
+                            "name": "Mariko Tamaki",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89747/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009407",
+                            "name": "Loki"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89747/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199812",
+                            "name": "cover from Thor & Loki: Double Trouble (2029) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199813",
+                            "name": "story from Thor & Loki: Double Trouble (2029) #2",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89747/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 85653,
+                "digitalId": 56405,
+                "title": "King in Black (2020) #5",
+                "issueNumber": 5,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2020-12-05T09:06:03-0500",
+                "isbn": "",
+                "upc": "75960609863700511",
+                "diamondCode": "JAN210521",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 40,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/85653",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/85653/king_in_black_2020_5?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/King-in-Black-5/digital-comic/56405?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56405&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56405?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30150",
+                    "name": "King in Black (2020 - 2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93130",
+                        "name": "King in Black (2020) #5 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93911",
+                        "name": "King in Black (2020) #5 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93912",
+                        "name": "King in Black (2020) #5 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93914",
+                        "name": "King in Black (2020) #5 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93916",
+                        "name": "King in Black (2020) #5 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-04-07T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-03-15T00:00:00-0400"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-07-12T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-04-07T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 5.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 5.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/e/d0/605cee09aacd2",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/e/d0/605cee09aacd2",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85653/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10172",
+                            "name": "Vc Clayton Cowles",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/426",
+                            "name": "Jason Keith",
+                            "role": "colorist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12457",
+                            "name": "Edward Devin Lewis",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4991",
+                            "name": "Frank Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13260",
+                            "name": "Jp Mayer",
+                            "role": "inker (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1156",
+                            "name": "Ryan Stegman",
+                            "role": "penciler (cover)"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85653/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009165",
+                            "name": "Avengers"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009282",
+                            "name": "Doctor Strange"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010787",
+                            "name": "Eddie Brock"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009299",
+                            "name": "Fantastic Four"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                            "name": "Spider-Man (Peter Parker)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009726",
+                            "name": "X-Men"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85653/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190268",
+                            "name": "cover from Venom: King in Black (2020) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190269",
+                            "name": "story from Venom: King in Black (2020) #5",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85653/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89733,
+                "digitalId": 56427,
+                "title": "Thor (2020) #13",
+                "issueNumber": 13,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-04-22T12:34:34-0400",
+                "isbn": "",
+                "upc": "75960609539101311",
+                "diamondCode": "JAN210691",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89733",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89733/thor_2020_13?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-13/digital-comic/56427?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56427&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56427?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93767",
+                        "name": "Thor (2020) #13 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93768",
+                        "name": "Thor (2020) #13 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-03-17T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-02-22T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-06-21T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-03-17T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/60464e1695be7",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/60464e1695be7",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 6,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89733/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4989",
+                            "name": "Nic Klein",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist (cover)"
+                        }
+                    ],
+                    "returned": 6
+                },
+                "characters": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89733/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010330",
+                            "name": "Donald Blake"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010329",
+                            "name": "Jane Foster"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009480",
+                            "name": "Odin"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89733/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199784",
+                            "name": "cover from Thor (2020) #13",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199785",
+                            "name": "story from Thor (2020) #13",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89733/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 89745,
+                "digitalId": 56428,
+                "title": "Thor & Loki: Double Trouble (2021) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-04-22T12:34:48-0400",
+                "isbn": "",
+                "upc": "75960609924500111",
+                "diamondCode": "JAN210562",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/89745",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/89745/thor_loki_double_trouble_2021_1?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-Loki-Double-Trouble-1/digital-comic/56428?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56428&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56428?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30890",
+                    "name": "Thor & Loki: Double Trouble (2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92416",
+                        "name": "Thor & Loki: Double Trouble (2021) #1 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92417",
+                        "name": "Thor & Loki: Double Trouble (2021) #1 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93271",
+                        "name": "Thor & Loki: Double Trouble (2021) #1 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93442",
+                        "name": "Thor & Loki: Double Trouble (2021) #1 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-03-10T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-02-15T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-06-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-03-10T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/603d2204bbb68",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/603d2204bbb68",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89745/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14063",
+                            "name": "G Gurihiru",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13046",
+                            "name": "Alanna Smith",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12945",
+                            "name": "Mariko Tamaki",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89745/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009407",
+                            "name": "Loki"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89745/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199808",
+                            "name": "cover from Thor & Loki: Double Trouble (2029) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/199809",
+                            "name": "story from Thor & Loki: Double Trouble (2029) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/89745/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 85652,
+                "digitalId": 56154,
+                "title": "King in Black (2020) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-05-24T00:34:24-0400",
+                "isbn": "",
+                "upc": "75960609863700411",
+                "diamondCode": "DEC200495",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 40,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/85652",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/85652/king_in_black_2020_4?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/King-in-Black-4/digital-comic/56154?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56154&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56154?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30150",
+                    "name": "King in Black (2020 - 2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93129",
+                        "name": "King in Black (2020) #4 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93223",
+                        "name": "King in Black (2020) #4 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93224",
+                        "name": "King in Black (2020) #4 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93225",
+                        "name": "King in Black (2020) #4 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-02-17T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-01-25T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-05-24T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-02-17T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 4.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 4.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/e0/6026d16e52b24",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/e0/6026d16e52b24",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 8,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85652/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13682",
+                            "name": "PEACH MOMOKO",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10172",
+                            "name": "Vc Clayton Cowles",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/14075",
+                            "name": "Vc Ariana Maher",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12457",
+                            "name": "Edward Devin Lewis",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4991",
+                            "name": "Frank Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13260",
+                            "name": "Jp Mayer",
+                            "role": "inker (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1156",
+                            "name": "Ryan Stegman",
+                            "role": "penciler (cover)"
+                        }
+                    ],
+                    "returned": 8
+                },
+                "characters": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85652/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009282",
+                            "name": "Doctor Strange"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010787",
+                            "name": "Eddie Brock"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009299",
+                            "name": "Fantastic Four"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009726",
+                            "name": "X-Men"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85652/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190266",
+                            "name": "cover from Venom: King in Black (2020) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190267",
+                            "name": "story from Venom: King in Black (2020) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85652/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 78638,
+                "digitalId": 56182,
+                "title": "Thor (2020) #12",
+                "issueNumber": 12,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-05-20T14:56:23-0400",
+                "isbn": "",
+                "upc": "75960609539101211",
+                "diamondCode": "DEC200615",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/78638",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/78638/thor_2020_12?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-12/digital-comic/56182?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56182&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56182?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/93269",
+                        "name": "Thor (2020) #12 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92932",
+                        "name": "Thor (2020) #12 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-02-17T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2021-01-25T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-05-24T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-02-17T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/6026d187e6d0b",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/6026d187e6d0b",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78638/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4989",
+                            "name": "Nic Klein",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4306",
+                            "name": "Laura Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78638/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010330",
+                            "name": "Donald Blake"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011389",
+                            "name": "Frog Thor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010329",
+                            "name": "Jane Foster"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78638/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/174298",
+                            "name": "cover from Thor (2020) #12",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/174299",
+                            "name": "story from Thor (2020) #12",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78638/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 85651,
+                "digitalId": 56025,
+                "title": "King in Black (2020) #3",
+                "issueNumber": 3,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2021-04-22T10:59:32-0400",
+                "isbn": "",
+                "upc": "75960609863700311",
+                "diamondCode": "NOV200459",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 40,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/85651",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/85651/king_in_black_2020_3?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/King-in-Black-3/digital-comic/56025?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56025&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56025?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/30150",
+                    "name": "King in Black (2020 - 2021)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92692",
+                        "name": "King in Black (2020) #3 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92693",
+                        "name": "King in Black (2020) #3 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92694",
+                        "name": "King in Black (2020) #3 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92696",
+                        "name": "King in Black (2020) #3 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-01-20T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2020-12-14T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-04-26T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-01-20T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 4.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 4.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/20/5ff8cf367e5d1",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/20/5ff8cf367e5d1",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 6,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85651/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10172",
+                            "name": "Vc Clayton Cowles",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12457",
+                            "name": "Edward Devin Lewis",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4991",
+                            "name": "Frank Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13260",
+                            "name": "Jp Mayer",
+                            "role": "inker (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1156",
+                            "name": "Ryan Stegman",
+                            "role": "penciler (cover)"
+                        }
+                    ],
+                    "returned": 6
+                },
+                "characters": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85651/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009165",
+                            "name": "Avengers"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009299",
+                            "name": "Fantastic Four"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                            "name": "Spider-Man (Peter Parker)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009726",
+                            "name": "X-Men"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85651/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190264",
+                            "name": "cover from Venom: King in Black (2020) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/190265",
+                            "name": "story from Venom: King in Black (2020) #3",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/85651/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 78637,
+                "digitalId": 56052,
+                "title": "Thor (2020) #11",
+                "issueNumber": 11,
+                "variantDescription": "",
+                "description": null,
+                "modified": "2020-07-01T09:05:01-0400",
+                "isbn": "",
+                "upc": "75960609539101111",
+                "diamondCode": "NOV200578",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/78637",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/78637/thor_2020_11?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Thor-11/digital-comic/56052?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "reader",
+                        "url": "http://marvel.com/digitalcomics/view.htm?iid=56052&utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "inAppLink",
+                        "url": "https://applink.marvel.com/issue/56052?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/28031",
+                    "name": "Thor (2020)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92738",
+                        "name": "Thor (2020) #11 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92736",
+                        "name": "Thor (2020) #11 (Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/92737",
+                        "name": "Thor (2020) #11 (Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-01-06T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2020-12-07T00:00:00-0500"
+                    },
+                    {
+                        "type": "unlimitedDate",
+                        "date": "2021-04-12T00:00:00-0400"
+                    },
+                    {
+                        "type": "digitalPurchaseDate",
+                        "date": "2021-01-06T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    },
+                    {
+                        "type": "digitalPurchasePrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/c0/5ff32d41b3331",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/c0/5ff32d41b3331",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78637/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12712",
+                            "name": "Donny Cates",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/6170",
+                            "name": "Olivier Coipel",
+                            "role": "penciler (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4989",
+                            "name": "Nic Klein",
+                            "role": "inker"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4306",
+                            "name": "Laura Martin",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12376",
+                            "name": "Wilson Moss",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+                            "name": "Vc Joe Sabino",
+                            "role": "letterer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/10279",
+                            "name": "Matthew Wilson",
+                            "role": "colorist"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "characters": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78637/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010330",
+                            "name": "Donald Blake"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78637/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/174296",
+                            "name": "cover from Thor (2020) #11",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/174297",
+                            "name": "story from Thor (2020) #11",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/78637/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 92064,
+                "digitalId": 0,
+                "title": "Marvel Masterworks: The Mighty Thor Vol. 20 (Hardcover)",
+                "issueNumber": 0,
+                "variantDescription": "",
+                "description": "Collects Thor (1966) #303-314, Thor Annual (1966) #9.  With writer Doug Moench behind the helm, Thor returns to Midgard (A.K.A. Earth) — but there’s no getting comfortable for the God of Thunder as he soon discovers heavies like the Wrecking Crew, Mephisto and Galactus’ heralds Firelord and Gabriel all ready and waiting to take him on! And even when Thor finally does get time for a well-earned rest, he finds himself haunted with visions of the dream demon! But why is All-Father Odin putting Thor on trial? Plus: X-Men scribe Chris Claremont delivers a supersize battle against the dread Dormammu, while Mark Gruenwald and Ralph Macchio provide a fresh set of Tales of Asgard! Lift Mjolnir high — this is a Masterworks fit for the Realm Eternal!",
+                "modified": "2021-04-16T16:08:59-0400",
+                "isbn": "978-1-302-92871-1",
+                "upc": "",
+                "diamondCode": "OCT200692",
+                "ean": "9781302 928711 57500",
+                "issn": "",
+                "format": "Hardcover",
+                "pageCount": 336,
+                "textObjects": [],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/92064",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/collection/92064/marvel_masterworks_the_mighty_thor_vol_20_hardcover?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Marvel-Masterworks-The-Mighty-Thor-Vol-20-0/digital-comic/56548?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/31492",
+                    "name": "Marvel Masterworks: The Mighty Thor Vol. 20 (2021)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2021-04-21T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2020-11-30T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 75
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/20/60799be8ab92e",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/20/60799be8ab92e",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 9,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/92064/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11401",
+                            "name": "Various",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/44",
+                            "name": "Chris Claremont",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1282",
+                            "name": "Ralph Macchio",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/13580",
+                            "name": "All Thumbs Creative",
+                            "role": "colorist (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/388",
+                            "name": "Alan Kupperberg",
+                            "role": "penciller"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1252",
+                            "name": "Rick Leonardi",
+                            "role": "penciller"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/2027",
+                            "name": "Luke Mcdonnell",
+                            "role": "penciller"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1267",
+                            "name": "Keith Pollard",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4430",
+                            "name": "Jeff Youngquist",
+                            "role": "editor"
+                        }
+                    ],
+                    "returned": 9
+                },
+                "characters": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/92064/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
+                            "name": "Thor"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/92064/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/205214",
+                            "name": "cover from MARVEL MASTERWORKS: THE MIGHTY THOR VOL. 20 HC (2021) #20",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/205215",
+                            "name": "story from MARVEL MASTERWORKS: THE MIGHTY THOR VOL. 20 HC (2021) #20",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/92064/events",
+                    "items": [],
+                    "returned": 0
+                }
+            }
+        ]
+    }
+}

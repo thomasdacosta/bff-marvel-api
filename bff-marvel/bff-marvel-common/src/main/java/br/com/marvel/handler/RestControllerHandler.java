@@ -22,10 +22,6 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	private static final Logger logger = LoggerFactory.getLogger(RestControllerHandler.class);
 	
 	/**
-	 * Erro 400
-	 */	
-	
-	/**
 	 * Erro 404 
 	 */
 	@ExceptionHandler(NotFoundException.class)
@@ -45,7 +41,7 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	/**
-	 * Erro 500
+	 * Erro 500 - OperationException
 	 */
 	@ExceptionHandler(OperationException.class)
 	public ResponseEntity<Object> handleThrowable(final Exception ex) {
@@ -53,6 +49,9 @@ public class RestControllerHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>(BffMarvelError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
+	/**
+	 * Erro 500 - FeignException
+	 */	
 	@ExceptionHandler(FeignException.class)
 	public ResponseEntity<Object> handleFeignException(final Exception ex) {
 		logger.error(ex.getMessage(), ex);
