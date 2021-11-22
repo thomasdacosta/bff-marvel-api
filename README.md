@@ -23,4 +23,6 @@ java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json 
 - **bff-marvel:** aplicação Maven multi-module com as chamadas da API da Marvel
 - **marvel:** exemplo de código gerado a partir do Swagger da API da Marvel
 
+---
 
+Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
