@@ -31,7 +31,7 @@ Efetuando a pesquisa a partir de um nome de herói:
 curl --location --request GET 'http://localhost:8080/marvel/heros/iron man'
 ```
 
-Resposta da chamada:
+A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
 
 ```json
 [
