@@ -8,6 +8,10 @@ Efetuar o cadastro no portal para obter as chaves e acesso a API da Marvel:
 
 - https://developer.marvel.com/
 
+Será necessário gerar um hash com as chaves da API da Marvel para efetuar as chamadas. Na documentação do Portal da Marvel existe a explicação. Sugestão de site que gera hash MD5:
+
+- https://www.md5hashgenerator.com/
+
 Baixar o Swagger do site abaixo:
 
 - https://speca.io/speca/marvel-public-api-v1
