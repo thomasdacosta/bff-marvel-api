@@ -221,6 +221,8 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     - Log com Trace Id
     - Erros do FeignClient
 - **Cache**
+- **Docker**
+- **Docker Hub**
 - **Configuração Distribuida**
 - **gRPC**
 - **Integração com Frontend**
