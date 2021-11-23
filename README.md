@@ -211,6 +211,13 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
 ]
 ```
 
+## Roadmap
+
+- Spring Data - gravar as informações obtidas dentro de um banco de dados NoSQL
+- Observability:
+    - Kiali
+    - Jaeger
+
 ---
 
 Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
