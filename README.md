@@ -234,6 +234,8 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     - **PUT** - Atualizar um personagem
     - **DELETE** - Excluir um personagem
 - **Refatoração do Código**
+- **Autenticação e Autorização**
+- **Keycloack**
 ---
 
 Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
