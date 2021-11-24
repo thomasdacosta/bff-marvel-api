@@ -233,6 +233,7 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     - **POST** - Buscar uma lista de personagens e incluir novos personagens
     - **PUT** - Atualizar um personagem
     - **DELETE** - Excluir um personagem
+- **Refatoração do Código**
 ---
 
 Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
