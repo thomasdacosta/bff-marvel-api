@@ -229,7 +229,10 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
 - **CI/CD**
 - **AWS**
 - **Cobertura de Testes Unitários e Integrados**
-- **Exemplos de Controller com POST, PUT e DELETE**
+- **Exemplos de Controller**
+    - **POST** - Buscar uma lista de personagens e incluir novos personagens
+    - **PUT** - Atualizar um personagem
+    - **DELETE** - Excluir um personagem
 ---
 
 Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
