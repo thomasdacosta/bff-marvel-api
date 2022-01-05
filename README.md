@@ -2,9 +2,6 @@
 
 BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
-## Artigo da Branch
-[https://thomasdacosta.com.br/2022/01/04/usando-wiremock-para-acelerar-testes-unitarios-e-integrados-com-spring-boot-e-api-oficial-da-marvel/](https://thomasdacosta.com.br/2022/01/04/usando-wiremock-para-acelerar-testes-unitarios-e-integrados-com-spring-boot-e-api-oficial-da-marvel/)
-
 ## Gerando o client da API da Marvel
 
 Efetuar o cadastro no portal para obter as chaves e acesso a API da Marvel:
