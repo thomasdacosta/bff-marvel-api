@@ -246,18 +246,15 @@ Default output format [None]:
 Na criação das chaves do Secret Manager incluir o paramêtro **--profile**
 
 ```
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/aws-secret-manager-sample_localstack --description "Chaves para a aplicação do Spring Boot" --secret-string "{\"user\":\"Bruce Wayne\",\"password\":\"Eu sou o Batman\"}"
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 ```
 
 Comandos para criação das chaves usando o AWS Cli:
 
 ```
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/aws-secret-manager-sample --description "Chaves para a aplicação do Spring Boot" --secret-string "{\"user\":\"Bruce Wayne\",\"password\":\"Eu sou o Batman\"}"
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application_localstack --description "Chaves para a aplicação do Spring Boot" --secret-string "{\"user\":\"Bruce Wayne\",\"password\":\"Eu sou o Batman\"}"
-
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application --description "Chaves para a aplicação do Spring Boot" --secret-string "{\"user\":\"Bruce Wayne\",\"password\":\"Eu sou o Batman\"}"
-
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 ```
 
 ### Documentação
@@ -267,6 +264,7 @@ aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-
 ## Roadmap
 
 - **Configuração Distribuida**
+
 2022-01-31 - AWS Secret Manager com LocalStack
 
 - **Spring Data** - gravar as informações obtidas dentro de um banco de dados NoSQL
