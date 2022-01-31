@@ -249,26 +249,25 @@ Na criação das chaves do Secret Manager incluir o paramêtro **--profile**
 aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 ```
 
-Comandos para criação das chaves usando o AWS Cli:
-
-```
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
-
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
-
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
-
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
-```
+Comandos para criação das chaves usando o AWS Cli estão localizadas no diretório **scripts**.
 
 ### Documentação
 
 [3.4. Integrating your Spring Cloud application with the AWS Secrets Manager](https://docs.awspring.io/spring-cloud-aws/docs/2.3.0/reference/html/index.html#integrating-your-spring-cloud-application-with-the-aws-secrets-manager)
 
+## AWS Parameter Store
+
+Usando o AWS Parameter Store em uma aplicação Spring Boot com Spring Cloud AWS.
+
+As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager.
+
+Comandos para criação dos paramêtros usando o AWS Cli estão localizadas no diretório **scripts**.
+
 ## Roadmap - Concluído
 
 - **Configuração Distribuida**
     - 2022-01-31 - AWS Secret Manager com LocalStack
+    - 2022-01-31 - AWS Parameter Store com LocalStack
 
 ## Roadmap - ToBe
 
