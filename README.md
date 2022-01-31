@@ -257,11 +257,7 @@ Comandos para criação das chaves usando o AWS Cli estão localizadas no diret�
 
 ## AWS Parameter Store
 
-Usando o AWS Parameter Store em uma aplicação Spring Boot com Spring Cloud AWS.
-
-As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager.
-
-Comandos para criação dos paramêtros usando o AWS Cli estão localizadas no diretório **scripts**.
+As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
 ## Roadmap - Concluído
 
