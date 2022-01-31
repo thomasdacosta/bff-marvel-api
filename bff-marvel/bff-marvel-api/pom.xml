@@ -21,6 +21,7 @@
 		<java.version>11</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 		<spring.cloud-version>2020.0.5</spring.cloud-version>
+		<logs.path>${basedir}/logs</logs.path>
 	</properties>
 
 	<dependencies>
@@ -64,6 +65,10 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-starter-aws-parameter-store-config</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>io.awspring.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws-secrets-manager-config</artifactId>

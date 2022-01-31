@@ -1,18 +1,21 @@
 spring:
   application:
     name: bff-marvel-api
-
 ---
 spring:
   profiles: default, local
 aws:
   secretsmanager:
     enabled: false
-
+  paramstore:
+    enabled: false
 ---
 spring:
   profiles: localstack
 aws:
   secretsmanager:
+    enabled: true
+    endpoint: http://localhost:4566
+  paramstore:
     enabled: true
     endpoint: http://localhost:4566

@@ -1,7 +1,9 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     
- 	<springProperty scope="local" name="log_path" source="log.path"/>
+<!-- 	<springProperty scope="context" name="log_path" source="log.path"/>-->
+
+	<property resource="application.properties" />
 
     <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -13,9 +15,9 @@
     </appender>
 
     <appender name="DEFAULT_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log_path}/bff-marvel-api.log</file>
+        <file>${logging.path}/bff-marvel-api.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>${log_path}/bff-marvel-api.%i.log</fileNamePattern>
+            <fileNamePattern>${logging.path}/bff-marvel-api.%i.log</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>10</maxIndex>
         </rollingPolicy>

@@ -24,8 +24,6 @@ public class ClientConfiguration {
 	@Bean
 	@ConditionalOnProperty(value = "proxy.enabled", havingValue = "true", matchIfMissing = false)
 	public Client feignClient() {
-		System.out.println(proxyHost);
-		System.out.println(proxyPort);
 		return new Client.Proxied(null, null, 
 				new Proxy(Proxy.Type.HTTP, 
 						new InetSocketAddress(proxyHost, proxyPort)));
