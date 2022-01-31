@@ -261,11 +261,12 @@ aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-
 
 [3.4. Integrating your Spring Cloud application with the AWS Secrets Manager](https://docs.awspring.io/spring-cloud-aws/docs/2.3.0/reference/html/index.html#integrating-your-spring-cloud-application-with-the-aws-secrets-manager)
 
-## Roadmap
+## Roadmap - Concluído
 
 - **Configuração Distribuida**
+    - 2022-01-31 - AWS Secret Manager com LocalStack
 
-2022-01-31 - AWS Secret Manager com LocalStack
+## Roadmap - ToBe
 
 - **Spring Data** - gravar as informações obtidas dentro de um banco de dados NoSQL
 - **Observability**:
