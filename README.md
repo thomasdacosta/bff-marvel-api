@@ -255,6 +255,8 @@ Comandos para criação das chaves usando o AWS Cli:
 aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 
 aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
 ```
 
 ### Documentação
