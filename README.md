@@ -210,7 +210,67 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     }
 ]
 ```
-## Roadmap
+## AWS Secret Manager
+
+Usando o AWS Secret Manager em uma aplicação Spring Boot com Spring Cloud AWS.
+
+### LocalStack
+
+Para habilitar o LocalStack, usar o seguinte profile:
+
+```
+-Dspring.profiles.active=localstack
+```
+
+Para execução com o LocalStack é necessário mudar o endpoint do Secret Manager no arquivo **bootstrap.yml** para o endereço do LocalStack:
+
+```
+aws:
+  secretsmanager:
+    endpoint: http://localhost:4566
+```
+
+Além disso a região padrão deve ser sempre **us-east-1** para testar com LocalStack.
+
+Crie um profile separado com o AWS Cli:
+
+```
+aws configure --profile localstack
+
+AWS Access Key ID [None]: test
+AWS Secret Access Key [None]: test
+Default region name [None]: us-east-1
+Default output format [None]:
+```
+
+Na criação das chaves do Secret Manager incluir o paramêtro **--profile**
+
+```
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+```
+
+Comandos para criação das chaves usando o AWS Cli:
+
+```
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+
+aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/application_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
+```
+
+### Documentação
+
+[3.4. Integrating your Spring Cloud application with the AWS Secrets Manager](https://docs.awspring.io/spring-cloud-aws/docs/2.3.0/reference/html/index.html#integrating-your-spring-cloud-application-with-the-aws-secrets-manager)
+
+## Roadmap - Concluído
+
+- **Configuração Distribuida**
+    - 2022-01-31 - AWS Secret Manager com LocalStack
+
+## Roadmap - ToBe
 
 - **Spring Data** - gravar as informações obtidas dentro de um banco de dados NoSQL
 - **Observability**:
@@ -223,7 +283,6 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
 - **Cache**
 - **Docker**
 - **Docker Hub**
-- **Configuração Distribuida**
 - **gRPC**
 - **Integração com Frontend**
 - **CI/CD**

@@ -19,6 +19,6 @@ public class BffConfiguration {
 	
 	@Value("${hash}")
 	@Getter @Setter
-	private String hash;	
+	private String hash;
 
 }
