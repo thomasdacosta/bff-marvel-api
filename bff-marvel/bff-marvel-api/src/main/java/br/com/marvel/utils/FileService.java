@@ -1,7 +1,9 @@
 package br.com.marvel.utils;
 
+import java.io.InputStream;
+
 public interface FileService {
 	
-	public void saveFile(String from, String to);
+	public void saveFile(InputStream from, String to);
 
 }
