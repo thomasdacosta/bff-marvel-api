@@ -12,3 +12,6 @@ aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --na
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.enabled" --value "false" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/marvelPublicAPIV1.url" --value "http://gateway.marvel.com/v1/public" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/marvelPublicAPIV1.name" --value "marvelPublicAPIV1" --type String
+
+echo Criando Chaves no S3 do LocalStack...
+aws --endpoint http://localhost:4566 --profile localstack s3 mb s3://marvel
