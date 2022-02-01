@@ -6,9 +6,11 @@
 package br.com.marvel.client;
 
 import java.math.BigDecimal;
+import java.net.URI;
 
 import javax.validation.Valid;
 
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,9 @@ import io.swagger.annotations.ApiResponses;
 @Validated
 @Api(value = "Default")
 public interface MarvelApi {
+	
+	@GetMapping
+	ResponseEntity<Resource> image(URI baseUri);
 
 	@ApiOperation(value = "Character by Id", nickname = "characterById", notes = "Fetches a single character by id.", response = CharacterDataWrapper.class, tags = {})
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = CharacterDataWrapper.class) })
