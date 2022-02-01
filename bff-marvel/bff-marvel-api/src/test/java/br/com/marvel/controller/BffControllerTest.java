@@ -1,8 +1,8 @@
 package br.com.marvel.controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -43,95 +43,87 @@ import br.com.marvel.utils.ResourceUtils;
 public class BffControllerTest {
 
 	private MockMvc mockMvc;
-	
+
 	@Autowired
-	private WebApplicationContext webApplicationContext;	
-	
+	private WebApplicationContext webApplicationContext;
+
 	@Autowired
 	private BffConfiguration configuration;
-	
+
 	@Value("classpath:json/listCharacters_OK.json")
 	private Resource listCharactersOK;
-	
+
 	@Value("classpath:json/characterComics_OK.json")
-	private Resource characterComicsOK;	
-	
+	private Resource characterComicsOK;
+
 	@Value("classpath:json/characterEvents_OK.json")
 	private Resource characterEventsOK;
-	
+
 	@Value("classpath:json/listCharacters_NotFound.json")
-	private Resource listCharactersNotFound;	
-	
+	private Resource listCharactersNotFound;
+
 	@BeforeEach
 	public void setup() throws Exception {
-	    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
-	}	
-	
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
+	}
+
 	@Test
 	@Order(1)
 	@DisplayName("1 - Efetuando a busca de um personagem de acordo com o critério de pesquisa")
-	public void testFindCharacters() {
-		try {
-			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s",
-					configuration.getTs(), configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
-					.willReturn(WireMock.aResponse()
-							.withStatus(200)
-							.withHeader("Content-Type", "application/json")
-							.withBody(ResourceUtils.getContentFile(listCharactersOK))));
-			
-			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters/%s/comics?ts=%s&apikey=%s&hash=%s&orderBy=-focDate",
-					Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
-					.willReturn(WireMock.aResponse()
-							.withStatus(200)
-							.withHeader("Content-Type", "application/json")
-							.withBody(ResourceUtils.getContentFile(characterComicsOK))));
-			
-			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters/%s/events?ts=%s&apikey=%s&hash=%s",
-					Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
-					.willReturn(WireMock.aResponse()
-							.withStatus(200)
-							.withHeader("Content-Type", "application/json")
-							.withBody(ResourceUtils.getContentFile(characterEventsOK))));			
-			
-			MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
-					.get(String.format("/marvel/heros/%s", Constants.CHARACTERS_NAME)))
-					.andExpect(MockMvcResultMatchers.status().isOk())
-					.andReturn();
-			
-			ObjectMapper mapper = new ObjectMapper();
-			List<MarvelCharacter> result = mapper.readValue(mvcResult.getResponse().getContentAsString(), new TypeReference<List<MarvelCharacter>>() {});
-			
-			assertFalse(result.isEmpty());
-			assertEquals(1, result.size());
-			assertEquals(BigDecimal.valueOf(Long.parseLong(Constants.CHARACTERS_ID)), result.get(0).getId());
-			assertEquals(Constants.CHARACTERS_NAME.toLowerCase(), result.get(0).getName().toLowerCase());
-			assertFalse(result.get(0).getComics().isEmpty());
-			assertEquals(20, result.get(0).getComics().size());
-			assertFalse(result.get(0).getEvents().isEmpty());
-			assertEquals(20, result.get(0).getEvents().size());
-		} catch (Exception ex) {
-			fail(ex.getMessage());
-		}
+	public void testFindCharacters() throws Exception {
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
+						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
+
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters/%s/comics?ts=%s&apikey=%s&hash=%s&orderBy=-focDate",
+						Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(),
+						configuration.getHash()))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(characterComicsOK))));
+
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters/%s/events?ts=%s&apikey=%s&hash=%s", Constants.CHARACTERS_ID,
+						configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(characterEventsOK))));
+
+		MvcResult mvcResult = mockMvc
+				.perform(MockMvcRequestBuilders.get(String.format("/marvel/heros/%s", Constants.CHARACTERS_NAME)))
+				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
+
+		ObjectMapper mapper = new ObjectMapper();
+		List<MarvelCharacter> result = mapper.readValue(mvcResult.getResponse().getContentAsString(),
+				new TypeReference<List<MarvelCharacter>>() {
+				});
+
+		assertFalse(result.isEmpty());
+		assertThat(result.size(), equalTo(1));
+		assertThat(result.get(0).getId(), equalTo(BigDecimal.valueOf(Long.parseLong(Constants.CHARACTERS_ID))));
+		assertThat(result.get(0).getName().toLowerCase(), equalTo(Constants.CHARACTERS_NAME.toLowerCase()));
+		
+		assertFalse(result.get(0).getComics().isEmpty());
+		assertThat(result.get(0).getComics().size(), equalTo(20));
+		
+		assertFalse(result.get(0).getEvents().isEmpty());
+		assertThat(result.get(0).getEvents().size(), equalTo(20));
 	}
-	
+
 	@Test
-	@Order(2)	
+	@Order(2)
 	@DisplayName("2 - Personagem não encontrado")
-	public void testNotFoundCharacter() {
-		try {
-			WireMock.stubFor(WireMock.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s",
-					configuration.getTs(), configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME_NOT_FOUND))
-					.willReturn(WireMock.aResponse()
-							.withStatus(200)
-							.withHeader("Content-Type", "application/json")
-							.withBody(ResourceUtils.getContentFile(listCharactersNotFound))));
-			
-			mockMvc.perform(MockMvcRequestBuilders
-					.get(String.format("/marvel/heros/%s", Constants.CHARACTERS_NAME_NOT_FOUND)))
-					.andExpect(MockMvcResultMatchers.status().isNotFound());
-		} catch (Exception ex) {
-			fail(ex.getMessage());
-		}
+	public void testNotFoundCharacter() throws Exception {
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
+						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME_NOT_FOUND))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(listCharactersNotFound))));
+
+		mockMvc.perform(
+				MockMvcRequestBuilders.get(String.format("/marvel/heros/%s", Constants.CHARACTERS_NAME_NOT_FOUND)))
+				.andExpect(MockMvcResultMatchers.status().isNotFound());
 	}
 
 }
