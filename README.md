@@ -210,6 +210,17 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     }
 ]
 ```
+## S3
+
+Para funcionar a escrita e leitura de arquivos usando S3 com LocalStack o endpoint deve ser configurado da seguinte forma:
+
+```
+cloud:
+  aws:
+    s3:
+      endpoint: http://s3.localhost.localstack.cloud:4566/
+```
+
 ## AWS Secret Manager
 
 Usando o AWS Secret Manager em uma aplicação Spring Boot com Spring Cloud AWS.
@@ -260,6 +271,10 @@ Comandos para criação das chaves usando o AWS Cli estão localizadas no diret�
 As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
 ## Roadmap - Concluído
+
+- 2022-02-01
+    - **AWS**
+        - Gravando as imagens dos personagens no S3 com LocalStack
 
 - 2022-01-31
     - **Configuração Distribuida**
