@@ -261,12 +261,13 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 ## Roadmap - Concluído
 
-- **Configuração Distribuida**
-    - 2022-01-31 - AWS Secret Manager com LocalStack
-    - 2022-01-31 - AWS Parameter Store com LocalStack
-- **AWS**
-    - 2022-01-31 - AWS Secret Manager com LocalStack
-    - 2022-01-31 - AWS Parameter Store com LocalStack
+- 2022-01-31
+    - **Configuração Distribuida**
+         - AWS Secret Manager com LocalStack
+         - AWS Parameter Store com LocalStack
+    - **AWS**
+        - AWS Secret Manager com LocalStack
+        - AWS Parameter Store com LocalStack
 
 ## Roadmap - ToBe
 
