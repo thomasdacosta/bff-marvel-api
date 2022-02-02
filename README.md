@@ -273,6 +273,8 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 ## Roadmap - Concluído
 
 - 2022-02-02
+    - **Async Spring Boot**
+        - Incluíndo o Async para obter as imagens dos personagens
     - **Arquitetura Hexagonal**
         - Refatoração do Client da API da Marvel
 - 2022-02-01
