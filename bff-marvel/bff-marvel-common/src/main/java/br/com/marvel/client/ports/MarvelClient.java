@@ -1,4 +1,4 @@
-package br.com.marvel.client;
+package br.com.marvel.client.ports;
 
 import java.math.BigDecimal;
 import java.net.URI;

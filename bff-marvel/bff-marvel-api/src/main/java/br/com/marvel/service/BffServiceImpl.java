@@ -13,11 +13,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import br.com.marvel.client.MarvelClient;
 import br.com.marvel.client.dto.Character;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
+import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controler.dto.MarvelCharacter;
 import br.com.marvel.controler.dto.MarvelComics;
 import br.com.marvel.controler.dto.MarvelEvents;

@@ -20,6 +20,7 @@ import br.com.marvel.client.dto.InlineResponse200;
 import br.com.marvel.client.dto.SeriesDataWrapper;
 import br.com.marvel.client.dto.StoryDataWrapper;
 import br.com.marvel.client.feign.MarvelApi;
+import br.com.marvel.client.ports.MarvelClient;
 
 @Component
 public class MarvelClientImpl implements MarvelClient {

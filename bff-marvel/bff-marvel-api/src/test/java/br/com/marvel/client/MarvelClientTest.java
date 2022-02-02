@@ -29,6 +29,7 @@ import br.com.marvel.client.configuration.ClientConfiguration;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
+import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.utils.Constants;
 import br.com.marvel.utils.ResourceUtils;
 import feign.FeignException.InternalServerError;
