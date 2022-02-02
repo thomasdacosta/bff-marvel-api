@@ -5,7 +5,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.math.BigDecimal;
 
@@ -18,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
@@ -66,15 +64,14 @@ public class MarvelClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
 
-		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(Constants.CHARACTERS_NAME, null, null,
-				null, null, null, null, null, null, null);
+		InlineResponse200 listCharacters = client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null,
+				null, null, null, null, null);
 
-		assertTrue(listCharacters.hasBody());
-		assertNotNull(listCharacters.getBody().getData());
-		assertThat(listCharacters.getBody().getData().getCount(), equalTo(BigDecimal.valueOf(1)));
+		assertNotNull(listCharacters.getData());
+		assertThat(listCharacters.getData().getCount(), equalTo(BigDecimal.valueOf(1)));
 
-		assertFalse(listCharacters.getBody().getData().getResults().isEmpty());
-		assertThat(listCharacters.getBody().getData().getResults().get(0).getId(),
+		assertFalse(listCharacters.getData().getResults().isEmpty());
+		assertThat(listCharacters.getData().getResults().get(0).getId(),
 				equalTo(BigDecimal.valueOf(Long.parseLong(Constants.CHARACTERS_ID))));
 	}
 
@@ -89,15 +86,14 @@ public class MarvelClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(characterComicsOK))));
 
-		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(Constants.CHARACTERS_ID, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
-				"-focDate", null, null);
+		ComicDataWrapper characterComics = client.characterComics(Constants.CHARACTERS_ID, null, null, null, null, null,
+				null, null, null, null, null, null, null, null, null, null, null, null, null, null, "-focDate", null,
+				null);
 
-		assertTrue(characterComics.hasBody());
-		assertNotNull(characterComics.getBody().getData());
+		assertNotNull(characterComics.getData());
 
-		assertThat(characterComics.getBody().getData().getCount(), equalTo(BigDecimal.valueOf(20)));
-		assertFalse(characterComics.getBody().getData().getResults().isEmpty());
+		assertThat(characterComics.getData().getCount(), equalTo(BigDecimal.valueOf(20)));
+		assertFalse(characterComics.getData().getResults().isEmpty());
 	}
 
 	@Test
@@ -110,14 +106,13 @@ public class MarvelClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(characterEventsOK))));
 
-		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(Constants.CHARACTERS_ID, null, null,
-				null, null, null, null, null, null, null, null);
+		EventDataWrapper characterEvents = client.characterEvents(Constants.CHARACTERS_ID, null, null, null, null, null,
+				null, null, null, null, null);
 
-		assertTrue(characterEvents.hasBody());
-		assertNotNull(characterEvents.getBody().getData());
+		assertNotNull(characterEvents.getData());
 
-		assertThat(characterEvents.getBody().getData().getCount(), equalTo(BigDecimal.valueOf(20)));
-		assertFalse(characterEvents.getBody().getData().getResults().isEmpty());
+		assertThat(characterEvents.getData().getCount(), equalTo(BigDecimal.valueOf(20)));
+		assertFalse(characterEvents.getData().getResults().isEmpty());
 	}
 
 	@Test
