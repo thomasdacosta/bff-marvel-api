@@ -25,10 +25,11 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
+import br.com.marvel.client.dto.ComicDataWrapper;
+import br.com.marvel.client.dto.EventDataWrapper;
+import br.com.marvel.client.dto.InlineResponse200;
+import br.com.marvel.client.feign.MarvelApi;
 import br.com.marvel.configuration.BffConfiguration;
-import br.com.marvel.model.ComicDataWrapper;
-import br.com.marvel.model.EventDataWrapper;
-import br.com.marvel.model.InlineResponse200;
 import br.com.marvel.utills.Constants;
 import br.com.marvel.utils.ResourceUtils;
 import feign.FeignException.InternalServerError;
@@ -41,7 +42,7 @@ import feign.FeignException.NotFound;
 public class MarvelApiClientTest {
 
 	@Autowired
-	private MarvelApiClient client;
+	private MarvelApi client;
 
 	@Autowired
 	private BffConfiguration configuration;

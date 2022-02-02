@@ -25,8 +25,9 @@ import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
 import br.com.marvel.configuration.BffConfiguration;
-import br.com.marvel.dto.MarvelCharacter;
-import br.com.marvel.exception.NotFoundException;
+import br.com.marvel.controler.dto.MarvelCharacter;
+import br.com.marvel.controller.exception.NotFoundException;
+import br.com.marvel.service.ports.BffService;
 import br.com.marvel.utills.Constants;
 import br.com.marvel.utils.ResourceUtils;
 
