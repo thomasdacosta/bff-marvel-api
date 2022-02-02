@@ -24,10 +24,11 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
-import br.com.marvel.configuration.BffConfiguration;
-import br.com.marvel.dto.MarvelCharacter;
-import br.com.marvel.exception.NotFoundException;
-import br.com.marvel.utills.Constants;
+import br.com.marvel.client.configuration.ClientConfiguration;
+import br.com.marvel.controler.dto.MarvelCharacter;
+import br.com.marvel.controller.exception.NotFoundException;
+import br.com.marvel.service.ports.BffService;
+import br.com.marvel.utils.Constants;
 import br.com.marvel.utils.ResourceUtils;
 
 @WireMockTest(httpPort = 8083)
@@ -40,7 +41,7 @@ public class BffServiceTest {
 	private BffService service;
 
 	@Autowired
-	private BffConfiguration configuration;
+	private ClientConfiguration configuration;
 
 	@Value("classpath:json/listCharacters_OK.json")
 	private Resource listCharactersOK;

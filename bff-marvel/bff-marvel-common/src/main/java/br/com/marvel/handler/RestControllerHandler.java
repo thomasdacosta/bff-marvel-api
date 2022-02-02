@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import br.com.marvel.dto.BffMarvelError;
-import br.com.marvel.exception.NotFoundException;
-import br.com.marvel.exception.OperationException;
+import br.com.marvel.controller.exception.NotFoundException;
+import br.com.marvel.controller.exception.OperationException;
+import br.com.marvel.handler.dto.BffMarvelError;
 import feign.FeignException;
 
 @RestControllerAdvice
