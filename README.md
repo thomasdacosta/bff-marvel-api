@@ -274,6 +274,9 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 - 2022-02-01
     - **Arquitetura Hexagonal**
+        - Refatoração do Client da API da Marvel
+- 2022-02-01
+    - **Arquitetura Hexagonal**
         - Modelo inicial
     - **AWS**
         - Gravando as imagens dos personagens no S3 com LocalStack
