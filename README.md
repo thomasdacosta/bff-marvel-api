@@ -272,7 +272,7 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 ## Roadmap - Concluído
 
-- 2022-02-01
+- 2022-02-02
     - **Arquitetura Hexagonal**
         - Refatoração do Client da API da Marvel
 - 2022-02-01
