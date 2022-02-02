@@ -1,18 +1,12 @@
 package br.com.marvel.service;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import br.com.marvel.client.dto.Character;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
@@ -21,11 +15,9 @@ import br.com.marvel.controler.dto.MarvelCharacter;
 import br.com.marvel.controler.dto.MarvelComics;
 import br.com.marvel.controler.dto.MarvelEvents;
 import br.com.marvel.controller.exception.NotFoundException;
-import br.com.marvel.file.ports.FileService;
 import br.com.marvel.service.ports.BffService;
-import lombok.extern.slf4j.Slf4j;
+import br.com.marvel.service.ports.ImageService;
 
-@Slf4j
 @Service
 public class BffServiceImpl implements BffService {
 
@@ -54,22 +46,7 @@ public class BffServiceImpl implements BffService {
 	private MarvelClient client;
 
 	@Autowired
-	private FileService fileService;
-
-	@Async
-	private void getCharacterImage(Character character, String size) {
-		try {
-			Resource response = client
-					.image(new URI(String.format("%s/%s.jpg", character.getThumbnail().getPath(), size)));
-			fileService.saveFile(response.getInputStream(),
-					String.format("%s_%s_%s.%s", character.getName().toUpperCase(), character.getId(), size,
-							character.getThumbnail().getExtension()));
-		} catch (URISyntaxException ex) {
-			log.error(ex.getMessage(), ex);
-		} catch (IOException ex) {
-			log.error(ex.getMessage(), ex);
-		}
-	}
+	private ImageService imageService;
 
 	@Override
 	public List<MarvelCharacter> findCharacters(String name) {
@@ -90,30 +67,26 @@ public class BffServiceImpl implements BffService {
 
 				marvelCharacters.add(marvelCharacter);
 
-				log.info("Obtendo imagens...");
+				imageService.getCharacterImage(c, PORTRAIT_SMALL);
+				imageService.getCharacterImage(c, PORTRAIT_MEDIUM);
+				imageService.getCharacterImage(c, PORTRAIT_XLARGE);
+				imageService.getCharacterImage(c, PORTRAIT_FANTASTIC);
+				imageService.getCharacterImage(c, PORTRAIT_UNCANNY);
+				imageService.getCharacterImage(c, PORTRAIT_INCREDIBLE);
 
-				getCharacterImage(c, PORTRAIT_SMALL);
-				getCharacterImage(c, PORTRAIT_MEDIUM);
-				getCharacterImage(c, PORTRAIT_XLARGE);
-				getCharacterImage(c, PORTRAIT_FANTASTIC);
-				getCharacterImage(c, PORTRAIT_UNCANNY);
-				getCharacterImage(c, PORTRAIT_INCREDIBLE);
+				imageService.getCharacterImage(c, STANDARD_SMALL);
+				imageService.getCharacterImage(c, STANDARD_MEDIUM);
+				imageService.getCharacterImage(c, STANDARD_LARGE);
+				imageService.getCharacterImage(c, STANDARD_XLARGE);
+				imageService.getCharacterImage(c, STANDARD_FANTASTIC);
+				imageService.getCharacterImage(c, STANDARD_AMAZING);
 
-				getCharacterImage(c, STANDARD_SMALL);
-				getCharacterImage(c, STANDARD_MEDIUM);
-				getCharacterImage(c, STANDARD_LARGE);
-				getCharacterImage(c, STANDARD_XLARGE);
-				getCharacterImage(c, STANDARD_FANTASTIC);
-				getCharacterImage(c, STANDARD_AMAZING);
-
-				getCharacterImage(c, LANDSCAPE_SMALL);
-				getCharacterImage(c, LANDSCAPE_MEDIUM);
-				getCharacterImage(c, LANDSCAPE_LARGE);
-				getCharacterImage(c, LANDSCAPE_XLARGE);
-				getCharacterImage(c, LANDSCAPE_AMAZING);
-				getCharacterImage(c, LANDSCAPE_INCREDIBLE);
-
-				log.info("Imagens gravadas !!!");
+				imageService.getCharacterImage(c, LANDSCAPE_SMALL);
+				imageService.getCharacterImage(c, LANDSCAPE_MEDIUM);
+				imageService.getCharacterImage(c, LANDSCAPE_LARGE);
+				imageService.getCharacterImage(c, LANDSCAPE_XLARGE);
+				imageService.getCharacterImage(c, LANDSCAPE_AMAZING);
+				imageService.getCharacterImage(c, LANDSCAPE_INCREDIBLE);
 			});
 		} else {
 			throw new NotFoundException("Personagens não encontrados. Deve ser da concorrente!!!");
