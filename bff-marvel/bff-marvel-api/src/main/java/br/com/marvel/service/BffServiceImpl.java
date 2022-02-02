@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -60,9 +59,9 @@ public class BffServiceImpl implements BffService {
 	@Async
 	private void getCharacterImage(Character character, String size) {
 		try {
-			ResponseEntity<Resource> response = client
+			Resource response = client
 					.image(new URI(String.format("%s/%s.jpg", character.getThumbnail().getPath(), size)));
-			fileService.saveFile(response.getBody().getInputStream(),
+			fileService.saveFile(response.getInputStream(),
 					String.format("%s_%s_%s.%s", character.getName().toUpperCase(), character.getId(), size,
 							character.getThumbnail().getExtension()));
 		} catch (URISyntaxException ex) {
@@ -75,11 +74,11 @@ public class BffServiceImpl implements BffService {
 	@Override
 	public List<MarvelCharacter> findCharacters(String name) {
 		List<MarvelCharacter> marvelCharacters = new ArrayList<>();
-		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(name, null, null, null, null, null,
+		InlineResponse200 listCharacters = client.listCharacters(name, null, null, null, null, null,
 				null, null, null, null);
 
-		if (!listCharacters.getBody().getData().getResults().isEmpty()) {
-			listCharacters.getBody().getData().getResults().forEach(c -> {
+		if (!listCharacters.getData().getResults().isEmpty()) {
+			listCharacters.getData().getResults().forEach(c -> {
 				MarvelCharacter marvelCharacter = new MarvelCharacter();
 
 				marvelCharacter.setDescription(c.getDescription());
@@ -125,12 +124,12 @@ public class BffServiceImpl implements BffService {
 
 	@Override
 	public List<MarvelComics> findComicsByCharacter(String id) {
-		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(id, null, null, null, null, null,
+		ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null,
 				null, null, null, null, null, null, null, null, null, null, null, null, null, null, "-focDate", null,
 				null);
 
-		if (!characterComics.getBody().getData().getResults().isEmpty()) {
-			return characterComics.getBody().getData().getResults().stream().map(m -> {
+		if (!characterComics.getData().getResults().isEmpty()) {
+			return characterComics.getData().getResults().stream().map(m -> {
 				MarvelComics marvelComics = new MarvelComics();
 				marvelComics.setTitle(m.getTitle());
 				marvelComics.setIssueNumber(m.getIssueNumber());
@@ -142,11 +141,11 @@ public class BffServiceImpl implements BffService {
 
 	@Override
 	public List<MarvelEvents> findEventsByCharacter(String id) {
-		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(id, null, null, null, null, null,
+		EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null,
 				null, null, null, null, null);
 
-		if (!characterEvents.getBody().getData().getResults().isEmpty()) {
-			return characterEvents.getBody().getData().getResults().stream().map(m -> {
+		if (!characterEvents.getData().getResults().isEmpty()) {
+			return characterEvents.getData().getResults().stream().map(m -> {
 				MarvelEvents marvelEvents = new MarvelEvents();
 				marvelEvents.setDescription(m.getDescription());
 				marvelEvents.setTitle(m.getTitle());
