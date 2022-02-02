@@ -1,20 +1,18 @@
-package br.com.marvel.controler.dto;
-
-import java.math.BigDecimal;
+package br.com.marvel.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class MarvelComics {
+public class MarvelEvents {
 	
 	@JsonProperty("title")
 	@Getter @Setter
 	private String title;	
 	
-	@JsonProperty("issueNumber")
+	@JsonProperty("description")
 	@Getter @Setter
-	private BigDecimal issueNumber;	
+	private String description;	
 
 }

@@ -2,9 +2,9 @@ package br.com.marvel.service.ports;
 
 import java.util.List;
 
-import br.com.marvel.controler.dto.MarvelCharacter;
-import br.com.marvel.controler.dto.MarvelComics;
-import br.com.marvel.controler.dto.MarvelEvents;
+import br.com.marvel.controller.dto.MarvelCharacter;
+import br.com.marvel.controller.dto.MarvelComics;
+import br.com.marvel.controller.dto.MarvelEvents;
 
 public interface BffService {
 

@@ -1,4 +1,4 @@
-package br.com.marvel.controler.dto;
+package br.com.marvel.controller.dto;
 
 import java.math.BigDecimal;
 import java.util.List;

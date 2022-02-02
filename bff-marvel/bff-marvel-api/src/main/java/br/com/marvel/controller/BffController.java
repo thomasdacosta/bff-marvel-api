@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.marvel.controler.dto.MarvelCharacter;
+import br.com.marvel.controller.dto.MarvelCharacter;
 import br.com.marvel.service.ports.BffService;
 
 @RestController

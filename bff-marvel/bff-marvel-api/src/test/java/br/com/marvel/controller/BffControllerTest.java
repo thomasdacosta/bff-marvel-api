@@ -32,7 +32,7 @@ import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
 import br.com.marvel.client.configuration.ClientConfiguration;
-import br.com.marvel.controler.dto.MarvelCharacter;
+import br.com.marvel.controller.dto.MarvelCharacter;
 import br.com.marvel.utils.Constants;
 import br.com.marvel.utils.ResourceUtils;
 
