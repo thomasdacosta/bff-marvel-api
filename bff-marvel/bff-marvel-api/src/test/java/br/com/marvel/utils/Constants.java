@@ -1,4 +1,4 @@
-package br.com.marvel.utills;
+package br.com.marvel.utils;
 
 public class Constants {
 	

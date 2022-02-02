@@ -3,8 +3,6 @@ package br.com.marvel.client;
 import java.math.BigDecimal;
 import java.net.URI;
 
-import javax.validation.Valid;
-
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 
@@ -120,11 +118,10 @@ public interface MarvelClient {
 			BigDecimal sharedAppearances, BigDecimal collaborators, String orderBy, BigDecimal limit,
 			BigDecimal offset);
 
-	ResponseEntity<CreatorDataWrapper> listCreators(String ts, String apikey, String hash, String firstName,
-			String middleName, String lastName, String suffix, String nameStartsWith, String firstNameStartsWith,
-			String middleNameStartsWith, String lastNameStartsWith, String modifiedSince, BigDecimal comics,
-			BigDecimal series, BigDecimal events, BigDecimal stories, String orderBy, BigDecimal limit,
-			BigDecimal offset);
+	ResponseEntity<CreatorDataWrapper> listCreators(String firstName, String middleName, String lastName, String suffix,
+			String nameStartsWith, String firstNameStartsWith, String middleNameStartsWith, String lastNameStartsWith,
+			String modifiedSince, BigDecimal comics, BigDecimal series, BigDecimal events, BigDecimal stories,
+			String orderBy, BigDecimal limit, BigDecimal offset);
 
 	ResponseEntity<EventDataWrapper> listEvents(String name, String nameStartsWith, String modifiedSince,
 			BigDecimal creators, BigDecimal characters, BigDecimal series, BigDecimal comics, BigDecimal stories,
@@ -135,7 +132,7 @@ public interface MarvelClient {
 			BigDecimal characters, String seriesType, String contains, String orderBy, BigDecimal limit,
 			BigDecimal offset);
 
-	ResponseEntity<StoryDataWrapper> listStories(String ts, String apikey, String hash, String modifiedSince,
+	ResponseEntity<StoryDataWrapper> listStories(String modifiedSince,
 			BigDecimal comics, BigDecimal series, BigDecimal events, BigDecimal creators, BigDecimal characters,
 			String orderBy, BigDecimal limit, BigDecimal offset);
 

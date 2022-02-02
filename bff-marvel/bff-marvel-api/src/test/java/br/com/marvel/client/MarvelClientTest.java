@@ -25,12 +25,11 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
+import br.com.marvel.client.configuration.ClientConfiguration;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
-import br.com.marvel.client.feign.MarvelApi;
-import br.com.marvel.configuration.BffConfiguration;
-import br.com.marvel.utills.Constants;
+import br.com.marvel.utils.Constants;
 import br.com.marvel.utils.ResourceUtils;
 import feign.FeignException.InternalServerError;
 import feign.FeignException.NotFound;
@@ -39,13 +38,13 @@ import feign.FeignException.NotFound;
 @SpringBootTest(classes = BffMarvelApiApplication.class)
 @TestPropertySource(locations = "classpath:application-marvelApiClientTest.properties")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class MarvelApiClientTest {
+public class MarvelClientTest {
 
 	@Autowired
-	private MarvelApi client;
+	private MarvelClient client;
 
 	@Autowired
-	private BffConfiguration configuration;
+	private ClientConfiguration configuration;
 
 	@Value("classpath:json/listCharacters_OK.json")
 	private Resource listCharactersOK;
@@ -66,9 +65,8 @@ public class MarvelApiClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
 
-		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME, null, null, null, null,
-				null, null, null, null, null);
+		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(Constants.CHARACTERS_NAME, null, null,
+				null, null, null, null, null, null, null);
 
 		assertTrue(listCharacters.hasBody());
 		assertNotNull(listCharacters.getBody().getData());
@@ -90,14 +88,13 @@ public class MarvelApiClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(characterComicsOK))));
 
-		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_ID, null, null, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "-focDate",
-				null, null);
+		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(Constants.CHARACTERS_ID, null, null,
+				null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+				"-focDate", null, null);
 
 		assertTrue(characterComics.hasBody());
 		assertNotNull(characterComics.getBody().getData());
-		
+
 		assertThat(characterComics.getBody().getData().getCount(), equalTo(BigDecimal.valueOf(20)));
 		assertFalse(characterComics.getBody().getData().getResults().isEmpty());
 	}
@@ -112,13 +109,12 @@ public class MarvelApiClientTest {
 				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
 						.withBody(ResourceUtils.getContentFile(characterEventsOK))));
 
-		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_ID, null, null, null, null,
-				null, null, null, null, null, null);
+		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(Constants.CHARACTERS_ID, null, null,
+				null, null, null, null, null, null, null, null);
 
 		assertTrue(characterEvents.hasBody());
 		assertNotNull(characterEvents.getBody().getData());
-		
+
 		assertThat(characterEvents.getBody().getData().getCount(), equalTo(BigDecimal.valueOf(20)));
 		assertFalse(characterEvents.getBody().getData().getResults().isEmpty());
 	}
@@ -134,8 +130,7 @@ public class MarvelApiClientTest {
 						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
 
 		assertThrows(NotFound.class, () -> {
-			client.listCharacters(configuration.getTs(), configuration.getApiKey(), configuration.getHash(),
-					Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
+			client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
 		});
 	}
 
@@ -150,8 +145,7 @@ public class MarvelApiClientTest {
 						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
 
 		assertThrows(InternalServerError.class, () -> {
-			client.listCharacters(configuration.getTs(), configuration.getApiKey(), configuration.getHash(),
-					Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
+			client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
 		});
 	}
 

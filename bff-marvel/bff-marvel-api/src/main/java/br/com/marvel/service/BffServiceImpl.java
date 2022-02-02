@@ -13,12 +13,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import br.com.marvel.client.MarvelClient;
 import br.com.marvel.client.dto.Character;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
-import br.com.marvel.client.feign.MarvelApi;
-import br.com.marvel.configuration.BffConfiguration;
 import br.com.marvel.controler.dto.MarvelCharacter;
 import br.com.marvel.controler.dto.MarvelComics;
 import br.com.marvel.controler.dto.MarvelEvents;
@@ -30,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class BffServiceImpl implements BffService {
-	
+
 	private static final String PORTRAIT_SMALL = "portrait_small";
 	private static final String PORTRAIT_MEDIUM = "portrait_medium";
 	private static final String PORTRAIT_XLARGE = "portrait_xlarge";
@@ -50,13 +49,10 @@ public class BffServiceImpl implements BffService {
 	private static final String LANDSCAPE_LARGE = "landscape_large";
 	private static final String LANDSCAPE_XLARGE = "landscape_xlarge";
 	private static final String LANDSCAPE_AMAZING = "landscape_amazing";
-	private static final String LANDSCAPE_INCREDIBLE = "landscape_incredible";	
+	private static final String LANDSCAPE_INCREDIBLE = "landscape_incredible";
 
 	@Autowired
-	private MarvelApi client;
-
-	@Autowired
-	private BffConfiguration configuration;
+	private MarvelClient client;
 
 	@Autowired
 	private FileService fileService;
@@ -79,9 +75,8 @@ public class BffServiceImpl implements BffService {
 	@Override
 	public List<MarvelCharacter> findCharacters(String name) {
 		List<MarvelCharacter> marvelCharacters = new ArrayList<>();
-		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), name, null, null, null, null, null, null, null,
-				null, null);
+		ResponseEntity<InlineResponse200> listCharacters = client.listCharacters(name, null, null, null, null, null,
+				null, null, null, null);
 
 		if (!listCharacters.getBody().getData().getResults().isEmpty()) {
 			listCharacters.getBody().getData().getResults().forEach(c -> {
@@ -95,7 +90,7 @@ public class BffServiceImpl implements BffService {
 				marvelCharacter.setEvents(findEventsByCharacter(String.valueOf(c.getId())));
 
 				marvelCharacters.add(marvelCharacter);
-				
+
 				log.info("Obtendo imagens...");
 
 				getCharacterImage(c, PORTRAIT_SMALL);
@@ -118,7 +113,7 @@ public class BffServiceImpl implements BffService {
 				getCharacterImage(c, LANDSCAPE_XLARGE);
 				getCharacterImage(c, LANDSCAPE_AMAZING);
 				getCharacterImage(c, LANDSCAPE_INCREDIBLE);
-				
+
 				log.info("Imagens gravadas !!!");
 			});
 		} else {
@@ -130,9 +125,9 @@ public class BffServiceImpl implements BffService {
 
 	@Override
 	public List<MarvelComics> findComicsByCharacter(String id) {
-		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), id, null, null, null, null, null, null, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, "-focDate", null, null);
+		ResponseEntity<ComicDataWrapper> characterComics = client.characterComics(id, null, null, null, null, null,
+				null, null, null, null, null, null, null, null, null, null, null, null, null, null, "-focDate", null,
+				null);
 
 		if (!characterComics.getBody().getData().getResults().isEmpty()) {
 			return characterComics.getBody().getData().getResults().stream().map(m -> {
@@ -147,9 +142,8 @@ public class BffServiceImpl implements BffService {
 
 	@Override
 	public List<MarvelEvents> findEventsByCharacter(String id) {
-		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(configuration.getTs(),
-				configuration.getApiKey(), configuration.getHash(), id, null, null, null, null, null, null, null, null,
-				null, null);
+		ResponseEntity<EventDataWrapper> characterEvents = client.characterEvents(id, null, null, null, null, null,
+				null, null, null, null, null);
 
 		if (!characterEvents.getBody().getData().getResults().isEmpty()) {
 			return characterEvents.getBody().getData().getResults().stream().map(m -> {
