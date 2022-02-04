@@ -303,6 +303,9 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 ## Roadmap - Concluído
 
+- 2022-02-3
+    - **Docker**
+        - Incluindo a geração da imagem e conexão com alguns serviços básicos do LocalStack
 - 2022-02-02
     - **Async Spring Boot**
         - Incluíndo o Async para obter as imagens dos personagens
@@ -333,7 +336,6 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
     - Log com Trace Id
     - Erros do FeignClient
 - **Cache**
-- **Docker**
 - **Docker Hub**
 - **gRPC**
 - **Integração com Frontend**
