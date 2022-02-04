@@ -210,6 +210,37 @@ A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
     }
 ]
 ```
+
+# Docker
+
+## Gerando a Imagem
+
+Use o comando abaixo para gerar a imagem Docker:
+
+```
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=bff-marvel-api:1.0.0
+```
+
+## Acessando o LocalStack
+
+Para usar o LocalStack no AWS Secret Manager e no AWS Parameter Store usar as seguintes configurações:
+
+```
+aws:
+  secretsmanager:
+    enabled: true
+    endpoint: http://host.docker.internal:4566
+  paramstore:
+    enabled: true
+    endpoint: http://host.docker.internal:4566
+```
+
+## S3 com LocalStack e Docker
+
+Ainda não está funcionando corretamente!!!
+
+# AWS
+
 ## S3
 
 Para funcionar a escrita e leitura de arquivos usando S3 com LocalStack o endpoint deve ser configurado da seguinte forma:
@@ -272,6 +303,9 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 ## Roadmap - Concluído
 
+- 2022-02-3
+    - **Docker**
+        - Incluindo a geração da imagem e conexão com alguns serviços básicos do LocalStack
 - 2022-02-02
     - **Async Spring Boot**
         - Incluíndo o Async para obter as imagens dos personagens
@@ -302,7 +336,6 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
     - Log com Trace Id
     - Erros do FeignClient
 - **Cache**
-- **Docker**
 - **Docker Hub**
 - **gRPC**
 - **Integração com Frontend**
