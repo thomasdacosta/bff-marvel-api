@@ -7,10 +7,6 @@ spring:
 aws:
   secretsmanager:
     enabled: false
-cloud:
-  aws:
-    credentials:
-      profile-name: spring
 ---
 spring:
   profiles: default, local

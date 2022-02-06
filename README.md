@@ -221,6 +221,18 @@ Use o comando abaixo para gerar a imagem Docker:
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=bff-marvel-api:1.0.0
 ```
 
+Executando a imagem com LocalStack
+
+```
+docker run -e "SPRING_PROFILES_ACTIVE=localstack" -e "AWS_ACCESS_KEY_ID=localstack" -e "AWS_SECRET_KEY=localstack" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
+```
+
+Executando a imagem em Produção
+
+```
+docker run -e "SPRING_PROFILES_ACTIVE=production" -e "AWS_ACCESS_KEY_ID=production" -e "AWS_SECRET_KEY=production" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
+```
+
 ## Acessando o LocalStack
 
 Para usar o LocalStack no AWS Secret Manager e no AWS Parameter Store usar as seguintes configurações:
