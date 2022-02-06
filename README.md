@@ -301,6 +301,11 @@ Comandos para criação das chaves usando o AWS Cli estão localizadas no diret�
 
 As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
+## Produção
+
+A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.
+O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
+
 ## Roadmap - Concluído
 
 - 2022-02-3

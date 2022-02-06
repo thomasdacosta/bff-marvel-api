@@ -3,6 +3,16 @@ spring:
     name: bff-marvel-api
 ---
 spring:
+  profiles: production
+aws:
+  secretsmanager:
+    enabled: false
+cloud:
+  aws:
+    credentials:
+      profile-name: spring
+---
+spring:
   profiles: default, local
 aws:
   secretsmanager:
