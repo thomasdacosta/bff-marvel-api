@@ -320,7 +320,9 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 
 ## Roadmap - Concluído
 
-- 2022-02-3
+- 2022-02-06
+    - Criando um profile de produção
+- 2022-02-03
     - **Docker**
         - Incluindo a geração da imagem e conexão com alguns serviços básicos do LocalStack
 - 2022-02-02
