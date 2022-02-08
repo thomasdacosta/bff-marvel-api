@@ -4,8 +4,8 @@ BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as 
 
 ## Diretórios
 
-**aws** - arquivos relacionados a implantação no ambiente da AWS ou LocalStack
-**bff-marvel** - API desenvolvida em Spring Boot
+**aws** - arquivos relacionados a implantação no ambiente da AWS ou LocalStack<br/>
+**bff-marvel** - API desenvolvida em Spring Boot<br/>
 **swagger** - Swagger da API da Marvel
 
 ## Gerando o client da API da Marvel
@@ -321,7 +321,7 @@ As instruções são a mesma utilizadas na seção anterior do AWS Secret Manage
 
 ## Produção
 
-A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.
+A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
 O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
 
 ## Roadmap - Concluído
