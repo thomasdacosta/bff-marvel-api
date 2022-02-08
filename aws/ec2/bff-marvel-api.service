@@ -1,0 +1,13 @@
+[Unit]
+Description=BFF Marvel API
+After=syslog.target network.target
+
+[Service]
+WorkingDirectory=/home/ec2-user/bff-marvel-api
+ExecStart=/usr/bin/java -jar -Dspring.profiles.active=production /home/ec2-user/bff-marvel-api/bff-marvel-api.jar
+KillMode=process
+User=ec2-user
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

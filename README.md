@@ -2,6 +2,12 @@
 
 BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
+## Diretórios
+
+**aws** - arquivos relacionados a implantação no ambiente da AWS ou LocalStack
+**bff-marvel** - API desenvolvida em Spring Boot
+**swagger** - Swagger da API da Marvel
+
 ## Gerando o client da API da Marvel
 
 Efetuar o cadastro no portal para obter as chaves e acesso a API da Marvel:
