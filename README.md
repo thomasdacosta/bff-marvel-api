@@ -38,7 +38,7 @@ java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json 
 Efetuando a pesquisa a partir de um nome de herói:
 
 ```sh
-curl --location --request GET 'http://localhost:8080/marvel/heros/iron man'
+curl --location --request GET 'http://localhost:8080/marvel/heroes/iron man'
 ```
 
 A resposta da chamada retorna por enquanto 20 registros de HQ´s e eventos:
