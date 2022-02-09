@@ -20,7 +20,7 @@ public class BffController {
 	@Autowired
 	private BffService bffService;
 	
-	@GetMapping(value = "/marvel/heros/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/marvel/heroes/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<MarvelCharacter>> findCharacters(@PathVariable("name") String name) {
 		return ResponseEntity.ok(bffService.findCharacters(name));
 	}

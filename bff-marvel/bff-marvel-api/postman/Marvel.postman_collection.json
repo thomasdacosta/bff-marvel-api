@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9&name=iron man",
+					"raw": "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=f59dbe01285f1d360542b5c47a9516e3&hash=0ea6be79e04ac1b0400d65ffc11088f9&name=thor",
 					"protocol": "http",
 					"host": [
 						"gateway",
@@ -38,7 +38,7 @@
 						},
 						{
 							"key": "name",
-							"value": "iron man"
+							"value": "thor"
 						}
 					]
 				}

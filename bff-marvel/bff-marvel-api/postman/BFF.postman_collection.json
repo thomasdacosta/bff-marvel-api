@@ -6,20 +6,75 @@
 	},
 	"item": [
 		{
-			"name": "/marvel/heros/{name}",
+			"name": "Hulk - /marvel/heroes/{name}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/marvel/heros/iron man",
-					"protocol": "http",
+					"raw": "{{url_bff}}/marvel/heroes/hulk",
 					"host": [
-						"localhost"
+						"{{url_bff}}"
 					],
-					"port": "8080",
 					"path": [
 						"marvel",
-						"heros",
+						"heroes",
+						"hulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Groot - /marvel/heroes/{name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_bff}}/marvel/heroes/groot",
+					"host": [
+						"{{url_bff}}"
+					],
+					"path": [
+						"marvel",
+						"heroes",
+						"groot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Thor - /marvel/heroes/{name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_bff}}/marvel/heroes/thor",
+					"host": [
+						"{{url_bff}}"
+					],
+					"path": [
+						"marvel",
+						"heroes",
+						"thor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Iron Man - /marvel/heroes/{name}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_bff}}/marvel/heroes/iron man",
+					"host": [
+						"{{url_bff}}"
+					],
+					"path": [
+						"marvel",
+						"heroes",
 						"iron man"
 					]
 				}

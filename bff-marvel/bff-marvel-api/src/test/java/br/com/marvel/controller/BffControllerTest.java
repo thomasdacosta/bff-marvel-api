@@ -91,7 +91,7 @@ public class BffControllerTest {
 						.withBody(ResourceUtils.getContentFile(characterEventsOK))));
 
 		MvcResult mvcResult = mockMvc
-				.perform(MockMvcRequestBuilders.get(String.format("/marvel/heros/%s", Constants.CHARACTERS_NAME)))
+				.perform(MockMvcRequestBuilders.get(String.format("/marvel/heroes/%s", Constants.CHARACTERS_NAME)))
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
 
 		ObjectMapper mapper = new ObjectMapper();
