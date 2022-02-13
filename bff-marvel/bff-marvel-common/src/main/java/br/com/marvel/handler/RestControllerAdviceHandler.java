@@ -15,6 +15,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.marvel.controller.exception.CharactersNotFoundException;
+import br.com.marvel.controller.exception.MethodNotImplementedException;
 import br.com.marvel.controller.exception.OperationException;
 import br.com.marvel.handler.dto.BffMarvelError;
 import feign.FeignException;
@@ -82,7 +83,7 @@ public class RestControllerAdviceHandler extends ResponseEntityExceptionHandler 
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(BffMarvelError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-
+	
 	/**
 	 * Erro 500 - Exception
 	 */
@@ -102,5 +103,14 @@ public class RestControllerAdviceHandler extends ResponseEntityExceptionHandler 
 		return ResponseEntity.status(ex.status())
 				.body(BffMarvelError.create().code(ex.status()).message("FEIGN_EXCEPTION").detail(ex.getMessage()));
 	}
+	
+	/**
+	 * Erro 501 - OperationException
+	 */
+	@ExceptionHandler(MethodNotImplementedException.class)
+	public ResponseEntity<Object> handleMethodNotImplementedException(final Exception ex) {
+		logger.error(ex.getMessage(), ex);
+		return new ResponseEntity<>(BffMarvelError.MethodNotImplementedException(ex), HttpStatus.NOT_IMPLEMENTED);
+	}	
 
 }

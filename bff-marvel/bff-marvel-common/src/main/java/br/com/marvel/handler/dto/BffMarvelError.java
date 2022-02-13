@@ -38,7 +38,7 @@ public class BffMarvelError implements Serializable {
 	}
 
 	public static BffMarvelError notFound(Exception ex) {
-		return BffMarvelError.create().code(HttpStatus.NOT_FOUND.value()).message("NOT FOUND").detail(ex.getMessage());
+		return BffMarvelError.create().code(HttpStatus.NOT_FOUND.value()).message("NOT_FOUND").detail(ex.getMessage());
 	}
 
 	public static BffMarvelError methodNotSupported(Exception ex) {
@@ -47,9 +47,14 @@ public class BffMarvelError implements Serializable {
 	}
 
 	public static BffMarvelError internalServerError(Exception ex) {
-		return BffMarvelError.create().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).message("INTERNAL SERVER ERROR")
+		return BffMarvelError.create().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).message("INTERNAL_SERVER_ERROR")
 				.detail(ex.getMessage());
 	}
+	
+	public static BffMarvelError MethodNotImplementedException(Exception ex) {
+		return BffMarvelError.create().code(HttpStatus.NOT_IMPLEMENTED.value()).message("METHOD_NOT_IMPLEMENTED")
+				.detail(ex.getMessage());
+	}	
 
 	public static BffMarvelError create() {
 		return new BffMarvelError();
