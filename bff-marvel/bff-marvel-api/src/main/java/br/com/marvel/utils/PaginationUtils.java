@@ -8,6 +8,7 @@ public class PaginationUtils {
 	
 	public static HttpHeaders paginationHeaders(Pagination pagination) {
 		HttpHeaders httpHeaders = new HttpHeaders();
+		
 		httpHeaders.set("offset", pagination.getOffset().toString());
 		httpHeaders.set("limit", pagination.getLimit().toString());
 		httpHeaders.set("total", pagination.getTotal().toString());

@@ -1,4 +1,4 @@
-package br.com.marvel.controller.dto;
+package br.com.marvel.controller.dto.events;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

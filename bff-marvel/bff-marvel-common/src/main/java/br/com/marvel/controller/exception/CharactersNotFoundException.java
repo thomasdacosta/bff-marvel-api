@@ -4,15 +4,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code=HttpStatus.NOT_FOUND)
-public class NotFoundException extends RuntimeException {
+public class CharactersNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = -571374318141836939L;
 
-	public NotFoundException(String message) {
+	public CharactersNotFoundException(String message) {
 		super(message);
 	}
 
-	public NotFoundException(String message, Throwable cause) {
+	public CharactersNotFoundException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
