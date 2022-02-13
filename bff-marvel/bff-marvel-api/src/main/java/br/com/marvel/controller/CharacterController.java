@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.exception.NotFoundException;
 import br.com.marvel.service.ports.CharacterService;
-import br.com.marvel.utils.ResponseHeadersUtils;
+import br.com.marvel.utils.PaginationUtils;
 
 @RestController
 @RequestMapping("/")
@@ -33,7 +33,7 @@ public class CharacterController {
 		if (pagination == null)
 			throw new NotFoundException("Personagens não encontrados. Deve ser da concorrente!!!");
 
-		return ResponseEntity.ok().headers(ResponseHeadersUtils.paginationHeaders(pagination))
+		return ResponseEntity.ok().headers(PaginationUtils.paginationHeaders(pagination))
 				.body((List<?>) pagination.getData());
 	}
 

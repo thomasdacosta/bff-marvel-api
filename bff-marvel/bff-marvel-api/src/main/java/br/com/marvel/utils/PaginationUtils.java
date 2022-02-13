@@ -4,7 +4,7 @@ import org.springframework.http.HttpHeaders;
 
 import br.com.marvel.controller.dto.Pagination;
 
-public class ResponseHeadersUtils {
+public class PaginationUtils {
 	
 	public static HttpHeaders paginationHeaders(Pagination pagination) {
 		HttpHeaders httpHeaders = new HttpHeaders();
