@@ -58,6 +58,8 @@ public class MarvelClientTest {
 	@Order(1)
 	@DisplayName("1 - Obtendo um personagem através do nome")
 	public void testGetCharacter_200() {
+		// TODO colocar um timeout para simular uma requsição com alta latência
+		
 		WireMock.stubFor(WireMock
 				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
 						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))

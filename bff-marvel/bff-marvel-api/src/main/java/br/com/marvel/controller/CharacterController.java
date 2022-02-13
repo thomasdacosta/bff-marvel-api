@@ -46,7 +46,7 @@ public class CharacterController {
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,
 			@RequestHeader(name = "limit", defaultValue = "10") BigDecimal limit,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
-		throw new OperationException("");
+		throw new OperationException("Método não implementado");
 	}
 	
 	@GetMapping(value = "/characters/series/{id_character}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -55,7 +55,7 @@ public class CharacterController {
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,
 			@RequestHeader(name = "limit", defaultValue = "10") BigDecimal limit,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
-		throw new OperationException("");
+		throw new OperationException("Método não implementado");
 	}	
 	
 	@GetMapping(value = "/characters/stories/{id_character}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -64,7 +64,7 @@ public class CharacterController {
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,
 			@RequestHeader(name = "limit", defaultValue = "10") BigDecimal limit,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
-		throw new OperationException("");
+		throw new OperationException("Método não implementado");
 	}	
 
 	@GetMapping(value = "/characters/events/{id_character}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -73,7 +73,7 @@ public class CharacterController {
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,
 			@RequestHeader(name = "limit", defaultValue = "10") BigDecimal limit,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
-		throw new OperationException("");
+		throw new OperationException("Método não implementado");
 	}
 	
 	@GetMapping(value = "/characters", produces = MediaType.IMAGE_JPEG_VALUE, consumes = MediaType.IMAGE_JPEG_VALUE)
