@@ -26,6 +26,9 @@ public class CharacterController {
 	@Autowired
 	private CharacterService characterService;
 	
+	/**
+	 * TODO LOG DE REQUEST DA APLICAÇÃO
+	 */
 	@GetMapping(value = "/characters", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<?>> findCharacters(@RequestParam(name = "name", required = false) String name,
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,

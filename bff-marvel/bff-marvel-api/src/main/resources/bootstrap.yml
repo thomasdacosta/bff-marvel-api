@@ -9,7 +9,7 @@ aws:
     enabled: false
 ---
 spring:
-  profiles: default, local, dev
+  profiles: default, local, development
 aws:
   secretsmanager:
     enabled: false
