@@ -29,7 +29,25 @@ wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.
 java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json -l spring --library spring-cloud -o marvel
 ```
 
-# AWS
+# LocalStack
+
+Para habilitar o LocalStack, usar o seguinte profile:
+
+```
+-Dspring.profiles.active=localstack
+```
+Além disso a região padrão deve ser sempre **us-east-1** para testar com LocalStack.
+
+Crie um profile separado com o AWS Cli:
+
+```
+aws configure --profile localstack
+
+AWS Access Key ID [None]: test
+AWS Secret Access Key [None]: test
+Default region name [None]: us-east-1
+Default output format [None]:
+```
 
 ## SQS
 
@@ -66,17 +84,9 @@ cloud:
       endpoint: http://s3.localhost.localstack.cloud:4566/
 ```
 
-## AWS Secret Manager
+## AWS Secrets Manager
 
 Usando o AWS Secret Manager em uma aplicação Spring Boot com Spring Cloud AWS.
-
-### LocalStack
-
-Para habilitar o LocalStack, usar o seguinte profile:
-
-```
--Dspring.profiles.active=localstack
-```
 
 Para execução com o LocalStack é necessário mudar o endpoint do Secret Manager no arquivo **bootstrap.yml** para o endereço do LocalStack:
 
@@ -84,19 +94,6 @@ Para execução com o LocalStack é necessário mudar o endpoint do Secret Manag
 aws:
   secretsmanager:
     endpoint: http://localhost:4566
-```
-
-Além disso a região padrão deve ser sempre **us-east-1** para testar com LocalStack.
-
-Crie um profile separado com o AWS Cli:
-
-```
-aws configure --profile localstack
-
-AWS Access Key ID [None]: test
-AWS Secret Access Key [None]: test
-Default region name [None]: us-east-1
-Default output format [None]:
 ```
 
 Na criação das chaves do Secret Manager incluir o paramêtro **--profile**
