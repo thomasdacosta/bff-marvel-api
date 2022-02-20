@@ -112,11 +112,6 @@ Comandos para criação das chaves usando o AWS Cli estão localizadas no diret�
 
 As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
-# Produção
-
-A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
-O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
-
 # Docker
 
 ## Gerando a Imagem
@@ -157,6 +152,11 @@ aws:
 
 Ainda não está funcionando corretamente!!!
 
+# Produção
+
+A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
+O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
+
 # Roadmap - Concluído
 
 - 2022-02-20
@@ -186,7 +186,7 @@ Ainda não está funcionando corretamente!!!
         - AWS Secret Manager com LocalStack
         - AWS Parameter Store com LocalStack
 
-## Roadmap - ToBe
+# Roadmap - ToBe
 
 - **Spring Data** - gravar as informações obtidas dentro de um banco de dados NoSQL
 - **Observability**:
