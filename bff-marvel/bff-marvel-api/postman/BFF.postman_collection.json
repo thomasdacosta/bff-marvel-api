@@ -6,76 +6,78 @@
 	},
 	"item": [
 		{
-			"name": "Hulk - /marvel/heroes/{name}",
+			"name": "Characters - nameStartsWith",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "offset",
+						"value": "0",
+						"type": "default"
+					},
+					{
+						"key": "limit",
+						"value": "20",
+						"type": "default"
+					}
+				],
 				"url": {
-					"raw": "{{url_bff}}/marvel/heroes/hulk",
+					"raw": "{{url_bff}}/characters?nameStartsWith=captain",
 					"host": [
 						"{{url_bff}}"
 					],
 					"path": [
-						"marvel",
-						"heroes",
-						"hulk"
+						"characters"
+					],
+					"query": [
+						{
+							"key": "nameStartsWith",
+							"value": "captain"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Groot - /marvel/heroes/{name}",
+			"name": "Characters - name",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "offset",
+						"value": "0",
+						"type": "default"
+					},
+					{
+						"key": "limit",
+						"value": "20",
+						"type": "default"
+					}
+				],
 				"url": {
-					"raw": "{{url_bff}}/marvel/heroes/groot",
+					"raw": "{{url_bff}}/characters?name=thor",
 					"host": [
 						"{{url_bff}}"
 					],
 					"path": [
-						"marvel",
-						"heroes",
-						"groot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Thor - /marvel/heroes/{name}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_bff}}/marvel/heroes/thor",
-					"host": [
-						"{{url_bff}}"
+						"characters"
 					],
-					"path": [
-						"marvel",
-						"heroes",
-						"thor"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Iron Man - /marvel/heroes/{name}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_bff}}/marvel/heroes/iron man",
-					"host": [
-						"{{url_bff}}"
-					],
-					"path": [
-						"marvel",
-						"heroes",
-						"iron man"
+					"query": [
+						{
+							"key": "name",
+							"value": "thor"
+						}
 					]
 				}
 			},

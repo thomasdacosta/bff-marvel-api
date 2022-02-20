@@ -14,22 +14,19 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.Resource;
 import org.springframework.test.context.TestPropertySource;
 
-import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import br.com.marvel.BffMarvelApiApplication;
-import br.com.marvel.client.configuration.ClientConfiguration;
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
 import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.utils.Constants;
-import br.com.marvel.utils.ResourceUtils;
+import br.com.marvel.utils.DataMapper;
+import br.com.marvel.utils.WireMockServers;
 import feign.FeignException.InternalServerError;
 import feign.FeignException.NotFound;
 
@@ -43,35 +40,21 @@ public class MarvelClientTest {
 	private MarvelClient client;
 
 	@Autowired
-	private ClientConfiguration configuration;
-
-	@Value("classpath:json/listCharacters_OK.json")
-	private Resource listCharactersOK;
-
-	@Value("classpath:json/characterComics_OK.json")
-	private Resource characterComicsOK;
-
-	@Value("classpath:json/characterEvents_OK.json")
-	private Resource characterEventsOK;
+	private DataMapper dataMapper;
+	
+	@Autowired
+	private WireMockServers wireMock;
 
 	@Test
 	@Order(1)
 	@DisplayName("1 - Obtendo um personagem através do nome")
 	public void testGetCharacter_200() {
-		// TODO colocar um timeout para simular uma requsição com alta latência
-		
-		WireMock.stubFor(WireMock
-				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
-						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
-				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
-						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
-
+		wireMock.serverCharacter(dataMapper.getListCharactersOK());
 		InlineResponse200 listCharacters = client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null,
 				null, null, null, null, null);
 
 		assertNotNull(listCharacters.getData());
 		assertThat(listCharacters.getData().getCount(), equalTo(BigDecimal.valueOf(1)));
-
 		assertFalse(listCharacters.getData().getResults().isEmpty());
 		assertThat(listCharacters.getData().getResults().get(0).getId(),
 				equalTo(BigDecimal.valueOf(Long.parseLong(Constants.CHARACTERS_ID))));
@@ -81,19 +64,12 @@ public class MarvelClientTest {
 	@Order(2)
 	@DisplayName("2 - Obtendo as HQ´s de um personagem através do ID")
 	public void testGetComicsByCharacter_200() {
-		WireMock.stubFor(WireMock
-				.get(String.format("/v1/public/characters/%s/comics?ts=%s&apikey=%s&hash=%s&orderBy=-focDate",
-						Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(),
-						configuration.getHash()))
-				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
-						.withBody(ResourceUtils.getContentFile(characterComicsOK))));
-
+		wireMock.serverCharactersComics(dataMapper.getCharacterComicsOK());
 		ComicDataWrapper characterComics = client.characterComics(Constants.CHARACTERS_ID, null, null, null, null, null,
 				null, null, null, null, null, null, null, null, null, null, null, null, null, null, "-focDate", null,
 				null);
 
 		assertNotNull(characterComics.getData());
-
 		assertThat(characterComics.getData().getCount(), equalTo(BigDecimal.valueOf(20)));
 		assertFalse(characterComics.getData().getResults().isEmpty());
 	}
@@ -102,17 +78,11 @@ public class MarvelClientTest {
 	@Order(3)
 	@DisplayName("3 - Obtendo os Eventos de um personagem através do ID")
 	public void testGetEventsByCharacter_200() {
-		WireMock.stubFor(WireMock
-				.get(String.format("/v1/public/characters/%s/events?ts=%s&apikey=%s&hash=%s", Constants.CHARACTERS_ID,
-						configuration.getTs(), configuration.getApiKey(), configuration.getHash()))
-				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
-						.withBody(ResourceUtils.getContentFile(characterEventsOK))));
-
+		wireMock.serverCharactersEvents(dataMapper.getCharacterEventsOK());
 		EventDataWrapper characterEvents = client.characterEvents(Constants.CHARACTERS_ID, null, null, null, null, null,
 				null, null, null, null, null);
 
 		assertNotNull(characterEvents.getData());
-
 		assertThat(characterEvents.getData().getCount(), equalTo(BigDecimal.valueOf(20)));
 		assertFalse(characterEvents.getData().getResults().isEmpty());
 	}
@@ -121,12 +91,7 @@ public class MarvelClientTest {
 	@Order(4)
 	@DisplayName("4 - Retornando um erro 404 do Client da API")
 	public void testGetCharacter_404() {
-		WireMock.stubFor(WireMock
-				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
-						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
-				.willReturn(WireMock.aResponse().withStatus(404).withHeader("Content-Type", "application/json")
-						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
-
+		wireMock.serverNotFound(dataMapper.getListCharactersOK());
 		assertThrows(NotFound.class, () -> {
 			client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
 		});
@@ -136,12 +101,7 @@ public class MarvelClientTest {
 	@Order(5)
 	@DisplayName("5 - Retornando um erro 500 do Client da API")
 	public void testGetCharacter_500() {
-		WireMock.stubFor(WireMock
-				.get(String.format("/v1/public/characters?ts=%s&apikey=%s&hash=%s&name=%s", configuration.getTs(),
-						configuration.getApiKey(), configuration.getHash(), Constants.CHARACTERS_NAME))
-				.willReturn(WireMock.aResponse().withStatus(500).withHeader("Content-Type", "application/json")
-						.withBody(ResourceUtils.getContentFile(listCharactersOK))));
-
+		wireMock.serverInternalServerError(dataMapper.getListCharactersOK());
 		assertThrows(InternalServerError.class, () -> {
 			client.listCharacters(Constants.CHARACTERS_NAME, null, null, null, null, null, null, null, null, null);
 		});

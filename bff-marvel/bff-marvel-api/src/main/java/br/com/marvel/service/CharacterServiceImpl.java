@@ -53,10 +53,6 @@ public class CharacterServiceImpl implements CharacterService {
 
 				marvelCharacter.setThumbnail(thumbnailCharacter);
 
-				// @TODO Gravar os Thumbnail no S3 e retornar os links
-
-				// @TODO Gravar as informações dos personagens em um banco de dados
-
 				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
 					UrlCharacter urlCharacter = new UrlCharacter();
 					urlCharacter.setType(u.getType());
@@ -82,7 +78,7 @@ public class CharacterServiceImpl implements CharacterService {
 				null, null, null, null, null, null, null, null, null, null, null, "-focDate", null, null);
 
 		if (!characterComics.getData().getResults().isEmpty()) {
-			// TODO
+			// TODO - será implementado na próxima versão
 		}
 		return null;
 	}
@@ -94,7 +90,7 @@ public class CharacterServiceImpl implements CharacterService {
 				null, null, null, null, null);
 
 		if (!characterSeries.getData().getResults().isEmpty()) {
-			// TODO
+			// TODO - será implementado na próxima versão
 		}
 		return null;
 	}
@@ -104,7 +100,7 @@ public class CharacterServiceImpl implements CharacterService {
 		StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, null, null);
 
 		if (!characterStories.getData().getResults().isEmpty()) {
-			// TODO
+			// TODO - será implementado na próxima versão
 		}
 		return null;
 	}
@@ -115,7 +111,7 @@ public class CharacterServiceImpl implements CharacterService {
 				null, null);
 
 		if (!characterEvents.getData().getResults().isEmpty()) {
-			// TODO
+			// TODO - será implementado na próxima versão
 		}
 		return null;
 	}
