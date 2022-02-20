@@ -1,4 +1,4 @@
-package br.com.marvel.controller.dto;
+package br.com.marvel.controller.dto.characters;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,12 +22,16 @@ public class MarvelCharacter {
 	@Getter @Setter
 	private String description;
 	
-	@JsonProperty("comics")
+	@JsonProperty("modified")
 	@Getter @Setter	
-	private List<MarvelComics> comics;
+	private String modified;
 	
-	@JsonProperty("events")
+	@JsonProperty("thumbnail")
 	@Getter @Setter	
-	private List<MarvelEvents> events;	
-
+	private ThumbnailCharacter thumbnail;
+	
+	@JsonProperty("urls")
+	@Getter @Setter	
+	private List<UrlCharacter> urlCharacters;
+	
 }

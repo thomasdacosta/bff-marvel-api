@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-@Profile({ "default", "local", "dev" })
-public class FileServiceDefaultImpl implements FileService {
+@Profile({ "default", "local", "development" })
+public class FileServiceTempImpl implements FileService {
 
 	@Value("${directory}")
 	private String directory;

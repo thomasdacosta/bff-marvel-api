@@ -32,7 +32,6 @@ public class FileServiceS3Impl implements FileService {
 		
         try (OutputStream outputStream = writableResource.getOutputStream()) {
         	from.transferTo(outputStream);
-        	outputStream.close();
         } catch (Exception ex) {
         	log.error(ex.getMessage(), ex);
         }		
