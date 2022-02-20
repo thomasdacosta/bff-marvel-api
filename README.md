@@ -28,52 +28,32 @@ Com o Swagger, gerar o código da aplicação através dos seguintes comandos:
 wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.29/swagger-codegen-cli-3.0.29.jar -O swagger-codegen-cli.jar
 java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json -l spring --library spring-cloud -o marvel
 ```
-## Diretórios
-
-- **bff-marvel:** aplicação Maven multi-module com as chamadas da API da Marvel
-- **marvel:** exemplo de código gerado a partir do Swagger da API da Marvel
-
-# Docker
-
-## Gerando a Imagem
-
-Use o comando abaixo para gerar a imagem Docker:
-
-```
-mvn spring-boot:build-image -Dspring-boot.build-image.imageName=bff-marvel-api:1.0.0
-```
-
-Executando a imagem com LocalStack
-
-```
-docker run -e "SPRING_PROFILES_ACTIVE=localstack" -e "AWS_ACCESS_KEY_ID=localstack" -e "AWS_SECRET_KEY=localstack" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
-```
-
-Executando a imagem em Produção
-
-```
-docker run -e "SPRING_PROFILES_ACTIVE=production" -e "AWS_ACCESS_KEY_ID=production" -e "AWS_SECRET_KEY=production" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
-```
-
-## Acessando o LocalStack
-
-Para usar o LocalStack no AWS Secret Manager e no AWS Parameter Store usar as seguintes configurações:
-
-```
-aws:
-  secretsmanager:
-    enabled: true
-    endpoint: http://host.docker.internal:4566
-  paramstore:
-    enabled: true
-    endpoint: http://host.docker.internal:4566
-```
-
-## S3 com LocalStack e Docker
-
-Ainda não está funcionando corretamente!!!
 
 # AWS
+
+## SQS
+
+Para funcionar o envio de mensagens para o SQS com LocalStack o endpoint deve ser configurado da seguinte forma:
+
+```
+cloud:
+  aws:
+    sqs:
+      endpoint: http://localhost:4566
+```
+Principais comandos do SQS com AWS Cli:
+
+```
+aws --endpoint http://localhost:4566 --profile localstack sqs create-queue --queue-name marvelThumbnailImage
+
+aws --endpoint http://localhost:4566 --profile localstack sqs send-message --queue-url http://localhost:4566/queue/marvelThumbnailImage --message-body "Mensagem de Teste"
+
+aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImage
+
+aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImage --max-number-of-messages 10
+
+aws --endpoint http://localhost:4566 --profile localstack sqs purge-queue --queue-url http://localhost:4566/queue/marvelThumbnailImage
+```
 
 ## S3
 
@@ -135,12 +115,52 @@ Comandos para criação das chaves usando o AWS Cli estão localizadas no diret�
 
 As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
-## Produção
+# Produção
 
 A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
 O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
 
-## Roadmap - Concluído
+# Docker
+
+## Gerando a Imagem
+
+Use o comando abaixo para gerar a imagem Docker:
+
+```
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=bff-marvel-api:1.0.0
+```
+
+Executando a imagem com LocalStack
+
+```
+docker run -e "SPRING_PROFILES_ACTIVE=localstack" -e "AWS_ACCESS_KEY_ID=localstack" -e "AWS_SECRET_KEY=localstack" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
+```
+
+Executando a imagem em Produção
+
+```
+docker run -e "SPRING_PROFILES_ACTIVE=production" -e "AWS_ACCESS_KEY_ID=production" -e "AWS_SECRET_KEY=production" -e "AWS_REGION=sa-east-1" -p 8080:8080 bff-marvel-api:1.0.0
+```
+
+## Acessando o LocalStack
+
+Para usar o LocalStack no AWS Secret Manager e no AWS Parameter Store usar as seguintes configurações:
+
+```
+aws:
+  secretsmanager:
+    enabled: true
+    endpoint: http://host.docker.internal:4566
+  paramstore:
+    enabled: true
+    endpoint: http://host.docker.internal:4566
+```
+
+## S3 com LocalStack e Docker
+
+Ainda não está funcionando corretamente!!!
+
+# Roadmap - Concluído
 
 - 2022-02-20
     - Refatoração do código e dos testes unitários

@@ -29,5 +29,10 @@ cloud:
   aws:
     s3:
       endpoint: http://s3.localhost.localstack.cloud:4566/
+    sqs:
+      endpoint: http://localhost:4566
     stack:
       auto: false
+      
+
+      

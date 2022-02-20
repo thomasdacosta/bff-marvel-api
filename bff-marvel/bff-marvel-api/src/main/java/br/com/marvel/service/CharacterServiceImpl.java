@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import br.com.marvel.client.dto.ComicDataWrapper;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
@@ -18,13 +21,19 @@ import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.controller.dto.characters.UrlCharacter;
+import br.com.marvel.messaging.port.MessageService;
 import br.com.marvel.service.ports.CharacterService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class CharacterServiceImpl implements CharacterService {
 
 	@Autowired
 	private MarvelClient client;
+	
+	@Autowired
+	private MessageService messageService;
 
 	@Override
 	public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
@@ -52,6 +61,9 @@ public class CharacterServiceImpl implements CharacterService {
 				thumbnailCharacter.setExtension(c.getThumbnail().getExtension());
 
 				marvelCharacter.setThumbnail(thumbnailCharacter);
+				
+				// Enviando messagem para o SQS para gravar a imagem do personagem
+				sendMessageThumbnailCharacter(thumbnailCharacter);
 
 				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
 					UrlCharacter urlCharacter = new UrlCharacter();
@@ -114,6 +126,15 @@ public class CharacterServiceImpl implements CharacterService {
 			// TODO - será implementado na próxima versão
 		}
 		return null;
+	}
+	
+	private void sendMessageThumbnailCharacter(ThumbnailCharacter thumbnailCharacter) {
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			messageService.sendMessage(mapper.writeValueAsString(thumbnailCharacter));
+		} catch (JsonProcessingException ex) {
+			log.error(ex.getMessage(), ex);
+		}		
 	}
 
 }
