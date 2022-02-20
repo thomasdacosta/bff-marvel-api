@@ -160,11 +160,11 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 # Roadmap - Concluído
 
 - 2022-02-20
-    - Refatoração do código e dos testes unitários
-    - Exclusão temporária do método que grava arquivos no bucket S3. Para saber como funciona o S3 com Spring Boot ver o repo [https://github.com/thomasdacosta/aws-s3-sample](https://github.com/thomasdacosta/aws-s3-sample)
-- 2022-02-06
     - **Refatoração do Código**
-      - Criando um profile de produção
+      - Refatoração do código e dos testes unitários
+      - Exclusão temporária do método que grava arquivos no bucket S3. Para saber como funciona o S3 com Spring Boot ver o repo [https://github.com/thomasdacosta/aws-s3-sample](https://github.com/thomasdacosta/aws-s3-sample)
+- 2022-02-06
+    - Criando um profile de produção
 - 2022-02-03
     - **Docker**
         - Incluindo a geração da imagem e conexão com alguns serviços básicos do LocalStack
