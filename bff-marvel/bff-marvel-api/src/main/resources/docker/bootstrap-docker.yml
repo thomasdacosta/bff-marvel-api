@@ -3,7 +3,13 @@ spring:
     name: bff-marvel-api
 ---
 spring:
-  profiles: default, local
+  profiles: production
+aws:
+  secretsmanager:
+    enabled: false
+---
+spring:
+  profiles: default, local, development
 aws:
   secretsmanager:
     enabled: false
@@ -23,5 +29,9 @@ cloud:
   aws:
     s3:
       endpoint: http://s3.localhost.localstack.cloud:4566/
+    sqs:
+      endpoint: http://host.docker.internal:4566
+    sns:
+      endpoint: http://host.docker.internal:4566
     stack:
       auto: false
