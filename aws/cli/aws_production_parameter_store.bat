@@ -5,7 +5,8 @@ aws ssm put-parameter --name "/config/bff-marvel-api_production/ts" --value "1" 
 aws ssm put-parameter --name "/config/bff-marvel-api_production/apiKey" --value "f59dbe01285f1d360542b5c47a9516e3" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/hash" --value "0ea6be79e04ac1b0400d65ffc11088f9" --type String
 
-aws ssm put-parameter --name "/config/bff-marvel-api_localstack/queue.name" --value "marvelThumbnailImage" --type String
+aws ssm put-parameter --name "/config/bff-marvel-api_localstack/notification.name" --value "marvelThumbnailImageNotification" --type String
+aws ssm put-parameter --name "/config/bff-marvel-api_localstack/queue.name" --value "marvelThumbnailImageQueue" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/directory" --value "marvelcharacter" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/proxy.host" --value "localhost" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/proxy.port" --value "8081" --type String
@@ -17,4 +18,7 @@ echo Criando Bucket no S3 do LocalStack...
 aws s3 mb s3://marvelcharacter
 
 echo Criando Queue no SQS do LocalStack...
-aws sqs create-queue --queue-name marvelThumbnailImage
+aws sqs create-queue --queue-name marvelThumbnailImage.fifo --attributes FifoQueue=true
+
+echo Criando Queue no SNS do LocalStack...
+aws sns create-topic --name marvelThumbnailImageNotification

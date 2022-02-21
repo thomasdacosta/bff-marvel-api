@@ -22,18 +22,24 @@ import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.controller.dto.characters.UrlCharacter;
 import br.com.marvel.messaging.port.MessageService;
+import br.com.marvel.notification.port.NotificationService;
 import br.com.marvel.service.ports.CharacterService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 public class CharacterServiceImpl implements CharacterService {
+	
+	private static final String NOTIFICATION_SUBJECT = "SUBJECT: THUMBNAIL CHARACTER";
 
 	@Autowired
 	private MarvelClient client;
 	
 	@Autowired
 	private MessageService messageService;
+	
+	@Autowired
+	private NotificationService notificationService;
 
 	@Override
 	public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
@@ -64,6 +70,9 @@ public class CharacterServiceImpl implements CharacterService {
 				
 				// Enviando messagem para o SQS para gravar a imagem do personagem
 				sendMessageThumbnailCharacter(thumbnailCharacter);
+				
+				// Enviando messagem para o SNS para gravar a imagem do personagem				
+				sendNotificationThumbnailCharacter(thumbnailCharacter);
 
 				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
 					UrlCharacter urlCharacter = new UrlCharacter();
@@ -136,5 +145,14 @@ public class CharacterServiceImpl implements CharacterService {
 			log.error(ex.getMessage(), ex);
 		}		
 	}
+	
+	private void sendNotificationThumbnailCharacter(ThumbnailCharacter thumbnailCharacter) {
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			notificationService.sendNotification(NOTIFICATION_SUBJECT, mapper.writeValueAsString(thumbnailCharacter));
+		} catch (JsonProcessingException ex) {
+			log.error(ex.getMessage(), ex);
+		}		
+	}	
 
 }

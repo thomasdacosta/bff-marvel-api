@@ -11,7 +11,7 @@ public class LocalMessageService implements MessageService {
 
 	@Override
 	public void sendMessage(String message) {
-		log.info("Enviando mensagem com LocalMessageService");
+		log.info(String.format("Enviando mensagem com LocalMessageService: %s", message));
 	}
 
 }
