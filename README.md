@@ -160,8 +160,9 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 # Roadmap - Concluído
 
 - 2022-02-20
-    - Refatoração do código e dos testes unitários
-    - Exclusão temporária do método que grava arquivos no bucket S3. Para saber como funciona o S3 com Spring Boot ver o repo [https://github.com/thomasdacosta/aws-s3-sample](https://github.com/thomasdacosta/aws-s3-sample)
+    - **Refatoração do Código**
+      - Refatoração do código e dos testes unitários
+      - Exclusão temporária do método que grava arquivos no bucket S3. Para saber como funciona o S3 com Spring Boot ver o repo [https://github.com/thomasdacosta/aws-s3-sample](https://github.com/thomasdacosta/aws-s3-sample)
 - 2022-02-06
     - Criando um profile de produção
 - 2022-02-03
@@ -206,7 +207,6 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
     - **POST** - Buscar uma lista de personagens e incluir novos personagens
     - **PUT** - Atualizar um personagem
     - **DELETE** - Excluir um personagem
-- **Refatoração do Código**
 - **Autenticação e Autorização**
 - **Keycloack**
 ---
