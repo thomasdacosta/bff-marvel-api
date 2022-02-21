@@ -3,13 +3,17 @@ spring:
     name: bff-marvel-api
 ---
 spring:
-  profiles: production
+  config:
+    activate:
+      on-profile: production
 aws:
   secretsmanager:
     enabled: false
 ---
 spring:
-  profiles: default, local, development
+  config:
+    activate:
+      on-profile: default, local, development
 aws:
   secretsmanager:
     enabled: false
@@ -17,7 +21,9 @@ aws:
     enabled: false
 ---
 spring:
-  profiles: localstack
+  config:
+    activate:
+      on-profile: localstack
 aws:
   secretsmanager:
     enabled: true

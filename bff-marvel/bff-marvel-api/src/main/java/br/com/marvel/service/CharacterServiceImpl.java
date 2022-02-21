@@ -23,21 +23,18 @@ import br.com.marvel.service.ports.NotificationImageService;
 
 @Service
 public class CharacterServiceImpl implements CharacterService {
-	
+
 	@Autowired
 	private MarvelClient client;
-	
+
 	@Autowired
 	private NotificationImageService notificationImageService;
-	
-//	@Autowired
-//	private MessageImageService messageImageService;	
-	
+
 	@Override
 	public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
 		InlineResponse200 listCharacters = client.listCharacters(name, nameStartsWith, null, null, null, null, null,
 				null, limit, offset);
-		
+
 		InlineResponse200Data data = listCharacters.getData();
 		Pagination pagination = new Pagination();
 		pagination.setOffset(data.getOffset());
@@ -59,12 +56,9 @@ public class CharacterServiceImpl implements CharacterService {
 				thumbnailCharacter.setExtension(c.getThumbnail().getExtension());
 
 				marvelCharacter.setThumbnail(thumbnailCharacter);
-				
-				// Enviando messagem para o SQS para gravar a imagem do personagem
-//				messageImageService.sendMessageThumbnailCharacter(thumbnailCharacter);
-				
-				// Enviando messagem para o SNS para gravar a imagem do personagem				
-				notificationImageService.sendNotificationThumbnailCharacter(thumbnailCharacter);
+
+				// Enviando messagem para o SNS para gravar a imagem do personagem
+				notificationImageService.sendNotificationThumbnailCharacter(marvelCharacter, thumbnailCharacter);
 
 				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
 					UrlCharacter urlCharacter = new UrlCharacter();
@@ -128,5 +122,5 @@ public class CharacterServiceImpl implements CharacterService {
 		}
 		return null;
 	}
-	
+
 }
