@@ -2,10 +2,8 @@ package br.com.marvel.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,28 +26,24 @@ public class CharacterController {
 	private CharacterService characterService;
 
 	@GetMapping(value = "/characters", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<?>> findCharacters(@RequestParam(name = "name", required = false) String name,
+	public ResponseEntity<?> findCharacters(@RequestParam(name = "name", required = false) String name,
 			@RequestParam(name = "nameStartsWith", required = false) String nameStartsWith,
 			@RequestHeader(name = "limit", defaultValue = "10") BigDecimal limit,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
-		Pagination pagination = characterService.findCharacters(name, nameStartsWith, limit, offset);
-		if (pagination == null)
-			throw new CharactersNotFoundException("Personagens não encontrados. Deve ser da concorrente!!!");
-
-		return ResponseEntity.ok().headers(PaginationUtils.paginationHeaders(pagination))
-				.body((List<?>) pagination.getData());
+		return response(characterService.findCharacters(name, nameStartsWith, limit, offset));
 	}
 
 	@GetMapping(value = "/characters", produces = MediaType.IMAGE_JPEG_VALUE, consumes = MediaType.IMAGE_JPEG_VALUE)
-	public @ResponseBody ResponseEntity<Resource> findCharactersImage(
+	public @ResponseBody ResponseEntity<?> findCharactersImage(
 			@RequestParam(name = "name", required = false) String name,
 			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) throws IOException {
-		Pagination pagination = characterService.findImageCharacters(name, offset);
+		return response(characterService.findImageCharacters(name, offset));
+	}
+
+	public ResponseEntity<?> response(Pagination pagination) {
 		if (pagination == null)
 			throw new CharactersNotFoundException("Personagem não encontrado. Deve ser da concorrente!!!");
-
-		return ResponseEntity.ok().headers(PaginationUtils.paginationHeaders(pagination))
-				.body((Resource) pagination.getData());
+		return ResponseEntity.ok().headers(PaginationUtils.paginationHeaders(pagination)).body(pagination.getData());
 	}
 
 }
