@@ -17,10 +17,25 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <fileNamePattern>${logging.path}/bff-marvel-api.%i.log</fileNamePattern>
             <minIndex>1</minIndex>
-            <maxIndex>10</maxIndex>
+            <maxIndex>20</maxIndex>
         </rollingPolicy>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <maxFileSize>100MB</maxFileSize>
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %c{1} [%p] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="REQUEST_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logging.path}/bff-marvel-api-request.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${logging.path}/bff-marvel-api-request.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>20</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
         </triggeringPolicy>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %c{1} [%p] %m%n</pattern>
@@ -32,6 +47,14 @@
    	</logger>
    	
    	<logger name="br.com.thomasdacosta" level="info" additivity="false">
+       	<appender-ref ref="CONSOLE_APPENDER"/>
+   	</logger>
+
+   	<logger name="org.zalando.logbook" level="trace" additivity="false">
+       	<appender-ref ref="REQUEST_APPENDER"/>
+   	</logger>
+   	
+   	<logger name="org.zalando.logbook" level="trace" additivity="false">
        	<appender-ref ref="CONSOLE_APPENDER"/>
    	</logger>
 
