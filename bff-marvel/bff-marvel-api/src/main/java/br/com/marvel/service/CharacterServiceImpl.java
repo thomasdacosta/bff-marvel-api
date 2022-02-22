@@ -15,7 +15,7 @@ import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.controller.dto.characters.UrlCharacter;
-import br.com.marvel.listener.service.FileService;
+import br.com.marvel.listener.service.port.FileService;
 import br.com.marvel.service.ports.CharacterService;
 import br.com.marvel.service.ports.NotificationImageService;
 

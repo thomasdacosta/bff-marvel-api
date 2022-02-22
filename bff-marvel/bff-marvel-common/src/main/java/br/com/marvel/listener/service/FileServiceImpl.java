@@ -19,12 +19,13 @@ import org.springframework.stereotype.Service;
 import com.amazonaws.services.s3.AmazonS3;
 
 import br.com.marvel.listener.exception.FileListenerException;
+import br.com.marvel.listener.service.port.FileService;
 import io.awspring.cloud.core.io.s3.PathMatchingSimpleStorageResourcePatternResolver;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class FileService {
+public class FileServiceImpl implements FileService {
 
 	@Value("${directory}")
 	private String directory;
@@ -40,6 +41,7 @@ public class FileService {
 				applicationContext);
 	}
 
+	@Override
 	public boolean isFileExists(String file) {
 		try {
 			Resource resource = this.resourceLoader.getResource(String.format("s3://%s/%s", directory, file));
@@ -49,6 +51,7 @@ public class FileService {
 		}
 	}
 
+	@Override
 	public List<Resource> searchFile(String name) {
 		Resource[] resources = null;
 
@@ -68,6 +71,7 @@ public class FileService {
 		}).collect(Collectors.toList());
 	}
 
+	@Override
 	public void saveFile(InputStream from, String to) throws FileListenerException {
 		Resource resource = this.resourceLoader.getResource(String.format("s3://%s/%s", directory, to));
 		WritableResource writableResource = (WritableResource) resource;
@@ -80,10 +84,12 @@ public class FileService {
 		}
 	}
 
+	@Override
 	public String getFileName(String size, String... values) {
 		return String.format("%s_%s_%s.%s", patternFile(values[0]), values[1], size, values[2]);
 	}
 
+	@Override
 	public String patternFile(String name) {
 		return name.toLowerCase().replace(" ", "_").replace("/", "_");
 	}

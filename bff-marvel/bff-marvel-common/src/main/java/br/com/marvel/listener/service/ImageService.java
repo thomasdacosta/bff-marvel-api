@@ -10,6 +10,7 @@ import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.listener.exception.FileListenerException;
+import br.com.marvel.listener.service.port.FileService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
