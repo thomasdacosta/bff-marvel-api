@@ -49,28 +49,38 @@ Default region name [None]: us-east-1
 Default output format [None]:
 ```
 
-## SQS
+## SQS e SNS
 
-Para funcionar o envio de mensagens para o SQS com LocalStack o endpoint deve ser configurado da seguinte forma:
+Para funcionar o envio de mensagens para o SQS e notificações para o SNS com LocalStack os endpoints devem ser configurados da seguinte forma:
 
 ```
 cloud:
   aws:
     sqs:
       endpoint: http://localhost:4566
+    sns:
+      endpoint: http://localhost:4566 
 ```
+
 Principais comandos do SQS com AWS Cli:
 
 ```
-aws --endpoint http://localhost:4566 --profile localstack sqs create-queue --queue-name marvelThumbnailImage
+aws --endpoint http://localhost:4566 --profile localstack sqs create-queue --queue-name marvelThumbnailImageQueue
+aws --endpoint http://localhost:4566 --profile localstack sqs send-message --queue-url http://localhost:4566/queue/marvelThumbnailImageQueue --message-body "Mensagem de Teste do SQS"
+aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImageQueue
+aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImageQueue --max-number-of-messages 10
+aws --endpoint http://localhost:4566 --profile localstack sqs purge-queue --queue-url http://localhost:4566/queue/marvelThumbnailImageQueue
+```
 
-aws --endpoint http://localhost:4566 --profile localstack sqs send-message --queue-url http://localhost:4566/queue/marvelThumbnailImage --message-body "Mensagem de Teste"
+Principais comandos do SNS com AWS Cli:
 
-aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImage
-
-aws --endpoint http://localhost:4566 --profile localstack sqs receive-message --queue-url http://localhost:4566/queue/marvelThumbnailImage --max-number-of-messages 10
-
-aws --endpoint http://localhost:4566 --profile localstack sqs purge-queue --queue-url http://localhost:4566/queue/marvelThumbnailImage
+```
+aws --endpoint http://localhost:4566 --profile localstack sns create-topic --name marvelThumbnailImageNotification
+aws --endpoint http://localhost:4566 --profile localstack sns list-topics
+aws --endpoint http://localhost:4566 --profile localstack sns subscribe --topic-arn arn:aws:sns:us-east-1:000000000000:marvelThumbnailImageNotification --protocol email --notification-endpoint name@email.com
+aws --endpoint http://localhost:4566 --profile localstack sns subscribe --topic-arn arn:aws:sns:us-east-1:000000000000:marvelThumbnailImageNotification --protocol sqs --notification-endpoint http://localhost:4566/queue/marvelThumbnailImageQueue
+aws --endpoint http://localhost:4566 --profile localstack sns list-subscriptions
+aws --endpoint http://localhost:4566 --profile localstack sns publish --topic-arn arn:aws:sns:us-east-1:000000000000:marvelThumbnailImageNotification --message "Mensagem de Teste do SNS"
 ```
 
 ## S3
@@ -84,33 +94,21 @@ cloud:
       endpoint: http://s3.localhost.localstack.cloud:4566/
 ```
 
-## AWS Secrets Manager
+## AWS Secrets Manager e AWS Parameter Store
 
-Usando o AWS Secret Manager em uma aplicação Spring Boot com Spring Cloud AWS.
-
-Para execução com o LocalStack é necessário mudar o endpoint do Secret Manager no arquivo **bootstrap.yml** para o endereço do LocalStack:
+Para execução com o LocalStack é necessário mudar o endpoint do Secrets Manager e do Parameter Store no arquivo **bootstrap.yml** para o endereço do LocalStack:
 
 ```
 aws:
   secretsmanager:
+    enabled: true
+    endpoint: http://localhost:4566
+  paramstore:
+    enabled: true
     endpoint: http://localhost:4566
 ```
 
-Na criação das chaves do Secret Manager incluir o paramêtro **--profile**
-
-```
-aws --endpoint http://localhost:4566 --profile localstack secretsmanager create-secret --name /secret/bff-marvel-api_localstack --description "Segredos para acesso a API da Marvel" --secret-string "{\"ts\":\"x\",\"apiKey\":\"x\",\"hash\":\"x\"}"
-```
-
 Comandos para criação das chaves usando o AWS Cli estão localizadas no diretório **scripts**.
-
-### Documentação
-
-[3.4. Integrating your Spring Cloud application with the AWS Secrets Manager](https://docs.awspring.io/spring-cloud-aws/docs/2.3.0/reference/html/index.html#integrating-your-spring-cloud-application-with-the-aws-secrets-manager)
-
-## AWS Parameter Store
-
-As instruções são a mesma utilizadas na seção anterior do AWS Secret Manager, diferenciando somentes os comandos do AWS Cli para criação dos paramêtros que estão localizadas no diretório **scripts**.
 
 # Docker
 
@@ -159,6 +157,9 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 
 # Roadmap - Concluído
 
+- 2022-02-21
+    - **AWS**
+      - Incluindo um Worker para trabalhar com SQS e SNS para gravar as imagens no S3
 - 2022-02-20
     - **Refatoração do Código**
       - Refatoração do código e dos testes unitários
