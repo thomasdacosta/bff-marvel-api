@@ -37,7 +37,7 @@ public class QueueListener {
 			ThumbnailCharacter thumbnailCharacter = objectMapper.readValue(url, ThumbnailCharacter.class);
 			MarvelCharacter marvelCharacter = objectMapper.readValue(character, MarvelCharacter.class);
 
-			imageService.saveImageFile(marvelCharacter, thumbnailCharacter, "portrait_xlarge");
+			imageService.saveImageFile(marvelCharacter, thumbnailCharacter, "portrait_uncanny");
 		} catch (Exception ex) {
 			log.error(ex.getMessage(), ex);
 		}

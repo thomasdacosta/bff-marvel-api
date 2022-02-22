@@ -20,6 +20,9 @@ public class Pagination {
     private BigDecimal count;
 	
 	@Getter @Setter
+	private String fileName;
+	
+	@Getter @Setter
 	private Object data;
 
 }

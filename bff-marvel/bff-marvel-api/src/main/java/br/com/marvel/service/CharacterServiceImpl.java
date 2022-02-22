@@ -5,19 +5,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import br.com.marvel.client.dto.ComicDataWrapper;
-import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
 import br.com.marvel.client.dto.InlineResponse200Data;
-import br.com.marvel.client.dto.SeriesDataWrapper;
-import br.com.marvel.client.dto.StoryDataWrapper;
 import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.controller.dto.characters.UrlCharacter;
+import br.com.marvel.listener.service.FileService;
 import br.com.marvel.service.ports.CharacterService;
 import br.com.marvel.service.ports.NotificationImageService;
 
@@ -26,6 +24,9 @@ public class CharacterServiceImpl implements CharacterService {
 
 	@Autowired
 	private MarvelClient client;
+
+	@Autowired
+	private FileService fileService;
 
 	@Autowired
 	private NotificationImageService notificationImageService;
@@ -80,47 +81,25 @@ public class CharacterServiceImpl implements CharacterService {
 	}
 
 	@Override
-	public Pagination findComicsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null, null, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, "-focDate", null, null);
+	public Pagination findImageCharacters(String name, BigDecimal offset) {
+		List<Resource> files = fileService.searchFile(fileService.patternFile(name));
+		if (files.isEmpty())
+			return null;
 
-		if (!characterComics.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
+		if (offset.intValue() > (files.size()-1))
+			offset = BigDecimal.ZERO; 
 
-	@Override
-	public Pagination findSeriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		// TODO Auto-generated method stub
-		SeriesDataWrapper characterSeries = client.characterSeries(id, null, null, null, null, null, null, null, null,
-				null, null, null, null, null);
+		Resource resource = files.get(offset.intValue());
+		
+		Pagination pagination = new Pagination();
+		pagination.setOffset(offset);
+		pagination.setLimit(BigDecimal.ZERO);
+		pagination.setTotal(BigDecimal.valueOf(files.size()));
+		pagination.setCount(BigDecimal.valueOf(files.size()));
+		pagination.setData(resource);
+		pagination.setFileName(resource.getFilename());
 
-		if (!characterSeries.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
-
-	@Override
-	public Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, null, null);
-
-		if (!characterStories.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
-
-	@Override
-	public Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null, null, null, null,
-				null, null);
-
-		if (!characterEvents.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
+		return pagination;
 	}
 
 }

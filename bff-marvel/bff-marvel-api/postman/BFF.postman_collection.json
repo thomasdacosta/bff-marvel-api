@@ -82,6 +82,40 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Image Characters - name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "default"
+					},
+					{
+						"key": "offset",
+						"value": "0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{url_bff}}/characters?name=captain",
+					"host": [
+						"{{url_bff}}"
+					],
+					"path": [
+						"characters"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "captain"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
