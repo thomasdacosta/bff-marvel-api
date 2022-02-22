@@ -15,6 +15,7 @@
 	<modules>
 		<module>bff-marvel-api</module>
 		<module>bff-marvel-common</module>
+		<module>bff-marvel-worker</module>
 	</modules>
 
 </project>
