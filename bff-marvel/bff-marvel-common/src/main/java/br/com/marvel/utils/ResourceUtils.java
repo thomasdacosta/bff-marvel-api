@@ -6,11 +6,10 @@ import java.nio.file.Files;
 import org.springframework.core.io.Resource;
 
 public class ResourceUtils {
-	
+
 	public static String getContentFile(Resource resource) {
 		try {
-			return new String(
-				      Files.readAllBytes(resource.getFile().toPath()));
+			return new String(Files.readAllBytes(resource.getFile().toPath()));
 		} catch (IOException e) {
 			return null;
 		}

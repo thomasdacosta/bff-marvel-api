@@ -63,10 +63,8 @@ public class CharacterControllerTest {
 		wireMock.serverCharacterOffSet(dataMapper.getListCharactersOK());
 
 		MvcResult mvcResult = mockMvc
-				.perform(
-						MockMvcRequestBuilders
-							.get(String.format("/characters?name=%s", Constants.CHARACTERS_NAME))
-							.header("Content-Type", "application/json"))
+				.perform(MockMvcRequestBuilders.get(String.format("/characters?name=%s", Constants.CHARACTERS_NAME))
+						.header("Content-Type", "application/json"))
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
 
 		ObjectMapper mapper = new ObjectMapper();

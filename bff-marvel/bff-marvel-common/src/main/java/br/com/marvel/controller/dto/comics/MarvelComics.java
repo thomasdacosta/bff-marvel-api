@@ -8,13 +8,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class MarvelComics {
-	
+
 	@JsonProperty("title")
-	@Getter @Setter
-	private String title;	
-	
+	@Getter
+	@Setter
+	private String title;
+
 	@JsonProperty("issueNumber")
-	@Getter @Setter
-	private BigDecimal issueNumber;	
+	@Getter
+	@Setter
+	private BigDecimal issueNumber;
 
 }

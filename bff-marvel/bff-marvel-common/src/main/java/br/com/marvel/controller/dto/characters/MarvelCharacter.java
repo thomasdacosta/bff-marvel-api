@@ -9,29 +9,35 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class MarvelCharacter {
-	
+
 	@JsonProperty("id")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private BigDecimal id;
-	
+
 	@JsonProperty("name")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String name;
-	
+
 	@JsonProperty("description")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String description;
-	
+
 	@JsonProperty("modified")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private String modified;
-	
+
 	@JsonProperty("thumbnail")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private ThumbnailCharacter thumbnail;
-	
+
 	@JsonProperty("urls")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private List<UrlCharacter> urlCharacters;
-	
+
 }

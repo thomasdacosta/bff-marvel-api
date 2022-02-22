@@ -10,19 +10,23 @@ import lombok.Setter;
 @Component
 public class DataMapper {
 
-	@Getter @Setter
+	@Getter
+	@Setter
 	@Value("classpath:json/listCharacters_OK.json")
 	private Resource listCharactersOK;
 
-	@Getter @Setter
+	@Getter
+	@Setter
 	@Value("classpath:json/characterComics_OK.json")
 	private Resource characterComicsOK;
 
-	@Getter @Setter
+	@Getter
+	@Setter
 	@Value("classpath:json/characterEvents_OK.json")
 	private Resource characterEventsOK;
-	
-	@Getter @Setter
+
+	@Getter
+	@Setter
 	@Value("classpath:json/listCharacters_NotFound.json")
 	private Resource listCharactersNotFound;
 

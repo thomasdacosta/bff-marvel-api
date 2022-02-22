@@ -7,17 +7,17 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
 public class BffConfiguration {
-	
-    @Bean(name="processExecutor")
-    public TaskExecutor workExecutor() {
-        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
-        threadPoolTaskExecutor.setThreadNamePrefix("Async-");
-        threadPoolTaskExecutor.setCorePoolSize(5);
-        threadPoolTaskExecutor.setMaxPoolSize(10);
-        threadPoolTaskExecutor.setQueueCapacity(600);
-        threadPoolTaskExecutor.afterPropertiesSet();
-        threadPoolTaskExecutor.initialize();
-        return threadPoolTaskExecutor;
-    }	
+
+	@Bean(name = "processExecutor")
+	public TaskExecutor workExecutor() {
+		ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+		threadPoolTaskExecutor.setThreadNamePrefix("Async-");
+		threadPoolTaskExecutor.setCorePoolSize(5);
+		threadPoolTaskExecutor.setMaxPoolSize(10);
+		threadPoolTaskExecutor.setQueueCapacity(600);
+		threadPoolTaskExecutor.afterPropertiesSet();
+		threadPoolTaskExecutor.initialize();
+		return threadPoolTaskExecutor;
+	}
 
 }

@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class Header {
-	
+
 	@JsonProperty("Type")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private String type;
-	
+
 	@JsonProperty("Value")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private String value;
 
 }

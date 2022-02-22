@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class ThumbnailCharacter {
-	
+
 	@JsonProperty("url")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private String url;
-	
+
 	@JsonProperty("extension")
-	@Getter @Setter	
-	private String extension;	
+	@Getter
+	@Setter
+	private String extension;
 
 }

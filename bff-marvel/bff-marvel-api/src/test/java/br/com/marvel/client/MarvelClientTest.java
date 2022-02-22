@@ -41,7 +41,7 @@ public class MarvelClientTest {
 
 	@Autowired
 	private DataMapper dataMapper;
-	
+
 	@Autowired
 	private WireMockServers wireMock;
 

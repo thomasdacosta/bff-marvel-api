@@ -86,11 +86,11 @@ public class CharacterServiceImpl implements CharacterService {
 		if (files.isEmpty())
 			return null;
 
-		if (offset.intValue() > (files.size()-1))
-			offset = BigDecimal.ZERO; 
+		if (offset.intValue() > (files.size() - 1))
+			offset = BigDecimal.ZERO;
 
 		Resource resource = files.get(offset.intValue());
-		
+
 		Pagination pagination = new Pagination();
 		pagination.setOffset(offset);
 		pagination.setLimit(BigDecimal.ZERO);

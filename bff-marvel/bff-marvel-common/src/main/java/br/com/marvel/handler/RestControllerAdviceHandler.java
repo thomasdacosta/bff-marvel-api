@@ -83,7 +83,7 @@ public class RestControllerAdviceHandler extends ResponseEntityExceptionHandler 
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(BffMarvelError.internalServerError(ex), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
+
 	/**
 	 * Erro 500 - Exception
 	 */
@@ -103,7 +103,7 @@ public class RestControllerAdviceHandler extends ResponseEntityExceptionHandler 
 		return ResponseEntity.status(ex.status())
 				.body(BffMarvelError.create().code(ex.status()).message("FEIGN_EXCEPTION").detail(ex.getMessage()));
 	}
-	
+
 	/**
 	 * Erro 501 - OperationException
 	 */
@@ -111,6 +111,6 @@ public class RestControllerAdviceHandler extends ResponseEntityExceptionHandler 
 	public ResponseEntity<Object> handleMethodNotImplementedException(final Exception ex) {
 		logger.error(ex.getMessage(), ex);
 		return new ResponseEntity<>(BffMarvelError.MethodNotImplementedException(ex), HttpStatus.NOT_IMPLEMENTED);
-	}	
+	}
 
 }

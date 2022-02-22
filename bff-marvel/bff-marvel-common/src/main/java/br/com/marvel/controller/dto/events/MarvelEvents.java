@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class MarvelEvents {
-	
+
 	@JsonProperty("title")
-	@Getter @Setter
-	private String title;	
-	
+	@Getter
+	@Setter
+	private String title;
+
 	@JsonProperty("description")
-	@Getter @Setter
-	private String description;	
+	@Getter
+	@Setter
+	private String description;
 
 }

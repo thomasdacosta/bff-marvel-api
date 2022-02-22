@@ -8,11 +8,13 @@ import lombok.Setter;
 public class UrlCharacter {
 
 	@JsonProperty("detail")
-	@Getter @Setter	
+	@Getter
+	@Setter
 	private String type;
-	
+
 	@JsonProperty("url")
-	@Getter @Setter	
-	private String url;	
-	
+	@Getter
+	@Setter
+	private String url;
+
 }

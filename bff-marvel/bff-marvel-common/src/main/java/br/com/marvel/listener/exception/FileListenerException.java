@@ -4,7 +4,8 @@ public class FileListenerException extends Exception {
 
 	private static final long serialVersionUID = 2589082267055876279L;
 
-	public FileListenerException() {}
+	public FileListenerException() {
+	}
 
 	public FileListenerException(String message) {
 		super(message);

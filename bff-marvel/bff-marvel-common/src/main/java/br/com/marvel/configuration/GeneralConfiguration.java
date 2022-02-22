@@ -20,13 +20,13 @@ import br.com.marvel.notification.port.NotificationService;
 
 @Configuration
 public class GeneralConfiguration {
-	
+
 	@Autowired
 	private AmazonSQSAsync amazonSQSAsync;
-	
+
 	@Autowired
 	private AmazonSNS amazonSns;
-	
+
 	@Bean
 	@Primary
 	@Conditional(AwsCondition.class)
@@ -40,19 +40,19 @@ public class GeneralConfiguration {
 	public NotificationService getNotificationService() {
 		return new SnsNotificationService(amazonSns);
 	}
-	
+
 	@Bean
 	@Primary
 	@Conditional(LocalCondition.class)
 	public MessageService getLocalMessageService() {
 		return new LocalMessageService();
 	}
-	
+
 	@Bean
 	@Primary
 	@Conditional(LocalCondition.class)
 	public NotificationService getLocalNotificationService() {
 		return new LocalNotificationService();
-	}	
+	}
 
 }

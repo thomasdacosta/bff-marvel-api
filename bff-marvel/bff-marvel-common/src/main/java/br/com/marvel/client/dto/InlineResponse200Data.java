@@ -38,7 +38,7 @@ public class InlineResponse200Data {
 
 	@JsonProperty("results")
 	@Valid
-	private List<Character> results = null;	
+	private List<Character> results = null;
 
 	public InlineResponse200Data offset(BigDecimal offset) {
 		this.offset = offset;

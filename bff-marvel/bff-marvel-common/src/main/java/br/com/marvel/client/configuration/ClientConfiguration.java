@@ -16,33 +16,36 @@ import lombok.Setter;
 @Configuration
 @EnableConfigurationProperties
 public class ClientConfiguration {
-	
+
 	@Value("${proxy.host}")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String proxyHost;
-	
+
 	@Value("${proxy.port}")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private Integer proxyPort;
 
 	@Value("${ts}")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String ts;
 
 	@Value("${apiKey}")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String apiKey;
 
 	@Value("${hash}")
-	@Getter @Setter
+	@Getter
+	@Setter
 	private String hash;
 
 	@Bean
 	@ConditionalOnProperty(value = "proxy.enabled", havingValue = "true", matchIfMissing = false)
 	public Client feignClient() {
-		return new Client.Proxied(null, null, 
-				new Proxy(Proxy.Type.HTTP, 
-						new InetSocketAddress(proxyHost, proxyPort)));
+		return new Client.Proxied(null, null, new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)));
 	}
 
 }

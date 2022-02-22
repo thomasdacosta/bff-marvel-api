@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class MessageImageServiceImpl implements MessageImageService {
-	
+
 	@Autowired
 	private MessageService messageService;
 
@@ -27,8 +27,7 @@ public class MessageImageServiceImpl implements MessageImageService {
 			messageService.sendMessage(mapper.writeValueAsString(thumbnailCharacter));
 		} catch (JsonProcessingException ex) {
 			log.error(ex.getMessage(), ex);
-		}		
+		}
 	}
-
 
 }

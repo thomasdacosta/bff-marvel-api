@@ -50,11 +50,11 @@ public class BffMarvelError implements Serializable {
 		return BffMarvelError.create().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).message("INTERNAL_SERVER_ERROR")
 				.detail(ex.getMessage());
 	}
-	
+
 	public static BffMarvelError MethodNotImplementedException(Exception ex) {
 		return BffMarvelError.create().code(HttpStatus.NOT_IMPLEMENTED.value()).message("METHOD_NOT_IMPLEMENTED")
 				.detail(ex.getMessage());
-	}	
+	}
 
 	public static BffMarvelError create() {
 		return new BffMarvelError();
