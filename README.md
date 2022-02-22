@@ -159,6 +159,8 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 
 # Roadmap - Concluído
 
+- 2022-02-22
+      - Inclusão de logs de request e response da aplicação
 - 2022-02-21
     - **AWS**
       - Incluindo um Worker para trabalhar com SQS e SNS para gravar as imagens no S3
