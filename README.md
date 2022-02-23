@@ -4,10 +4,22 @@ BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as 
 
 ![Screenshot](bffMarvel.png)
 
+# 1 - Introdução
+
+## Tecnologias
+
+- Java 11
+- Spring Boot Servlet
+- Spring Cloud AWS
+- LocalStack
+
 ## Diretórios
 
-**aws** - arquivos relacionados a implantação no ambiente da AWS ou LocalStack<br/>
+**arquitetura** - Arquitetura da aplicação<br/>
+**aws** - Arquivos relacionados a implantação no ambiente da AWS ou LocalStack<br/>
 **bff-marvel** - API desenvolvida em Spring Boot<br/>
+**localstack** - Docker Compose para execução do LocalStack<br/>
+**postman** - Arquivos com request dos Postman<br/>
 **swagger** - Swagger da API da Marvel
 
 ## Gerando o client da API da Marvel
@@ -31,7 +43,7 @@ wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.
 java -jar swagger-codegen-cli.jar generate -i marvel-public-api-v1-swagger.json -l spring --library spring-cloud -o marvel
 ```
 
-# LocalStack
+# 2 - LocalStack
 
 Para habilitar o LocalStack, usar o seguinte profile:
 
@@ -112,7 +124,7 @@ aws:
 
 Comandos para criação das chaves usando o AWS Cli estão localizadas no diretório **scripts**.
 
-# Docker
+# 3 - Docker
 
 ## Gerando a Imagem
 
@@ -152,12 +164,12 @@ aws:
 
 Ainda não está funcionando corretamente!!!
 
-# Produção
+# 4 - Produção
 
 A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
 O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
 
-# Roadmap - Concluído
+# A - Roadmap - Concluído
 
 - 2022-02-22
     - Inclusão de logs de request e response da aplicação
@@ -192,7 +204,7 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
         - AWS Secret Manager com LocalStack
         - AWS Parameter Store com LocalStack
 
-# Roadmap - ToBe
+# B - Roadmap - ToBe
 
 - **AWS**
     - RDS com Spring Data

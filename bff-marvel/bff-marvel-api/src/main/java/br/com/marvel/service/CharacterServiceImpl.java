@@ -8,8 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import br.com.marvel.client.dto.ComicDataWrapper;
+import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
 import br.com.marvel.client.dto.InlineResponse200Data;
+import br.com.marvel.client.dto.SeriesDataWrapper;
+import br.com.marvel.client.dto.StoryDataWrapper;
 import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
@@ -100,6 +104,51 @@ public class CharacterServiceImpl implements CharacterService {
 		pagination.setFileName(resource.getFilename());
 
 		return pagination;
+	}
+
+	@Override
+	public Pagination findComicsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+		ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null, null, null, null,
+				null, null, null, null, null, null, null, null, null, null, null, "-focDate", limit, offset);
+
+		if (!characterComics.getData().getResults().isEmpty()) {
+			// TODO - será implementado na próxima versão
+		}
+		return null;
+	}
+
+	@Override
+	public Pagination findSeriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+		// TODO Auto-generated method stub
+		SeriesDataWrapper characterSeries = client.characterSeries(id, null, null, null, null, null, null, null, null,
+				null, null, null, limit, offset);
+
+		if (!characterSeries.getData().getResults().isEmpty()) {
+			// TODO - será implementado na próxima versão
+		}
+		return null;
+	}
+
+	@Override
+	public Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+		StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, limit,
+				offset);
+
+		if (!characterStories.getData().getResults().isEmpty()) {
+			// TODO - será implementado na próxima versão
+		}
+		return null;
+	}
+
+	@Override
+	public Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+		EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null, null, null, null,
+				limit, offset);
+
+		if (!characterEvents.getData().getResults().isEmpty()) {
+			// TODO - será implementado na próxima versão
+		}
+		return null;
 	}
 
 }
