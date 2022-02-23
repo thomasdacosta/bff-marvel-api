@@ -194,7 +194,11 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 
 # Roadmap - ToBe
 
-- **Spring Data** - gravar as informações obtidas dentro de um banco de dados NoSQL
+- **AWS**
+    - RDS com Spring Data
+    - DynamoDB
+- **Testes**    
+    - Cobertura total de testes unitários
 - **Observability**:
     - Kiali
     - Jaeger
@@ -203,13 +207,13 @@ O usuário configurado deve possuir as permissões para acessar os recursos da A
 - **gRPC**
 - **Integração com Frontend**
 - **CI/CD**
-- **Cobertura de Testes Unitários e Integrados**
 - **Exemplos de Controller**
     - **POST** - Buscar uma lista de personagens e incluir novos personagens
     - **PUT** - Atualizar um personagem
     - **DELETE** - Excluir um personagem
 - **Autenticação e Autorização**
 - **Keycloack**
+
 ---
 
 Thomás da Costa - [https://thomasdacosta.com.br](https://thomasdacosta.com.br)
