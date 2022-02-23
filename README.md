@@ -164,11 +164,6 @@ aws:
 
 Ainda não está funcionando corretamente!!!
 
-# 4 - Produção
-
-A aplicação do Spring Boot pega automaticamente as credenciais no arquivo *~/.aws/credentials* e conecta nos serviços da AWS.<br/>
-O usuário configurado deve possuir as permissões para acessar os recursos da AWS.
-
 # A - Roadmap - Concluído
 
 - 2022-02-22
