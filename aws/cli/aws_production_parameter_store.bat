@@ -5,8 +5,8 @@ aws ssm put-parameter --name "/config/bff-marvel-api_production/ts" --value "1" 
 aws ssm put-parameter --name "/config/bff-marvel-api_production/apiKey" --value "f59dbe01285f1d360542b5c47a9516e3" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/hash" --value "0ea6be79e04ac1b0400d65ffc11088f9" --type String
 
-aws ssm put-parameter --name "/config/bff-marvel-api_localstack/notification.name" --value "marvelThumbnailImageNotification" --type String
-aws ssm put-parameter --name "/config/bff-marvel-api_localstack/queue.name" --value "marvelThumbnailImageQueue" --type String
+aws ssm put-parameter --name "/config/bff-marvel-api_production/notification.name" --value "marvelThumbnailImageNotification" --type String
+aws ssm put-parameter --name "/config/bff-marvel-api_production/queue.name" --value "marvelThumbnailImageQueue" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/directory" --value "marvelcharacter" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/proxy.host" --value "localhost" --type String
 aws ssm put-parameter --name "/config/bff-marvel-api_production/proxy.port" --value "8081" --type String

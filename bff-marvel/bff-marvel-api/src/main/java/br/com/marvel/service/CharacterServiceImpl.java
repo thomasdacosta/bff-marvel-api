@@ -8,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import br.com.marvel.client.dto.ComicDataContainer;
 import br.com.marvel.client.dto.ComicDataWrapper;
+import br.com.marvel.client.dto.EventDataContainer;
 import br.com.marvel.client.dto.EventDataWrapper;
 import br.com.marvel.client.dto.InlineResponse200;
 import br.com.marvel.client.dto.InlineResponse200Data;
+import br.com.marvel.client.dto.SeriesDataContainer;
 import br.com.marvel.client.dto.SeriesDataWrapper;
+import br.com.marvel.client.dto.StoryDataContainer;
 import br.com.marvel.client.dto.StoryDataWrapper;
 import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controller.dto.Pagination;
@@ -62,7 +66,6 @@ public class CharacterServiceImpl implements CharacterService {
 
 				marvelCharacter.setThumbnail(thumbnailCharacter);
 
-				// Enviando messagem para o SNS para gravar a imagem do personagem
 				notificationImageService.sendNotificationThumbnailCharacter(marvelCharacter, thumbnailCharacter);
 
 				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
@@ -110,7 +113,14 @@ public class CharacterServiceImpl implements CharacterService {
 	public Pagination findComicsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
 		ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null, null, null, null,
 				null, null, null, null, null, null, null, null, null, null, null, "-focDate", limit, offset);
-
+		
+		ComicDataContainer data = characterComics.getData();
+		Pagination pagination = new Pagination();
+		pagination.setOffset(data.getOffset());
+		pagination.setLimit(data.getLimit());
+		pagination.setTotal(data.getTotal());
+		pagination.setCount(data.getCount());		
+		
 		if (!characterComics.getData().getResults().isEmpty()) {
 			// TODO - será implementado na próxima versão
 		}
@@ -122,6 +132,13 @@ public class CharacterServiceImpl implements CharacterService {
 		// TODO Auto-generated method stub
 		SeriesDataWrapper characterSeries = client.characterSeries(id, null, null, null, null, null, null, null, null,
 				null, null, null, limit, offset);
+		
+		SeriesDataContainer data = characterSeries.getData();
+		Pagination pagination = new Pagination();
+		pagination.setOffset(data.getOffset());
+		pagination.setLimit(data.getLimit());
+		pagination.setTotal(data.getTotal());
+		pagination.setCount(data.getCount());		
 
 		if (!characterSeries.getData().getResults().isEmpty()) {
 			// TODO - será implementado na próxima versão
@@ -133,6 +150,13 @@ public class CharacterServiceImpl implements CharacterService {
 	public Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
 		StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, limit,
 				offset);
+		
+		StoryDataContainer data = characterStories.getData();
+		Pagination pagination = new Pagination();
+		pagination.setOffset(data.getOffset());
+		pagination.setLimit(data.getLimit());
+		pagination.setTotal(data.getTotal());
+		pagination.setCount(data.getCount());		
 
 		if (!characterStories.getData().getResults().isEmpty()) {
 			// TODO - será implementado na próxima versão
@@ -144,6 +168,13 @@ public class CharacterServiceImpl implements CharacterService {
 	public Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
 		EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null, null, null, null,
 				limit, offset);
+		
+		EventDataContainer data = characterEvents.getData();
+		Pagination pagination = new Pagination();
+		pagination.setOffset(data.getOffset());
+		pagination.setLimit(data.getLimit());
+		pagination.setTotal(data.getTotal());
+		pagination.setCount(data.getCount());		
 
 		if (!characterEvents.getData().getResults().isEmpty()) {
 			// TODO - será implementado na próxima versão
