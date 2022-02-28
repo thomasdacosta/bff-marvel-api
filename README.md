@@ -164,42 +164,7 @@ aws:
 
 Ainda não está funcionando corretamente!!!
 
-# A - Roadmap - Concluído
-
-- 2022-02-22
-    - Inclusão de logs de request e response da aplicação
-- 2022-02-21
-    - **AWS**
-      - Incluindo um Worker para trabalhar com SQS e SNS para gravar as imagens no S3
-- 2022-02-20
-    - **Refatoração do Código**
-      - Refatoração do código e dos testes unitários
-      - Exclusão temporária do método que grava arquivos no bucket S3. Para saber como funciona o S3 com Spring Boot ver o repo [https://github.com/thomasdacosta/aws-s3-sample](https://github.com/thomasdacosta/aws-s3-sample)
-- 2022-02-06
-    - Criando um profile de produção
-- 2022-02-03
-    - **Docker**
-        - Incluindo a geração da imagem e conexão com alguns serviços básicos do LocalStack
-- 2022-02-02
-    - **Async Spring Boot**
-        - Incluíndo o Async para obter as imagens dos personagens
-    - **Arquitetura Hexagonal**
-        - Refatoração do Client da API da Marvel
-- 2022-02-01
-    - **Arquitetura Hexagonal**
-        - Modelo inicial
-    - **AWS**
-        - Gravando as imagens dos personagens no S3 com LocalStack
-
-- 2022-01-31
-    - **Configuração Distribuida**
-         - AWS Secret Manager com LocalStack
-         - AWS Parameter Store com LocalStack
-    - **AWS**
-        - AWS Secret Manager com LocalStack
-        - AWS Parameter Store com LocalStack
-
-# B - Roadmap - ToBe
+# A - Roadmap - ToBe
 
 - **AWS**
     - RDS com Spring Data
