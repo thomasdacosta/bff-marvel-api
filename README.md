@@ -166,25 +166,52 @@ Ainda não está funcionando corretamente!!!
 
 # A - Roadmap - ToBe
 
-- **AWS**
-    - RDS com Spring Data
-    - DynamoDB
-- **Testes**    
-    - Cobertura total de testes unitários
-- **Observability**:
-    - Kiali
-    - Jaeger
-- **Cache**
-- **Docker Hub**
-- **gRPC**
-- **Integração com Frontend**
-- **CI/CD**
-- **Exemplos de Controller**
-    - **POST** - Buscar uma lista de personagens e incluir novos personagens
-    - **PUT** - Atualizar um personagem
-    - **DELETE** - Excluir um personagem
-- **Autenticação e Autorização**
-- **Keycloack**
+### AWS
+
+- KMS no Parameter Store
+- SNS com criptografia
+- SQS com criptografia
+- RDS com MySQL e Spring Data
+- DynamoDB
+- DLQ para o SQS
+- Utilizar SES com LocalStack
+- CloudFormation com LocalStack
+- CDK com Spring Boot
+- Logs da aplicação no CloudWatch
+- Substiuir Worker pelo Lambda
+- ElastiCache
+- Cognito para usuários da aplicação
+
+### Spring
+
+- Spring Reativo
+- HATEOAS com Feign Client
+- Autenticação e Autorização
+ 
+### Funcionalidades
+
+- Criar os endpoints restantes (comics, stories, events e series) para o Character
+- Incluir novos personagens
+- Atualizar persongens
+- Excluir personagens
+
+### Testes
+
+- Cobertura total de testes unitários
+- Usar o avançado do Wiremock com latência de rede e simular autenticação
+- Testcontainers - https://www.testcontainers.org/
+
+### Observability
+
+- Kiali
+- Jaeger
+
+### Outros
+
+- gRPC
+- Integração com Frontend
+- CI/CD
+- Keycloack
 
 ---
 
