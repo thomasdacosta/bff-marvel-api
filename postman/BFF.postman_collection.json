@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "f17e0140-2462-4d12-9b0b-b1917d08198b",
+		"_postman_id": "9023078e-6bdf-416f-81ff-eb20b558ea1a",
 		"name": "BFF",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Characters - nameStartsWith",
+			"name": "GET - Characters - nameStartsWith",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -27,7 +27,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?nameStartsWith=captain",
+					"raw": "{{url_bff}}/characters?nameStartsWith=HULK",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -37,7 +37,7 @@
 					"query": [
 						{
 							"key": "nameStartsWith",
-							"value": "captain"
+							"value": "HULK"
 						}
 					]
 				}
@@ -45,7 +45,7 @@
 			"response": []
 		},
 		{
-			"name": "Characters - name",
+			"name": "GET - Characters - name",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -66,7 +66,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?name=thor",
+					"raw": "{{url_bff}}/characters?name=hulk",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -76,7 +76,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "thor"
+							"value": "hulk"
 						}
 					]
 				}
@@ -84,7 +84,46 @@
 			"response": []
 		},
 		{
-			"name": "Image Characters - name",
+			"name": "POST - Create Character",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "offset",
+						"value": "0",
+						"type": "default"
+					},
+					{
+						"key": "limit",
+						"value": "20",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": null,\r\n    \"name\": null,\r\n    \"description\": null,\r\n    \"modified\": null,\r\n    \"thumbnail\": null,\r\n    \"urls\": null\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Image Characters - name",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -95,12 +134,12 @@
 					},
 					{
 						"key": "offset",
-						"value": "0",
+						"value": "2",
 						"type": "default"
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?name=captain",
+					"raw": "{{url_bff}}/characters?name=hulk",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -110,7 +149,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "captain"
+							"value": "hulk"
 						}
 					]
 				}

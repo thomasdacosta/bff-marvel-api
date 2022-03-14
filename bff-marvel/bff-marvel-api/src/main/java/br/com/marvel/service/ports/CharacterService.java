@@ -3,6 +3,7 @@ package br.com.marvel.service.ports;
 import java.math.BigDecimal;
 
 import br.com.marvel.controller.dto.Pagination;
+import br.com.marvel.controller.dto.characters.MarvelCharacter;
 
 public interface CharacterService {
 
@@ -17,5 +18,7 @@ public interface CharacterService {
 	Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset);
 
 	Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset);
+
+	MarvelCharacter saveCharacters(MarvelCharacter marvelCharacter);
 
 }

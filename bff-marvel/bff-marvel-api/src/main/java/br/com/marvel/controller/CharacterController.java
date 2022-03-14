@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.marvel.controller.dto.Pagination;
+import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.exception.CharactersNotFoundException;
 import br.com.marvel.service.ports.CharacterService;
 import br.com.marvel.utils.PaginationUtils;
@@ -25,6 +28,11 @@ public class CharacterController {
 
 	@Autowired
 	private CharacterService characterService;
+	
+	@PostMapping(value = "/characters", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> saveCharacters(@RequestBody MarvelCharacter marvelCharacter) {
+		return response(characterService.saveCharacters(marvelCharacter));
+	}
 
 	@GetMapping(value = "/characters", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> findCharacters(@RequestParam(name = "name", required = false) String name,
@@ -74,5 +82,9 @@ public class CharacterController {
 			throw new CharactersNotFoundException("Personagem não encontrado. Deve ser da concorrente!!!");
 		return ResponseEntity.ok().headers(PaginationUtils.paginationHeaders(pagination)).body(pagination.getData());
 	}
+	
+	private ResponseEntity<?> response(MarvelCharacter marvelCharacter) {
+		return ResponseEntity.ok().body(marvelCharacter);
+	}	
 
 }

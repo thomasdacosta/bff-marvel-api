@@ -38,6 +38,11 @@ public class CharacterServiceImpl implements CharacterService {
 
 	@Autowired
 	private NotificationImageService notificationImageService;
+	
+	@Override
+	public MarvelCharacter saveCharacters(MarvelCharacter marvelCharacter) {
+		return new MarvelCharacter();
+	}
 
 	@Override
 	public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
