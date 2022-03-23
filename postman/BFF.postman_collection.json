@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "GET - Characters - nameStartsWith",
+			"name": "GET - Find Characters - nameStartsWith",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -27,7 +27,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?nameStartsWith=HULK",
+					"raw": "{{url_bff}}/characters?nameStartsWith=captain",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -37,7 +37,7 @@
 					"query": [
 						{
 							"key": "nameStartsWith",
-							"value": "HULK"
+							"value": "captain"
 						}
 					]
 				}
@@ -45,7 +45,7 @@
 			"response": []
 		},
 		{
-			"name": "GET - Characters - name",
+			"name": "GET - FInd Characters - name",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -66,7 +66,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?name=hulk",
+					"raw": "{{url_bff}}/characters?name=thor",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -76,7 +76,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "hulk"
+							"value": "thor"
 						}
 					]
 				}
@@ -109,12 +109,10 @@
 					"raw": "{\r\n    \"id\": null,\r\n    \"name\": null,\r\n    \"description\": null,\r\n    \"modified\": null,\r\n    \"thumbnail\": null,\r\n    \"urls\": null\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/characters",
-					"protocol": "http",
+					"raw": "{{url_bff}}/characters",
 					"host": [
-						"localhost"
+						"{{url_bff}}"
 					],
-					"port": "8080",
 					"path": [
 						"characters"
 					]
@@ -123,7 +121,7 @@
 			"response": []
 		},
 		{
-			"name": "GET - Image Characters - name",
+			"name": "GET - Find Image Characters - name",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -134,12 +132,12 @@
 					},
 					{
 						"key": "offset",
-						"value": "2",
+						"value": "0",
 						"type": "default"
 					}
 				],
 				"url": {
-					"raw": "{{url_bff}}/characters?name=hulk",
+					"raw": "{{url_bff}}/characters?name=thor",
 					"host": [
 						"{{url_bff}}"
 					],
@@ -149,7 +147,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "hulk"
+							"value": "thor"
 						}
 					]
 				}

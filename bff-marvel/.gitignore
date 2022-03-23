@@ -208,3 +208,13 @@ buildNumber.properties
 .history
 
 # End of https://www.gitignore.io/api/java,maven,eclipse,intellij,visualstudiocode
+
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
