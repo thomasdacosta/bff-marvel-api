@@ -176,6 +176,7 @@ Ainda não está funcionando corretamente!!!
 - DLQ para o SQS
 - Utilizar SES com LocalStack
 - CloudFormation com LocalStack
+- CloudWatch logs com LocalStack
 - CDK com Spring Boot
 - Logs da aplicação no CloudWatch
 - Substiuir Worker pelo Lambda
