@@ -164,6 +164,12 @@ aws:
 
 Ainda não está funcionando corretamente!!!
 
+## Docker MySQL
+
+```
+docker run -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=mypassword" mysql
+```
+
 # A - Roadmap - ToBe
 
 ### AWS
