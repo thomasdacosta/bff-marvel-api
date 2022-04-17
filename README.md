@@ -180,6 +180,14 @@ Ainda não está funcionando corretamente!!!
 docker run -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=mypassword" mysql
 ```
 
+# 4 - AWS Lambda
+
+Para usa o AWS Lambda para testes locais, devemos ajustar o **docker-compose.yml** do LocalStack configurando a seguinte variável:
+
+```
+LAMBDA_EXECUTOR=local
+```
+
 # A - Roadmap - ToBe
 
 ### AWS
