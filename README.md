@@ -2,9 +2,15 @@
 
 BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
+# Solução 1
+
+Utilizando um Worker em Spring para obter as mensagens de uma fila SQS e gravar as imagens em um bucket S3.
+
 ![Screenshot](solutionWorker.png)
 
+# Solução 2
 
+Utilizando um AWS Lambda para obter as mensagens de uma fila SQS e gravar as imagens em um bucket S3.
 
 ![Screenshot](solutionLambda.png)
 
