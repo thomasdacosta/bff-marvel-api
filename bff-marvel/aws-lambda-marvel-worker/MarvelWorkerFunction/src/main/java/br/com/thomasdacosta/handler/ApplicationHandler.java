@@ -4,6 +4,7 @@ import br.com.thomasdacosta.handler.dto.Header;
 import br.com.thomasdacosta.handler.dto.MarvelCharacter;
 import br.com.thomasdacosta.handler.dto.Notification;
 import br.com.thomasdacosta.handler.dto.ThumbnailCharacter;
+import br.com.thomasdacosta.handler.util.ImageUtil;
 import br.com.thomasdacosta.handler.util.S3Util;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -35,8 +36,7 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
                 ThumbnailCharacter thumbnailCharacter = objectMapper.readValue(url, ThumbnailCharacter.class);
                 MarvelCharacter marvelCharacter = objectMapper.readValue(character, MarvelCharacter.class);
 
-                System.out.println(marvelCharacter.getId() + "-" + marvelCharacter.getName());
-                S3Util.getS3(env).putObject("marvelcharacter", "marvelcharacter_" + marvelCharacter.getId() + ".txt", message.getBody());
+                ImageUtil.saveImage(thumbnailCharacter, marvelCharacter);
             } catch (Exception ex) {
                 ex.printStackTrace(System.out);
             }
