@@ -15,12 +15,12 @@ BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as 
 
 ## Diretórios
 
-**arquitetura** - Arquitetura da aplicação<br/>
-**aws** - Arquivos relacionados a implantação no ambiente da AWS ou LocalStack<br/>
+**01-arquitetura** - Arquitetura da aplicação<br/>
+**02-aws** - Arquivos relacionados a implantação no ambiente da AWS ou LocalStack<br/>
+**03-localstack** - Docker Compose para execução do LocalStack<br/>
+**04-postman** - Arquivos com request dos Postman<br/>
+**05-swagger** - Swagger da API da Marvel
 **bff-marvel** - API desenvolvida em Spring Boot<br/>
-**localstack** - Docker Compose para execução do LocalStack<br/>
-**postman** - Arquivos com request dos Postman<br/>
-**swagger** - Swagger da API da Marvel
 
 ## Gerando o client da API da Marvel
 
