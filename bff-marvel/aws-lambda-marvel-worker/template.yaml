@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+[Lambda Worker] - Lambda - aws-lambda-marvel-worker
+Globals:
+  Function:
+    Timeout: 20
+Resources:
+  MarvelWorkerFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: br.com.thomasdacosta.handler.ApplicationHandler::handleRequest
+      Runtime: java11
+      CodeUri: MarvelWorkerFunction
+      Description: An Amazon SQS trigger that logs messages in a queue.
+      MemorySize: 512
+      Timeout: 3
+      Role: 'arn:aws:iam::000000000000:role/marvelWorkerFunctionRole'
+      Events:
+        SQS1:
+          Type: SQS
+          Properties:
+            Queue:
+              'Fn::GetAtt':
+                - SQSQueue1
+                - Arn
+            BatchSize: 10
+  SQSQueue1:
+    Type: 'AWS::SQS::Queue'
+    Properties: {}
