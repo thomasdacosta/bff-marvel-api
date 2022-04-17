@@ -1,0 +1,20 @@
+{
+  "Records": [
+    {
+      "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+      "receiptHandle": "MessageReceiptHandle",
+      "body": "{\"Type\": \"Notification\", \"MessageId\": \"7b260e80-31cc-495d-8789-bd02647b82e4\", \"TopicArn\": \"arn:aws:sns:us-east-1:000000000000:marvelThumbnailImageNotification\", \"Message\": \"{\\\"url\\\":\\\"http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/b\/40\/image_not_available\\\",\\\"extension\\\":\\\"jpg\\\"}\", \"Timestamp\": \"2022-04-17T16:16:47.522Z\", \"SignatureVersion\": \"1\", \"Signature\": \"EXAMPLEpH+..\", \"SigningCertURL\": \"https:\/\/sns.us-east-1.amazonaws.com\/SimpleNotificationService-0000000000000000000000.pem\", \"MessageAttributes\": {\"id\": {\"Type\": \"String\", \"Value\": \"3a8ac35b-4d4c-e1a3-6848-7d5bd91614f6\"}, \"contentType\": {\"Type\": \"String\", \"Value\": \"text\/plain;charset=UTF-8\"}, \"marvelCharacter\": {\"Type\": \"String\", \"Value\": \"{\\\"id\\\":1011355,\\\"name\\\":\\\"Captain Midlands\\\",\\\"description\\\":\\\"\\\",\\\"modified\\\":\\\"1969-12-31T19:00:00-0500\\\",\\\"thumbnail\\\":{\\\"url\\\":\\\"http:\/\/i.annihil.us\/u\/prod\/marvel\/i\/mg\/b\/40\/image_not_available\\\",\\\"extension\\\":\\\"jpg\\\"},\\\"urls\\\":[{\\\"detail\\\":\\\"detail\\\",\\\"url\\\":\\\"http:\/\/marvel.com\/characters\/386\/captain_midlands?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3\\\"},{\\\"detail\\\":\\\"wiki\\\",\\\"url\\\":\\\"http:\/\/marvel.com\/universe\/Captain_Midlands?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3\\\"},{\\\"detail\\\":\\\"comiclink\\\",\\\"url\\\":\\\"http:\/\/marvel.com\/comics\/characters\/1011355\/captain_midlands?utm_campaign=apiRef&utm_source=f59dbe01285f1d360542b5c47a9516e3\\\"}]}\"}, \"timestamp\": {\"Type\": \"Number.java.lang.Long\", \"Value\": \"1650212207335\"}}}",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1523232000000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1523232000001"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:{partition}:sqs:{region}:123456789012:MyQueue",
+      "awsRegion": "{region}"
+    }
+  ]
+}
