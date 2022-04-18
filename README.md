@@ -190,9 +190,16 @@ LAMBDA_EXECUTOR=local
 
 # 5 - Code Coverage
 
+- aws-lambda-marvel-worker:
 ![Screenshot](coverageLambda.png)
+
+- bff-marvel-api
 ![Screenshot](coverageApi.png)
+
+- bff-marvel-common
 ![Screenshot](coverageCommon.png)
+
+- bff-marvel-worker
 ![Screenshot](coverageWorker.png)
 
 # A - Roadmap - ToBe
