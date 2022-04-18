@@ -32,6 +32,10 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
             } catch (Exception ex) {
                 ex.printStackTrace(System.out);
                 // TODO colocar uma expection personalizada
+                // TODO colocar no AWS CLI a criação com memoria e tempo de execução
+                // TODO criar no Cloudwatch uma regra quando tem uma exception
+                // TODO verificar com mais carinho os logs
+                // TODO subir com Cloudformation
             }
         }
         return "Function Performed";
