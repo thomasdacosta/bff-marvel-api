@@ -1,5 +1,6 @@
 package br.com.thomasdacosta.handler;
 
+import br.com.thomasdacosta.handler.exception.FunctionMarvelWorkerException;
 import br.com.thomasdacosta.handler.util.S3Util;
 import br.com.thomasdacosta.util.Constants;
 import br.com.thomasdacosta.util.LocalStackUtil;
@@ -22,6 +23,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @WireMockTest(httpPort = 8081)
 public class ApplicationHandlerTest {
@@ -29,7 +31,7 @@ public class ApplicationHandlerTest {
     @Test
     @Order(1)
     @DisplayName("1 - Executando o Lambda")
-    public void testLambda() throws URISyntaxException, IOException {
+    public void testLambdaOk() throws URISyntaxException, IOException {
         WireMockUtils.serverImage();
 
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
@@ -60,4 +62,23 @@ public class ApplicationHandlerTest {
                 .getObjectSummaries().get(0).getKey());
     }
 
+    @Test
+    @Order(2)
+    @DisplayName("2 - Executando o Lambda com erro")
+    public void testLambdaError() {
+        SQSEvent sqsEvent = new SQSEvent();
+
+        SQSEvent.SQSMessage message = new SQSEvent.SQSMessage();
+        message.setBody(null);
+
+        List<SQSEvent.SQSMessage> records = new ArrayList<>();
+        records.add(message);
+
+        sqsEvent.setRecords(records);
+
+        ApplicationHandler applicationHandler = new ApplicationHandler();
+
+        assertThrows(FunctionMarvelWorkerException.class,
+                () -> applicationHandler.handleRequest(sqsEvent, null));
+    }
 }

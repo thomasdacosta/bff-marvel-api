@@ -188,6 +188,13 @@ Para usa o AWS Lambda para testes locais, devemos ajustar o **docker-compose.yml
 LAMBDA_EXECUTOR=local
 ```
 
+# 5 - Code Coverage
+
+![Screenshot](coverageLambda.png)
+![Screenshot](coverageApi.png)
+![Screenshot](coverageCommon.png)
+![Screenshot](coverageWorker.png)
+
 # A - Roadmap - ToBe
 
 ### AWS

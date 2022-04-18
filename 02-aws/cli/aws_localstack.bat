@@ -10,8 +10,8 @@ echo ### Criando Chaves no AWS Parameter Store do LocalStack...
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/notification.name" --value "marvelThumbnailImageNotification" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/queue.name" --value "marvelThumbnailImageQueue" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/directory" --value "marvelcharacter" --type String
-aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.host" --value "" --type String
-aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.port" --value "" --type String
+aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.host" --value "localhost" --type String
+aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.port" --value "8081" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/proxy.enabled" --value "false" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/marvelPublicAPIV1.url" --value "http://gateway.marvel.com/v1/public" --type String
 aws --endpoint http://localhost:4566 --profile localstack ssm put-parameter --name "/config/bff-marvel-api_localstack/marvelPublicAPIV1.name" --value "marvelPublicAPIV1" --type String
