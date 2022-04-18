@@ -5,7 +5,6 @@ import br.com.thomasdacosta.handler.dto.MarvelCharacter;
 import br.com.thomasdacosta.handler.dto.Notification;
 import br.com.thomasdacosta.handler.dto.ThumbnailCharacter;
 import br.com.thomasdacosta.handler.util.ImageUtil;
-import br.com.thomasdacosta.handler.util.S3Util;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
@@ -13,17 +12,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
 
-    private static final String ENV_TYPE = "ENV_TYPE";
-
     public String handleRequest(final SQSEvent input, final Context context) {
         ObjectMapper objectMapper = new ObjectMapper();
         String url = null;
         String character = null;
-        S3Util.Env env = S3Util.Env.LOCALSTACK;
-        String value = System.getenv(ENV_TYPE);
-
-        if ("aws".equals(value))
-            env = S3Util.Env.AWS;
 
         for (SQSEvent.SQSMessage message : input.getRecords()) {
             try {
@@ -39,6 +31,7 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
                 ImageUtil.saveImage(thumbnailCharacter, marvelCharacter);
             } catch (Exception ex) {
                 ex.printStackTrace(System.out);
+                // TODO colocar uma expection personalizada
             }
         }
         return "Function Performed";

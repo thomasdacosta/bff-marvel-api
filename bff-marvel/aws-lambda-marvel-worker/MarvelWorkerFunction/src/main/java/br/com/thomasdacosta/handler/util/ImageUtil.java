@@ -10,9 +10,16 @@ import java.net.URISyntaxException;
 
 public class ImageUtil {
 
+    private static final String ENV_TYPE = "ENV_TYPE";
     private static final String IMAGE_SIZE = "portrait_uncanny";
 
     public static void saveImage(ThumbnailCharacter thumbnailCharacter, MarvelCharacter marvelCharacter) throws URISyntaxException, IOException {
+        S3Util.Env env = S3Util.Env.LOCALSTACK;
+        String value = System.getenv(ENV_TYPE);
+
+        if ("aws".equals(value))
+            env = S3Util.Env.AWS;
+
         URI uri = new URI(
                 String.format("%s/%s.%s", thumbnailCharacter.getUrl(), IMAGE_SIZE, thumbnailCharacter.getExtension()));
 
@@ -24,7 +31,7 @@ public class ImageUtil {
 
         Call call = client.newCall(request);
         Response response = call.execute();
-        S3Util.getS3(S3Util.Env.LOCALSTACK).putObject("marvelcharacter", file, response.body().byteStream(), null);
+        S3Util.getS3(env).putObject("marvelcharacter", file, response.body().byteStream(), null);
     }
 
     private static String getFileName(String size, String... values) {
