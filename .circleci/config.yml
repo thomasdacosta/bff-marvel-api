@@ -29,6 +29,8 @@ jobs:
           command: echo 'export AWS_DEFAULT_REGION="us-east-1"' >> $BASH_ENV
       - run:
           command: echo ${AWS_DEFAULT_REGION}
+      - run:
+          command: echo 'export TESTCONTAINERS_RYUK_DISABLED="true"' >> $BASH_ENV
       - aws-cli/install
       - aws-cli/setup:
           aws-access-key-id: localstack
