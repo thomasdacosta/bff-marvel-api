@@ -21,6 +21,8 @@ jobs:
     steps:
       - docker/install-docker
       - run:
+          command: docker ps
+      - run:
           command: echo 'export AWS_DEFAULT_REGION="us-east-1"' >> $BASH_ENV
       - run:
           command: echo ${AWS_DEFAULT_REGION}
