@@ -22,7 +22,7 @@ jobs:
       - run: 
           command: echo 'sudo apt-get update'
       - run:
-          command: echo 'sudo apt-get install docker-ce docker-ce-cli containerd.io"
+          command: echo 'sudo apt-get install docker-ce docker-ce-cli containerd.io'
       - run: 
           command: echo 'sudo docker run hello-world'
       - run:
