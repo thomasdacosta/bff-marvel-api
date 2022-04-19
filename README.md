@@ -1,6 +1,7 @@
 # BFF Marvel API - 1.0.0
 
 [![thomasdacosta](https://circleci.com/gh/thomasdacosta/bff-marvel-api.svg?style=shield)](https://app.circleci.com/pipelines/github/thomasdacosta/bff-marvel-api)
+[![codecov](https://codecov.io/gh/thomasdacosta/bff-marvel-api/branch/main/graph/badge.svg?token=l0XfxVVqVf)](https://codecov.io/gh/thomasdacosta/bff-marvel-api)
 
 BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
@@ -189,20 +190,6 @@ Para usa o AWS Lambda para testes locais, devemos ajustar o **docker-compose.yml
 ```
 LAMBDA_EXECUTOR=local
 ```
-
-# 5 - Code Coverage
-
-- aws-lambda-marvel-worker:
-![Screenshot](coverageLambda.png)
-
-- bff-marvel-api:
-![Screenshot](coverageApi.png)
-
-- bff-marvel-common:
-![Screenshot](coverageCommon.png)
-
-- bff-marvel-worker:
-![Screenshot](coverageWorker.png)
 
 # A - Roadmap - ToBe
 
