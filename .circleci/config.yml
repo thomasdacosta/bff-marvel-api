@@ -24,8 +24,6 @@ jobs:
           command: echo 'export AWS_DEFAULT_REGION="us-east-1"' >> $BASH_ENV
       - run:
           command: echo ${AWS_DEFAULT_REGION}
-      - run:
-          command: echo 'export TESTCONTAINERS_RYUK_DISABLED="true"' >> $BASH_ENV
       - aws-cli/install
       - aws-cli/setup:
           aws-access-key-id: localstack
@@ -43,7 +41,7 @@ jobs:
       - run:
           working_directory: ./bff-marvel
           name: Test
-          command: mvn test -Dtest="!br.com.thomasdacosta.handler.ApplicationHandlerTest*, !br.com.thomasdacosta.handler.util.ImageUtilTest*, !br.com.thomasdacosta.handler.util.S3UtilTest*" -DfailIfNoTests=false
+          command: mvn test
       - run:    
           command: echo 'export CODECOV_TOKEN="b5d44f43-0fb8-4760-b158-010fac6ca271"' >> $BASH_ENV
       - codecov/upload:
