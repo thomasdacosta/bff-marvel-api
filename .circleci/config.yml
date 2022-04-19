@@ -22,11 +22,11 @@ jobs:
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
-          command: pwd
+          command: ls -la
       # Then run your tests!
       - run:
           name: Test
-          command: pwd
+          command: ls -la
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
