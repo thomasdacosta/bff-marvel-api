@@ -20,9 +20,10 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
-      - run:
+      - run:  
+          working_directory: ./bff-marvel
           name: Build
-          command: cd bff-marvel
+          command: ls -la
       # Then run your tests!
       - run:
           name: Test
