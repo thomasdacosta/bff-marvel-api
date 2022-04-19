@@ -13,7 +13,7 @@ Resources:
       CodeUri: MarvelWorkerFunction
       Description: An Amazon SQS trigger that logs messages in a queue.
       MemorySize: 512
-      Timeout: 3
+      Timeout: 600
       Role: 'arn:aws:iam::000000000000:role/marvelWorkerFunctionRole'
       Events:
         SQS1:
