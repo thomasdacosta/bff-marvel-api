@@ -41,12 +41,14 @@ jobs:
           working_directory: ./bff-marvel
           name: Test
           command: mvn test -Dtest="!br.com.thomasdacosta.handler.ApplicationHandlerTest*, !br.com.thomasdacosta.handler.util.ImageUtilTest*, !br.com.thomasdacosta.handler.util.S3UtilTest*" -DfailIfNoTests=false
+      - run:    
+          command: echo 'export CODECOV_TOKEN="b5d44f43-0fb8-4760-b158-010fac6ca271"' >> $BASH_ENV
       - codecov/upload:
-          token: b5d44f43-0fb8-4760-b158-010fac6ca271 
+          validate: true           
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+  bff-marvel-workflow: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
