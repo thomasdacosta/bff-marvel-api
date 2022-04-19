@@ -65,15 +65,13 @@ public class S3Util {
             ObjectListing files = amazonS3.listObjects(bucket);
             for (S3ObjectSummary key : files.getObjectSummaries()) {
                 try {
-                    System.out.println("######" + key.getKey());
+                    System.out.println("######" + bucket + "/" + key.getKey());
                     amazonS3.deleteObject(bucket, key.getKey());
                 } catch (Exception ex) {
                     ex.printStackTrace(System.out);
                 }
             }
-        } catch (Exception ex) {
-            ex.printStackTrace(System.out);
-        }
+        } catch (Exception ex) {}
     }
 
 }
