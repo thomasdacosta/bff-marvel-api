@@ -42,6 +42,8 @@ jobs:
           command: mvn clean install -DskipTests
       # Then run your tests!
       - run:
+          command: sudo iptables -A INPUT -i docker0 -j ACCEPT
+      - run:
           working_directory: ./bff-marvel
           name: Test
           command: mvn test
