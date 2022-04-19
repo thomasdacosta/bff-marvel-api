@@ -44,7 +44,9 @@ public class ImageUtilTest {
 
         ImageUtil.saveImage(thumbnailCharacter, marvelCharacter);
         ObjectListing files = amazonS3.listObjects(Constants.BUCKET);
-        assertEquals(1, files.getObjectSummaries().size());
+
+        assertEquals(1, files.getObjectSummaries().stream()
+                .filter(p -> p.getKey().equals("captain_midlands_1011355_portrait_uncanny.jpg")).count());
     }
 
 }
