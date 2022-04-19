@@ -20,6 +20,10 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
+      - run:
+          command: echo 'export AWS_DEFAULT_REGION="us-east-1"' >> $BASH_ENV
+      - run:
+          command: echo ${AWS_DEFAULT_REGION}
       - run:  
           working_directory: ./bff-marvel
           name: Build
