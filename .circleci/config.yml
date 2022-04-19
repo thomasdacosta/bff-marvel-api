@@ -19,7 +19,10 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - aws-cli/install
-      - aws-cli/setup
+      - aws-cli/setup:
+          aws-access-key-id: localstack 
+          aws-region: us-east-1 
+          aws-secret-access-key: localstack 
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
