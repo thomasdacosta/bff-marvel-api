@@ -46,7 +46,7 @@ jobs:
       - run:
           working_directory: ./bff-marvel
           name: Test
-          command: mvn test -Dtest="!br.com.thomasdacosta.handler.ApplicationHandlerTest*, !br.com.thomasdacosta.handler.util.ImageUtilTest*, !br.com.thomasdacosta.handler.util.S3UtilTest*" -DfailIfNoTests=false
+          command: mvn test
       - run:    
           command: echo 'export CODECOV_TOKEN="b5d44f43-0fb8-4760-b158-010fac6ca271"' >> $BASH_ENV
       - codecov/upload:
