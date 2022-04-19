@@ -36,7 +36,7 @@ jobs:
       - run:  
           working_directory: ./bff-marvel
           name: Build
-          command: mvn clean install
+          command: mvn clean install -DskipTests
       # Then run your tests!
       - run:
           working_directory: ./bff-marvel
