@@ -12,11 +12,12 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-// TODO colocar no AWS CLI a criação com memoria e tempo de execução
 // TODO criar no Cloudwatch uma regra quando tem uma exception
 // TODO verificar com mais carinho os logs
 // TODO subir com Cloudformation
 // TODO INCLUIR UM DESTINO PARA O LAMBDA NA AWS
+// TODO INCLUIR LAMBDA LAYERS
+// TODO USAR A LIB COMMON COMO LAYER
 public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
 
     public String handleRequest(final SQSEvent input, final Context context) {
@@ -24,12 +25,13 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
         String url;
         String character;
 
-        LoggerUtil.setLogger(context);
-        LoggerUtil.log("## Executando Function");
-        LoggerUtil.log("## Total de Mensagens:" + input.getRecords().size());
+        try {
+            LoggerUtil.setLogger(context);
+            LoggerUtil.log("## Executando Function");
+            LoggerUtil.log("## Total de Mensagens:" + input.getRecords().size());
 
-        for (SQSEvent.SQSMessage message : input.getRecords()) {
-            try {
+            for (SQSEvent.SQSMessage message : input.getRecords()) {
+
                 LoggerUtil.log("## Processando Mensagem...");
                 Notification notification = objectMapper.readValue(message.getBody(), Notification.class);
                 url = notification.getMessage();
@@ -41,10 +43,10 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
                 MarvelCharacter marvelCharacter = objectMapper.readValue(character, MarvelCharacter.class);
 
                 ImageUtil.saveImage(thumbnailCharacter, marvelCharacter);
-            } catch (Exception ex) {
-                LoggerUtil.error(ex);
-                throw new FunctionMarvelWorkerException(ex.getMessage(), ex);
             }
+        } catch (Exception ex) {
+            LoggerUtil.error(ex);
+            throw new FunctionMarvelWorkerException(ex.getMessage(), ex);
         }
 
         LoggerUtil.log("## Function Executada");

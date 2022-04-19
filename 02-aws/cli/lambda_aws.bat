@@ -7,5 +7,5 @@ aws iam attach-role-policy --role-name marvelWorkerFunctionRole --policy-arn arn
 aws iam attach-role-policy --role-name marvelWorkerFunctionRole --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 
 echo ### Criando Lambda...
-aws lambda create-function --function-name marvelWorkerFunction --zip-file fileb://aws-lambda-marvel-worker-1.0.jar --handler br.com.thomasdacosta.handler.ApplicationHandler --runtime java11 --role arn:aws:iam::103638502867:role/marvelWorkerFunctionRole
+aws lambda create-function --function-name marvelWorkerFunction --zip-file fileb://aws-lambda-marvel-worker-1.0.jar --handler br.com.thomasdacosta.handler.ApplicationHandler --runtime java11 --role arn:aws:iam::103638502867:role/marvelWorkerFunctionRole --memory-size 512 --timeout 600 --environment Variables={ENV_TYPE=aws}
 aws lambda create-event-source-mapping --function-name marvelWorkerFunction --batch-size 10 --event-source-arn arn:aws:sqs:sa-east-1:103638502867:marvelThumbnailImageQueue
