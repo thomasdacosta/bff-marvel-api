@@ -20,7 +20,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - setup_remote_docker:
-          version: 20.10.2
+          version: 19.03.14
       - run:
           command: docker ps
       - run:
