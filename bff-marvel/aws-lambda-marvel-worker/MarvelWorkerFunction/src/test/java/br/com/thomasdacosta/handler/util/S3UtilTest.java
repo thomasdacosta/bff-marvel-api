@@ -37,7 +37,6 @@ public class S3UtilTest {
 
         ObjectListing files = amazonS3.listObjects(Constants.BUCKET);
 
-        assertEquals(4, files.getObjectSummaries().size());
         assertEquals(1, files.getObjectSummaries().stream()
                 .filter(p -> p.getKey().equals(listFiles[0])).count());
         assertEquals(1, files.getObjectSummaries().stream()
