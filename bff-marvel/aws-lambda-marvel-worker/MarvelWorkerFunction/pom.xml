@@ -119,6 +119,7 @@
                 <configuration>
                     <excludes>
                         <exclude>br/com/thomasdacosta/handler/dto/*</exclude>
+                        <exclude>br/com/thomasdacosta/handler/util/LoggerUtil*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

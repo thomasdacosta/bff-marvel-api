@@ -1,0 +1,14 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 512
+      Handler: br.com.thomasdacosta.handler.ApplicationHandler
+      CodeUri: C:\Users\thoma\development\workspace-eclipse\pessoal\bff-marvel-api\bff-marvel\aws-lambda-marvel-worker\MarvelWorkerFunction
+      Runtime: java11
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          ENV_DOCKER: true

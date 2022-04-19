@@ -10,20 +10,17 @@ import java.net.URISyntaxException;
 
 public class ImageUtil {
 
-    private static final String ENV_TYPE = "ENV_TYPE";
-    private static final String IMAGE_SIZE = "portrait_uncanny";
-
     public static void saveImage(ThumbnailCharacter thumbnailCharacter, MarvelCharacter marvelCharacter) throws URISyntaxException, IOException {
         S3Util.Env env = S3Util.Env.LOCALSTACK;
-        String value = System.getenv(ENV_TYPE);
+        String value = System.getenv(Constants.ENV_TYPE);
 
         if ("aws".equals(value))
             env = S3Util.Env.AWS;
 
         URI uri = new URI(
-                String.format("%s/%s.%s", thumbnailCharacter.getUrl(), IMAGE_SIZE, thumbnailCharacter.getExtension()));
+                String.format("%s/%s.%s", thumbnailCharacter.getUrl(), Constants.IMAGE_SIZE, thumbnailCharacter.getExtension()));
 
-        String file = getFileName(IMAGE_SIZE, marvelCharacter.getName(),
+        String file = getFileName(Constants.IMAGE_SIZE, marvelCharacter.getName(),
                 marvelCharacter.getId().toPlainString(), thumbnailCharacter.getExtension());
 
         OkHttpClient client = new OkHttpClient();

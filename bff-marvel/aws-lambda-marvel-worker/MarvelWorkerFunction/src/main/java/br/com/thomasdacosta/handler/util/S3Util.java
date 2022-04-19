@@ -12,9 +12,6 @@ public class S3Util {
         AWS, LOCALSTACK
     }
 
-    private static final String AWS_REGION = "us-east-1";
-    private static final String S3_ENDPOINT = "http://s3.localhost.localstack.cloud:4566/";
-
     private static AwsClientBuilder.EndpointConfiguration endpointConfiguration = null;
     private static AmazonS3 amazonS3 = null;
 
@@ -44,11 +41,20 @@ public class S3Util {
 
     private static AmazonS3 getS3LocalStack() {
         if (amazonS3 == null)  {
+            boolean docker = "true".equals(System.getenv(Constants.ENV_DOCKER));
+
             if (endpointConfiguration == null) {
-                endpointConfiguration = new AwsClientBuilder.EndpointConfiguration(S3_ENDPOINT, AWS_REGION);
+                if (docker)
+                    endpointConfiguration = new AwsClientBuilder.EndpointConfiguration(Constants.S3_ENDPOINT_DOCKER, Constants.AWS_REGION);
+                else
+                    endpointConfiguration = new AwsClientBuilder.EndpointConfiguration(Constants.S3_ENDPOINT, Constants.AWS_REGION);
             }
             AmazonS3ClientBuilder builder = AmazonS3ClientBuilder.standard();
             builder.withEndpointConfiguration(endpointConfiguration);
+
+            if (docker)
+                builder.setPathStyleAccessEnabled(true);
+
             amazonS3 = builder.build();
         }
         return amazonS3;

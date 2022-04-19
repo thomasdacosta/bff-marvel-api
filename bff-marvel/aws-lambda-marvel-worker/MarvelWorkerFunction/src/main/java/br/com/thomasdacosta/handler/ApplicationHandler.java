@@ -8,7 +8,6 @@ import br.com.thomasdacosta.handler.exception.FunctionMarvelWorkerException;
 import br.com.thomasdacosta.handler.util.ImageUtil;
 import br.com.thomasdacosta.handler.util.LoggerUtil;
 import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 // TODO criar no Cloudwatch uma regra quando tem uma exception
 // TODO verificar com mais carinho os logs
 // TODO subir com Cloudformation
+// TODO INCLUIR UM DESTINO PARA O LAMBDA NA AWS
 public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
 
     public String handleRequest(final SQSEvent input, final Context context) {
@@ -28,12 +28,8 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
         LoggerUtil.log("## Executando Function");
         LoggerUtil.log("## Total de Mensagens:" + input.getRecords().size());
 
-//        System.out.println("## Executando Function");
-//        System.out.println("## Total de Mensagens:" + input.getRecords().size());
-
         for (SQSEvent.SQSMessage message : input.getRecords()) {
             try {
-//                System.out.println("## Processando Mensagem...");
                 LoggerUtil.log("## Processando Mensagem...");
                 Notification notification = objectMapper.readValue(message.getBody(), Notification.class);
                 url = notification.getMessage();
@@ -51,7 +47,6 @@ public class ApplicationHandler implements RequestHandler<SQSEvent, String> {
             }
         }
 
-//        System.out.println("## Function Executada");
         LoggerUtil.log("## Function Executada");
         return "## Function Executada";
     }
