@@ -23,12 +23,12 @@ jobs:
       - run:  
           working_directory: ./bff-marvel
           name: Build
-          command: mvn -B -DskipTests clean package
+          command: mvn clean install -DskipTests
       # Then run your tests!
       - run:
           working_directory: ./bff-marvel
           name: Test
-          command: mvn clean install
+          command: mvn test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
