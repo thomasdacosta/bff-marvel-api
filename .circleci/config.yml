@@ -36,12 +36,7 @@ jobs:
       - run:  
           working_directory: ./bff-marvel
           name: Build
-          command: mvn clean install -DskipTests
-      # Then run your tests!
-      - run:
-          working_directory: ./bff-marvel
-          name: Test
-          command: mvn test
+          command: mvn clean install
       - run:    
           command: echo 'export CODECOV_TOKEN="b5d44f43-0fb8-4760-b158-010fac6ca271"' >> $BASH_ENV
       - codecov/upload:
