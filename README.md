@@ -1,6 +1,6 @@
 # BFF Marvel API - 1.0.0
 
-![thomasdacosta](https://circleci.com/gh/thomasdacosta/bff-marvel-api.svg?style=shield)
+[![thomasdacosta](https://circleci.com/gh/thomasdacosta/bff-marvel-api.svg?style=shield)](https://app.circleci.com/pipelines/github/thomasdacosta/bff-marvel-api)
 
 BFF (Backends For Frontends) desenvolvido em Spring Boot que efeuta o acesso as API´s Oficiais da Marvel e busca o personagem, HQ´s e eventos de acordo com o nome pesquisado.
 
