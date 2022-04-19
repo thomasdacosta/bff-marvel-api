@@ -1,7 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-machine: true
+
 orbs:
   aws-cli: circleci/aws-cli@2.0.3
   docker: circleci/docker@2.0.3
@@ -19,6 +19,10 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - setup_remote_docker:
+          version: 17.09.0-ce
+      - run:
+          command: docker ps
       - run:
           command: echo 'export AWS_DEFAULT_REGION="us-east-1"' >> $BASH_ENV
       - run:
