@@ -20,12 +20,12 @@ jobs:
       - checkout
       # Use mvn clean and package as the standard maven build phase
       - run:
-          working_directory: /home/circleci/project/bff-marvel-api/bff-marvel
+          working_directory: /home/circleci/project/bff-marvel-api/bff-marvelxxxx
           name: Build
           command: mvn -B -DskipTests clean package
       # Then run your tests!
       - run:
-          working_directory: /home/circleci/project/bff-marvel-api/bff-marvel
+          working_directory: /home/circleci/project/bff-marvel-api/bff-marvelxxxx
           name: Test
           command: mvn test
 
