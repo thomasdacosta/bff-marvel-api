@@ -21,8 +21,8 @@ jobs:
       - aws-cli/install
       - aws-cli/setup:
           aws-access-key-id: localstack 
-          aws-region: us-east-1 
           aws-secret-access-key: localstack 
+          profile-name: localstack       
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
