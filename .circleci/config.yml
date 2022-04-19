@@ -28,7 +28,7 @@ jobs:
       - run:
           working_directory: ./bff-marvel
           name: Test
-          command: mvn test
+          command: mvn clean install
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
