@@ -3,8 +3,6 @@ package br.com.thomasdacosta.handler.util;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class S3Util {
 
@@ -58,17 +56,6 @@ public class S3Util {
             amazonS3 = builder.build();
         }
         return amazonS3;
-    }
-
-    public static void deleteBucket(AmazonS3 amazonS3, String bucket) {
-        try {
-            ObjectListing files = amazonS3.listObjects(bucket);
-            for (S3ObjectSummary key : files.getObjectSummaries()) {
-                try {
-                    amazonS3.deleteObject(bucket, key.getKey());
-                } catch (Exception ex) {}
-            }
-        } catch (Exception ex) {}
     }
 
 }

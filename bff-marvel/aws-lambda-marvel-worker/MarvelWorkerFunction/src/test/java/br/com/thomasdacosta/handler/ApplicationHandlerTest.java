@@ -38,28 +38,25 @@ public class ApplicationHandlerTest {
         String file = new String(Files.readAllBytes(Paths.get(
                 Objects.requireNonNull(classloader.getResource("event-sqs.json")).toURI())));
 
-        ApplicationHandler applicationHandler = new ApplicationHandler();
         S3Util.setEndpointConfiguration(LocalStackUtil.getLocalstack().getEndpointConfiguration(LocalStackContainer.Service.S3));
+
         AmazonS3 amazonS3 = S3Util.getS3(S3Util.Env.LOCALSTACK);
-        S3Util.deleteBucket(amazonS3, Constants.BUCKET);
         Objects.requireNonNull(amazonS3).createBucket(Constants.BUCKET);
 
         SQSEvent sqsEvent = new SQSEvent();
-
         SQSEvent.SQSMessage message = new SQSEvent.SQSMessage();
         message.setBody(file);
 
         List<SQSEvent.SQSMessage> records = new ArrayList<>();
         records.add(message);
-
         sqsEvent.setRecords(records);
 
+        ApplicationHandler applicationHandler = new ApplicationHandler();
         applicationHandler.handleRequest(sqsEvent, null);
 
         ObjectListing files = amazonS3.listObjects(Constants.BUCKET);
-        assertEquals(1, files.getObjectSummaries().size());
-        assertEquals("captain_midlands_1011355_portrait_uncanny.jpg", files
-                .getObjectSummaries().get(0).getKey());
+        assertEquals(1, files.getObjectSummaries().stream()
+                .filter(p -> p.getKey().equals("captain_midlands_1011355_portrait_uncanny.jpg")).count());
     }
 
     @Test
@@ -67,13 +64,11 @@ public class ApplicationHandlerTest {
     @DisplayName("2 - Executando o Lambda com erro")
     public void testLambdaError() {
         SQSEvent sqsEvent = new SQSEvent();
-
         SQSEvent.SQSMessage message = new SQSEvent.SQSMessage();
         message.setBody(null);
 
         List<SQSEvent.SQSMessage> records = new ArrayList<>();
         records.add(message);
-
         sqsEvent.setRecords(records);
 
         ApplicationHandler applicationHandler = new ApplicationHandler();

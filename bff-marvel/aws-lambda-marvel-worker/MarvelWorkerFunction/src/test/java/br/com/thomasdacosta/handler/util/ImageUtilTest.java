@@ -31,7 +31,6 @@ public class ImageUtilTest {
         S3Util.setEndpointConfiguration(LocalStackUtil.getLocalstack().getEndpointConfiguration(LocalStackContainer.Service.S3));
         AmazonS3 amazonS3 = S3Util.getS3(S3Util.Env.LOCALSTACK);
 
-        S3Util.deleteBucket(amazonS3, Constants.BUCKET);
         Objects.requireNonNull(amazonS3).createBucket(Constants.BUCKET);
 
         ThumbnailCharacter thumbnailCharacter = new ThumbnailCharacter();
