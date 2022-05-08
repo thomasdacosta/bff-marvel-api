@@ -28,6 +28,9 @@ public class ImageUtilTest {
     @Order(1)
     @DisplayName("1 - Criando as imagens em um Bucket S3")
     public void testCreateImage() throws URISyntaxException, IOException {
+        S3Util.setAmazonS3(null);
+        S3Util.setEndpointConfiguration(null);
+
         WireMockUtils.serverImage();
 
         S3Util.setEndpointConfiguration(LocalStackUtil.getLocalstack().getEndpointConfiguration(LocalStackContainer.Service.S3));
@@ -55,6 +58,8 @@ public class ImageUtilTest {
     @SetEnvironmentVariable(key = ENV_TYPE, value = "aws")
     @DisplayName("2 - Simulando a execuçao no ambiente da AWS")
     public void testImageAws() {
+        S3Util.setAmazonS3(null);
+        S3Util.setEndpointConfiguration(null);
         assertNotNull(new ImageUtil());
         assertThrows(Exception.class, () ->
                 ImageUtil.saveImage(null, null));
