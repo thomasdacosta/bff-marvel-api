@@ -76,4 +76,5 @@ public class ApplicationHandlerTest {
         assertThrows(FunctionMarvelWorkerException.class,
                 () -> applicationHandler.handleRequest(sqsEvent, null));
     }
+
 }

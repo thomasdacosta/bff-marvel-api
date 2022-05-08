@@ -72,6 +72,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit-pioneer</groupId>
+            <artifactId>junit-pioneer</artifactId>
+            <version>1.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.jupiter.version}</version>
@@ -120,6 +126,7 @@
                     <excludes>
                         <exclude>br/com/thomasdacosta/handler/dto/*</exclude>
                         <exclude>br/com/thomasdacosta/handler/util/LoggerUtil*</exclude>
+                        <exclude>br/com/thomasdacosta/handler/util/Constants*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

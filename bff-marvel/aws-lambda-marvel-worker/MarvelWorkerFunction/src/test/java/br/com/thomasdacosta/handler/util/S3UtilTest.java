@@ -5,12 +5,13 @@ import br.com.thomasdacosta.util.LocalStackUtil;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectListing;
 import org.junit.jupiter.api.*;
+import org.junitpioneer.jupiter.SetEnvironmentVariable;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 
 import java.util.Objects;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static br.com.thomasdacosta.handler.util.Constants.ENV_DOCKER;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class S3UtilTest {
@@ -55,6 +56,17 @@ public class S3UtilTest {
         S3Util.setAmazonS3(null);
         S3Util.setEndpointConfiguration(null);
         assertNotNull(S3Util.getS3(S3Util.Env.LOCALSTACK));
+        assertNotNull(S3Util.getS3(S3Util.Env.LOCALSTACK));
+    }
+
+    @Test
+    @Order(2)
+    @SetEnvironmentVariable(key = ENV_DOCKER, value = "true")
+    @DisplayName("2 - Simulando com endpoint do Docker")
+    public void testImageAws() {
+        S3Util.setAmazonS3(null);
+        S3Util.setEndpointConfiguration(null);
+        assertNotNull(new S3Util());
         assertNotNull(S3Util.getS3(S3Util.Env.LOCALSTACK));
     }
 

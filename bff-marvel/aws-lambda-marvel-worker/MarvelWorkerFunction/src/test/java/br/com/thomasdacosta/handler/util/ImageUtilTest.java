@@ -9,6 +9,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import org.junit.jupiter.api.*;
+import org.junitpioneer.jupiter.SetEnvironmentVariable;
 import org.testcontainers.containers.localstack.LocalStackContainer;
 
 import java.io.IOException;
@@ -16,7 +17,8 @@ import java.math.BigDecimal;
 import java.net.URISyntaxException;
 import java.util.Objects;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static br.com.thomasdacosta.handler.util.Constants.ENV_TYPE;
+import static org.junit.jupiter.api.Assertions.*;
 
 @WireMockTest(httpPort = 8082)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -46,6 +48,16 @@ public class ImageUtilTest {
 
         assertEquals(1, files.getObjectSummaries().stream()
                 .filter(p -> p.getKey().equals("captain_midlands_1011355_portrait_uncanny.jpg")).count());
+    }
+
+    @Test
+    @Order(2)
+    @SetEnvironmentVariable(key = ENV_TYPE, value = "aws")
+    @DisplayName("2 - Simulando a execuçao no ambiente da AWS")
+    public void testImageAws() {
+        assertNotNull(new ImageUtil());
+        assertThrows(Exception.class, () ->
+                ImageUtil.saveImage(null, null));
     }
 
 }
