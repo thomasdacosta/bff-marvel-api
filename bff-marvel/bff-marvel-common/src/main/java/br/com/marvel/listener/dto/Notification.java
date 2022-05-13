@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-@JsonIgnoreProperties("UnsubscribeURL")
+@JsonIgnoreProperties({"UnsubscribeURL", "Subject"})
 public class Notification {
 
 	@JsonProperty("Type")
