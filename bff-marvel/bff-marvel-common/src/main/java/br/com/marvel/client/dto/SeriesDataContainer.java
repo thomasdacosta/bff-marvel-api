@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import javax.validation.Valid;
 
+import br.com.marvel.controller.dto.Pagination;
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,7 +20,8 @@ import io.swagger.annotations.ApiModelProperty;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2021-11-11T22:48:12.266406300-03:00[America/Sao_Paulo]")
 
-public class SeriesDataContainer {
+public class SeriesDataContainer extends Pagination {
+
 	@JsonProperty("offset")
 	private BigDecimal offset = null;
 

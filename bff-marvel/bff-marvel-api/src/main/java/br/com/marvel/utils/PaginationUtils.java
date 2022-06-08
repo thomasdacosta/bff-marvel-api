@@ -21,4 +21,10 @@ public class PaginationUtils {
 		return httpHeaders;
 	}
 
+	public static Pagination createPagination() {
+		Pagination pagination = new Pagination();
+
+		return pagination;
+	}
+
 }

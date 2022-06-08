@@ -1,190 +1,166 @@
 package br.com.marvel.service;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Service;
-
-import br.com.marvel.client.dto.ComicDataContainer;
-import br.com.marvel.client.dto.ComicDataWrapper;
-import br.com.marvel.client.dto.EventDataContainer;
-import br.com.marvel.client.dto.EventDataWrapper;
-import br.com.marvel.client.dto.InlineResponse200;
-import br.com.marvel.client.dto.InlineResponse200Data;
-import br.com.marvel.client.dto.SeriesDataContainer;
-import br.com.marvel.client.dto.SeriesDataWrapper;
-import br.com.marvel.client.dto.StoryDataContainer;
-import br.com.marvel.client.dto.StoryDataWrapper;
+import br.com.marvel.client.dto.*;
 import br.com.marvel.client.ports.MarvelClient;
 import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.dto.characters.ThumbnailCharacter;
 import br.com.marvel.controller.dto.characters.UrlCharacter;
+import br.com.marvel.controller.exception.MethodNotImplementedException;
 import br.com.marvel.listener.service.port.FileService;
 import br.com.marvel.service.ports.CharacterService;
 import br.com.marvel.service.ports.NotificationImageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CharacterServiceImpl implements CharacterService {
 
-	@Autowired
-	private MarvelClient client;
+    @Autowired
+    private MarvelClient client;
 
-	@Autowired
-	private FileService fileService;
+    @Autowired
+    private FileService fileService;
 
-	@Autowired
-	private NotificationImageService notificationImageService;
-	
-	@Override
-	public MarvelCharacter saveCharacters(MarvelCharacter marvelCharacter) {
-		return new MarvelCharacter();
-	}
+    @Autowired
+    private NotificationImageService notificationImageService;
 
-	@Override
-	public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
-		InlineResponse200 listCharacters = client.listCharacters(name, nameStartsWith, null, null, null, null, null,
-				null, limit, offset);
+    @Override
+    public MarvelCharacter saveCharacters(MarvelCharacter marvelCharacter) {
+        return new MarvelCharacter();
+    }
 
-		InlineResponse200Data data = listCharacters.getData();
-		Pagination pagination = new Pagination();
-		pagination.setOffset(data.getOffset());
-		pagination.setLimit(data.getLimit());
-		pagination.setTotal(data.getTotal());
-		pagination.setCount(data.getCount());
+    @Override
+    public Pagination findCharacters(String name, String nameStartsWith, BigDecimal limit, BigDecimal offset) {
+        InlineResponse200 listCharacters = client.listCharacters(name, nameStartsWith, null, null, null, null, null,
+                null, limit, offset);
 
-		if (!listCharacters.getData().getResults().isEmpty()) {
-			List<MarvelCharacter> characters = listCharacters.getData().getResults().stream().map(c -> {
-				MarvelCharacter marvelCharacter = new MarvelCharacter();
+//        InlineResponse200Data data = listCharacters.getData();
+//        Pagination pagination = new Pagination();
+//        pagination.setOffset(data.getOffset());
+//        pagination.setLimit(data.getLimit());
+//        pagination.setTotal(data.getTotal());
+//        pagination.setCount(data.getCount());
+		Pagination pagination = listCharacters.getData();
 
-				marvelCharacter.setId(c.getId());
-				marvelCharacter.setName(c.getName());
-				marvelCharacter.setDescription(c.getDescription());
-				marvelCharacter.setModified(c.getModified());
+        if (!listCharacters.getData().getResults().isEmpty()) {
+            List<MarvelCharacter> characters = listCharacters.getData().getResults().stream().map(c -> {
+                MarvelCharacter marvelCharacter = new MarvelCharacter();
 
-				ThumbnailCharacter thumbnailCharacter = new ThumbnailCharacter();
-				thumbnailCharacter.setUrl(c.getThumbnail().getPath());
-				thumbnailCharacter.setExtension(c.getThumbnail().getExtension());
+                marvelCharacter.setId(c.getId());
+                marvelCharacter.setName(c.getName());
+                marvelCharacter.setDescription(c.getDescription());
+                marvelCharacter.setModified(c.getModified());
 
-				marvelCharacter.setThumbnail(thumbnailCharacter);
+                ThumbnailCharacter thumbnailCharacter = new ThumbnailCharacter();
+                thumbnailCharacter.setUrl(c.getThumbnail().getPath());
+                thumbnailCharacter.setExtension(c.getThumbnail().getExtension());
 
-				notificationImageService.sendNotificationThumbnailCharacter(marvelCharacter, thumbnailCharacter);
+                marvelCharacter.setThumbnail(thumbnailCharacter);
 
-				List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
-					UrlCharacter urlCharacter = new UrlCharacter();
-					urlCharacter.setType(u.getType());
-					urlCharacter.setUrl(u.getUrl());
-					return urlCharacter;
-				}).collect(Collectors.toList());
+                notificationImageService.sendNotificationThumbnailCharacter(marvelCharacter, thumbnailCharacter);
 
-				marvelCharacter.setUrlCharacters(urlCharacters);
+                List<UrlCharacter> urlCharacters = c.getUrls().stream().map(u -> {
+                    UrlCharacter urlCharacter = new UrlCharacter();
+                    urlCharacter.setType(u.getType());
+                    urlCharacter.setUrl(u.getUrl());
+                    return urlCharacter;
+                }).collect(Collectors.toList());
 
-				return marvelCharacter;
-			}).collect(Collectors.toList());
+                marvelCharacter.setUrlCharacters(urlCharacters);
 
-			pagination.setData(characters);
-			return pagination;
-		} else {
-			return null;
-		}
-	}
+                return marvelCharacter;
+            }).collect(Collectors.toList());
 
-	@Override
-	public Pagination findImageCharacters(String name, BigDecimal offset) {
-		List<Resource> files = fileService.searchFile(fileService.patternFile(name));
-		if (files.isEmpty())
-			return null;
+            pagination.setData(characters);
+            return pagination;
+        } else {
+            return null;
+        }
+    }
 
-		if (offset.intValue() > (files.size() - 1))
-			offset = BigDecimal.ZERO;
+    @Override
+    public Pagination findImageCharacters(String name, BigDecimal offset) {
+        List<Resource> files = fileService.searchFile(fileService.patternFile(name));
+        if (files.isEmpty())
+            return null;
 
-		Resource resource = files.get(offset.intValue());
+        if (offset.intValue() > (files.size() - 1))
+            offset = BigDecimal.ZERO;
 
-		Pagination pagination = new Pagination();
-		pagination.setOffset(offset);
-		pagination.setLimit(BigDecimal.ZERO);
-		pagination.setTotal(BigDecimal.valueOf(files.size()));
-		pagination.setCount(BigDecimal.valueOf(files.size()));
-		pagination.setData(resource);
-		pagination.setFileName(resource.getFilename());
+        Resource resource = files.get(offset.intValue());
 
-		return pagination;
-	}
+        Pagination pagination = new Pagination();
+        pagination.setOffset(offset);
+        pagination.setLimit(BigDecimal.ZERO);
+        pagination.setTotal(BigDecimal.valueOf(files.size()));
+        pagination.setCount(BigDecimal.valueOf(files.size()));
+        pagination.setData(resource);
+        pagination.setFileName(resource.getFilename());
 
-	@Override
-	public Pagination findComicsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null, null, null, null,
-				null, null, null, null, null, null, null, null, null, null, null, "-focDate", limit, offset);
-		
-		ComicDataContainer data = characterComics.getData();
-		Pagination pagination = new Pagination();
-		pagination.setOffset(data.getOffset());
-		pagination.setLimit(data.getLimit());
-		pagination.setTotal(data.getTotal());
-		pagination.setCount(data.getCount());		
-		
-		if (!characterComics.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
+        return pagination;
+    }
 
-	@Override
-	public Pagination findSeriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		// TODO Auto-generated method stub
-		SeriesDataWrapper characterSeries = client.characterSeries(id, null, null, null, null, null, null, null, null,
-				null, null, null, limit, offset);
-		
-		SeriesDataContainer data = characterSeries.getData();
-		Pagination pagination = new Pagination();
-		pagination.setOffset(data.getOffset());
-		pagination.setLimit(data.getLimit());
-		pagination.setTotal(data.getTotal());
-		pagination.setCount(data.getCount());		
+    @Override
+    public Pagination findComicsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+        ComicDataWrapper characterComics = client.characterComics(id, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null, "-focDate", null, null);
 
-		if (!characterSeries.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
+        Pagination pagination = characterComics.getData();
 
-	@Override
-	public Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, limit,
-				offset);
-		
-		StoryDataContainer data = characterStories.getData();
-		Pagination pagination = new Pagination();
-		pagination.setOffset(data.getOffset());
-		pagination.setLimit(data.getLimit());
-		pagination.setTotal(data.getTotal());
-		pagination.setCount(data.getCount());		
+        if (!characterComics.getData().getResults().isEmpty()) {
+            // TODO - será implementado na próxima versão
+        }
 
-		if (!characterStories.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
+        return pagination;
+    }
 
-	@Override
-	public Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
-		EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null, null, null, null,
-				limit, offset);
-		
-		EventDataContainer data = characterEvents.getData();
-		Pagination pagination = new Pagination();
-		pagination.setOffset(data.getOffset());
-		pagination.setLimit(data.getLimit());
-		pagination.setTotal(data.getTotal());
-		pagination.setCount(data.getCount());		
+    @Override
+    public Pagination findSeriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+        // TODO Auto-generated method stub
+        SeriesDataWrapper characterSeries = client.characterSeries(id, null, null, null, null, null, null, null, null,
+                null, null, null, null, null);
 
-		if (!characterEvents.getData().getResults().isEmpty()) {
-			// TODO - será implementado na próxima versão
-		}
-		return null;
-	}
+        Pagination pagination = characterSeries.getData();
+
+        if (!characterSeries.getData().getResults().isEmpty()) {
+            // TODO - será implementado na próxima versão
+        }
+
+        return pagination;
+    }
+
+    @Override
+    public Pagination findStoriesByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+        StoryDataWrapper characterStories = client.characterStories(id, null, null, null, null, null, null, null,
+                null);
+
+        Pagination pagination = characterStories.getData();
+
+        if (!characterStories.getData().getResults().isEmpty()) {
+            // TODO - será implementado na próxima versão
+        }
+
+        return pagination;
+    }
+
+    @Override
+    public Pagination findEventsByCharacter(String id, BigDecimal limit, BigDecimal offset) {
+        EventDataWrapper characterEvents = client.characterEvents(id, null, null, null, null, null, null, null, null,
+                null, null);
+
+        Pagination pagination = characterEvents.getData();
+
+        if (!characterEvents.getData().getResults().isEmpty()) {
+            // TODO - será implementado na próxima versão
+        }
+
+        return pagination;
+    }
 
 }

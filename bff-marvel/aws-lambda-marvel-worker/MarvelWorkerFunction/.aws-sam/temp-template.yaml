@@ -11,5 +11,5 @@ Resources:
         - x86_64
       Environment:
         Variables:
-          ENV_TYPE: LOCALSTACK
           ENV_DOCKER: true
+          ENV_TYPE: LOCALSTACK

@@ -1,26 +1,16 @@
 package br.com.marvel.controller;
 
-import java.io.IOException;
-import java.math.BigDecimal;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import br.com.marvel.controller.dto.Pagination;
 import br.com.marvel.controller.dto.characters.MarvelCharacter;
 import br.com.marvel.controller.exception.CharactersNotFoundException;
 import br.com.marvel.service.ports.CharacterService;
 import br.com.marvel.utils.PaginationUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/")
@@ -45,7 +35,7 @@ public class CharacterController {
 	@GetMapping(value = "/characters", produces = MediaType.IMAGE_JPEG_VALUE, consumes = MediaType.IMAGE_JPEG_VALUE)
 	public @ResponseBody ResponseEntity<?> findCharactersImage(
 			@RequestParam(name = "name", required = false) String name,
-			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) throws IOException {
+			@RequestHeader(name = "offset", defaultValue = "0") BigDecimal offset) {
 		return response(characterService.findImageCharacters(name, offset));
 	}
 

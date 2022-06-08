@@ -48,6 +48,24 @@ public class WireMockServers {
 						.withBody(ResourceUtils.getContentFile(body))));
 	}
 
+	public void serverCharactersSeries(Resource body) {
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters/%s/series?ts=%s&apikey=%s&hash=%s",
+						Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(),
+						configuration.getHash()))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(body))));
+	}
+
+	public void serverCharactersStories(Resource body) {
+		WireMock.stubFor(WireMock
+				.get(String.format("/v1/public/characters/%s/stories?ts=%s&apikey=%s&hash=%s",
+						Constants.CHARACTERS_ID, configuration.getTs(), configuration.getApiKey(),
+						configuration.getHash()))
+				.willReturn(WireMock.aResponse().withStatus(200).withHeader("Content-Type", "application/json")
+						.withBody(ResourceUtils.getContentFile(body))));
+	}
+
 	public void serverCharactersEvents(Resource body) {
 		WireMock.stubFor(WireMock
 				.get(String.format("/v1/public/characters/%s/events?ts=%s&apikey=%s&hash=%s", Constants.CHARACTERS_ID,
