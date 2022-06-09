@@ -4,10 +4,10 @@
 
     <groupId>br.com.thomasdacosta</groupId>
     <artifactId>aws-lambda-marvel-worker</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>[Lambda Worker] - Lambda - aws-lambda-marvel-worker</name>
+    <name>[BFF Marvel] - AWS Lambda - aws-lambda-marvel-worker</name>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
