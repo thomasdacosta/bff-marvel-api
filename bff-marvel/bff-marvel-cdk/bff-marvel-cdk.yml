@@ -1,13 +1,17 @@
 Resources:
-  BffCdkQueue8A279DBC:
+  marvelcharacter82203E3A:
+    Type: AWS::S3::Bucket
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BffCdkStack/marvelcharacter/Resource
+  marvelThumbnailImageQueueBD99C7AF:
     Type: AWS::SQS::Queue
-    Properties:
-      VisibilityTimeout: 300
     UpdateReplacePolicy: Delete
     DeletionPolicy: Delete
     Metadata:
-      aws:cdk:path: BffCdkStack/BffCdkQueue/Resource
-  BffCdkQueuePolicy3EAA7DF8:
+      aws:cdk:path: BffCdkStack/marvelThumbnailImageQueue/Resource
+  marvelThumbnailImageQueuePolicyAE898939:
     Type: AWS::SQS::QueuePolicy
     Properties:
       PolicyDocument:
@@ -16,41 +20,39 @@ Resources:
             Condition:
               ArnEquals:
                 aws:SourceArn:
-                  Ref: BffCdkTopic27D33B34
+                  Ref: marvelThumbnailImageNotificationA3A49848
             Effect: Allow
             Principal:
               Service: sns.amazonaws.com
             Resource:
               Fn::GetAtt:
-                - BffCdkQueue8A279DBC
+                - marvelThumbnailImageQueueBD99C7AF
                 - Arn
         Version: "2012-10-17"
       Queues:
-        - Ref: BffCdkQueue8A279DBC
+        - Ref: marvelThumbnailImageQueueBD99C7AF
     Metadata:
-      aws:cdk:path: BffCdkStack/BffCdkQueue/Policy/Resource
-  BffCdkQueueBffCdkStackBffCdkTopic58F8D981A4996C6B:
+      aws:cdk:path: BffCdkStack/marvelThumbnailImageQueue/Policy/Resource
+  marvelThumbnailImageQueueBffCdkStackmarvelThumbnailImageNotification3BB263FFD851E283:
     Type: AWS::SNS::Subscription
     Properties:
       Protocol: sqs
       TopicArn:
-        Ref: BffCdkTopic27D33B34
+        Ref: marvelThumbnailImageNotificationA3A49848
       Endpoint:
         Fn::GetAtt:
-          - BffCdkQueue8A279DBC
+          - marvelThumbnailImageQueueBD99C7AF
           - Arn
     Metadata:
-      aws:cdk:path: BffCdkStack/BffCdkQueue/BffCdkStackBffCdkTopic58F8D981/Resource
-  BffCdkTopic27D33B34:
+      aws:cdk:path: BffCdkStack/marvelThumbnailImageQueue/BffCdkStackmarvelThumbnailImageNotification3BB263FF/Resource
+  marvelThumbnailImageNotificationA3A49848:
     Type: AWS::SNS::Topic
-    Properties:
-      DisplayName: My First Topic Yeah
     Metadata:
-      aws:cdk:path: BffCdkStack/BffCdkTopic/Resource
+      aws:cdk:path: BffCdkStack/marvelThumbnailImageNotification/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/1WOuw7CMAxFv6V7EqAMfEA3JmjZUeoGybQkJU5AKMq/k4eExGKfe3QluxXtQWwb+SYO08wXHEUYnISZJXUN9CQRzl55xbqbrlDmySwIn5+sMTLSqT/4kcDi6tDo3PjLF7MiZFsgxoy9IuMtlBud0RPmZmRH+ZKbXXpP7Js7IXLrtcOHEn3dXw14h7i8AAAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/1WOwQ6CMAyGn4X7qAoH73LzpODdjDKTCm5IN41Z9u5uLDHx0n7/lz9pK6j2sC3km0scxnKiHnxnJY4iqqvnGvzB4aisaG46UxD8ZPBnp5xKNsM6T2Yi/PxkjrGvY79zPeNCsyWjU+MvX8xMmOwKISRsFRu34HqjMXqg1AziKF9ys4tPQ13cmahcnLb0UNDm/QWOFfou0gAAAA==
     Metadata:
       aws:cdk:path: BffCdkStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable

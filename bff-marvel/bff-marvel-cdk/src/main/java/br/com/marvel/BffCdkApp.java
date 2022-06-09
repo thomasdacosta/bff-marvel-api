@@ -1,8 +1,9 @@
-package com.myorg;
+package br.com.marvel;
 
 import software.amazon.awscdk.App;
 
 public final class BffCdkApp {
+
     public static void main(final String[] args) {
         App app = new App();
 
@@ -10,4 +11,5 @@ public final class BffCdkApp {
 
         app.synth();
     }
+
 }
