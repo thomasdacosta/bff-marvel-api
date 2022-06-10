@@ -2,13 +2,11 @@ package br.com.marvel;
 
 import software.amazon.awscdk.App;
 
-public final class BffCdkApp {
+public final class BffMarvelCdkApp {
 
     public static void main(final String[] args) {
         App app = new App();
-
-        new BffCdkStack(app, "BffCdkStack");
-
+        new BffMarvelCdkStack(app, "BffMarvelCdkStack");
         app.synth();
     }
 
