@@ -15,6 +15,8 @@ import software.amazon.awscdk.services.ssm.StringParameter;
 import software.amazon.awscdk.services.ssm.StringParameterProps;
 import software.constructs.Construct;
 
+import java.util.UUID;
+
 public class BffMarvelCdkStack extends Stack {
 
     public BffMarvelCdkStack(final Construct parent, final String id) {
