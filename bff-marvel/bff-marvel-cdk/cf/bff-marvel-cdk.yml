@@ -1,44 +1,28 @@
 Resources:
-  secretBffMarvelApiLocalstackF6E15DCE:
-    Type: AWS::SecretsManager::Secret
+  configBffMarvelApiLocalstackTsE05077BA:
+    Type: AWS::SSM::Parameter
     Properties:
-      Description: Segredos para acesso a API da Marvel
-      Name: /secret/bff-marvel-api_localstack
-      SecretString: '{"ts":"1","apiKey":"f59dbe01285f1d360542b5c47a9516e3","hash":"0ea6be79e04ac1b0400d65ffc11088f9"}'
-    UpdateReplacePolicy: Delete
-    DeletionPolicy: Delete
+      Type: String
+      Value: "1"
+      Name: /config/bff-marvel-api_localstack/ts
     Metadata:
-      aws:cdk:path: BffMarvelCdkStack/secretBffMarvelApiLocalstack/Resource
-  secretBffMarvelApi61AF7C55:
-    Type: AWS::SecretsManager::Secret
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackTs/Resource
+  configBffMarvelApiLocalstackApiKeyAA084A9C:
+    Type: AWS::SSM::Parameter
     Properties:
-      Description: Segredos para acesso a API da Marvel
-      Name: /secret/bff-marvel-api
-      SecretString: '{"ts":"1","apiKey":"f59dbe01285f1d360542b5c47a9516e3","hash":"0ea6be79e04ac1b0400d65ffc11088f9"}'
-    UpdateReplacePolicy: Delete
-    DeletionPolicy: Delete
+      Type: String
+      Value: f59dbe01285f1d360542b5c47a9516e3
+      Name: /config/bff-marvel-api_localstack/apiKey
     Metadata:
-      aws:cdk:path: BffMarvelCdkStack/secretBffMarvelApi/Resource
-  secretApplicationDA4B98E0:
-    Type: AWS::SecretsManager::Secret
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackApiKey/Resource
+  configBffMarvelApiLocalstackHash838D7D0E:
+    Type: AWS::SSM::Parameter
     Properties:
-      Description: Segredos para acesso a API da Marvel
-      Name: /secret/application
-      SecretString: '{"ts":"1","apiKey":"f59dbe01285f1d360542b5c47a9516e3","hash":"0ea6be79e04ac1b0400d65ffc11088f9"}'
-    UpdateReplacePolicy: Delete
-    DeletionPolicy: Delete
+      Type: String
+      Value: 0ea6be79e04ac1b0400d65ffc11088f9
+      Name: /config/bff-marvel-api_localstack/hash
     Metadata:
-      aws:cdk:path: BffMarvelCdkStack/secretApplication/Resource
-  secretApplicationLocalstackD9451F6C:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Description: Segredos para acesso a API da Marvel
-      Name: /secret/application_localstack
-      SecretString: '{"ts":"1","apiKey":"f59dbe01285f1d360542b5c47a9516e3","hash":"0ea6be79e04ac1b0400d65ffc11088f9"}'
-    UpdateReplacePolicy: Delete
-    DeletionPolicy: Delete
-    Metadata:
-      aws:cdk:path: BffMarvelCdkStack/secretApplicationLocalstack/Resource
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackHash/Resource
   configBffMarvelApiLocalstackNotificationNameF28CFC57:
     Type: AWS::SSM::Parameter
     Properties:
@@ -195,7 +179,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 94317c8a51f43fcb3026bdc62eb833408d5d1a19d4a67b4e0f78aa03b79d99db.jar
+        S3Key: 2f73b6d82a3cff3bf06fe699389bc084fa0fe7bb197cfbe3c9003959b23f7dc0.jar
       Role:
         Fn::GetAtt:
           - marvelWorkerFunctionRole98E7A5B0
@@ -212,7 +196,7 @@ Resources:
       - marvelWorkerFunctionRole98E7A5B0
     Metadata:
       aws:cdk:path: BffMarvelCdkStack/marvelWorkerFunction/Resource
-      aws:asset:path: asset.94317c8a51f43fcb3026bdc62eb833408d5d1a19d4a67b4e0f78aa03b79d99db.jar
+      aws:asset:path: asset.2f73b6d82a3cff3bf06fe699389bc084fa0fe7bb197cfbe3c9003959b23f7dc0.jar
       aws:asset:is-bundled: false
       aws:asset:property: Code
   eventSourceMappingLambdaSQSE8A70952:
@@ -229,7 +213,7 @@ Resources:
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/2VQTU/DMAz9LbtnAbYDZzbBAQlptNwnNzWVaZuUOBlCVf87TjIqJC55z/Z78cdO7+717Qa+eGvafjtQo+c6gOmVpM4zo/EYeAQLHXop5Vgd321hi2Iek8OT7U7gYcSAPtXXQCR7PR+i6YvxygocgFEEn6zn14gRk6CQ/J7cQOZ7TZZQ9Fb0dWzYeJoCOZsH+hu/uYlMymayKAKZsnJDbpBwUQOMTQt6forW/P6x8scL2lC76A2+wDTJcqn8P5uWOwOz3Eg/JFhUBjlhdzVVyNmR+NHZllKDRT3DBW7u5PZ6v/lgoq2PNtCIuir4A+FIehyZAQAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/2VQTU/DMAz9LbunAbYDZzbBAQlptNwnNzWTaZuUOBlCUf87cToqIS55H36OE2/19l7fbuCLK9P11UCtTk0A06tsnRLzKNqTPR/Bw4gBvTq821XMinc67aPpMUjhyhbYA2MOfLJOrxEjSmAh5Ty6gcz3ai4y523ON7Fl42kK5Kwk/ug3N5ERt5BZEeRX1m4oAwRnNcDYdqDTU7Tm946VP17QhsZFb/AFpil/Tsr/XfncCZgxsH4QmFWBvKDztalGLh3CD852JANm9QwXuLnLm9W7zQcTVT7aQCPqesEfTp3KtHcBAAA=
     Metadata:
       aws:cdk:path: BffMarvelCdkStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable

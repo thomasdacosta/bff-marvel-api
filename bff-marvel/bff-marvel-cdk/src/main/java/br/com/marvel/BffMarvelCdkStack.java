@@ -1,7 +1,6 @@
 package br.com.marvel;
 
 import software.amazon.awscdk.Duration;
-import software.amazon.awscdk.SecretValue;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
 import software.amazon.awscdk.services.iam.ManagedPolicy;
@@ -12,7 +11,6 @@ import software.amazon.awscdk.services.lambda.Runtime;
 import software.amazon.awscdk.services.lambda.*;
 import software.amazon.awscdk.services.s3.Bucket;
 import software.amazon.awscdk.services.s3.BucketProps;
-import software.amazon.awscdk.services.secretsmanager.Secret;
 import software.amazon.awscdk.services.ses.actions.S3;
 import software.amazon.awscdk.services.sns.Topic;
 import software.amazon.awscdk.services.sns.subscriptions.SqsSubscription;
@@ -36,7 +34,7 @@ public class BffMarvelCdkStack extends Stack {
     }
 
     public void create() {
-        createSecretsManager();
+//        createSecretsManager();
         createParameterStore();
         createS3();
         Queue queue = createSQS();
@@ -44,44 +42,62 @@ public class BffMarvelCdkStack extends Stack {
         createLambda(queue);
     }
 
-    private void createSecretsManager() {
-        // SecretManager
-        SecretValue secretValue = new SecretValue("{" +
-                "\"ts\":\"1\"," +
-                "\"apiKey\":\"f59dbe01285f1d360542b5c47a9516e3\"," +
-                "\"hash\":\"0ea6be79e04ac1b0400d65ffc11088f9\"}");
-
-        Secret.Builder
-                .create(this, "secretBffMarvelApiLocalstack")
-                .description("Segredos para acesso a API da Marvel")
-                .secretName("/secret/bff-marvel-api_localstack")
-                .secretStringValue(secretValue)
-                .build();
-
-        Secret.Builder
-                .create(this, "secretBffMarvelApi")
-                .description("Segredos para acesso a API da Marvel")
-                .secretName("/secret/bff-marvel-api")
-                .secretStringValue(secretValue)
-                .build();
-
-        Secret.Builder
-                .create(this, "secretApplication")
-                .description("Segredos para acesso a API da Marvel")
-                .secretName("/secret/application")
-                .secretStringValue(secretValue)
-                .build();
-
-        Secret.Builder
-                .create(this, "secretApplicationLocalstack")
-                .description("Segredos para acesso a API da Marvel")
-                .secretName("/secret/application_localstack")
-                .secretStringValue(secretValue)
-                .build();
-    }
+//    private void createSecretsManager() {
+//        // SecretManager
+//        SecretValue secretValue = new SecretValue("{" +
+//                "\"ts\":\"1\"," +
+//                "\"apiKey\":\"f59dbe01285f1d360542b5c47a9516e3\"," +
+//                "\"hash\":\"0ea6be79e04ac1b0400d65ffc11088f9\"}");
+//
+//        Secret.Builder
+//                .create(this, "secretBffMarvelApiLocalstack")
+//                .description("Segredos para acesso a API da Marvel")
+//                .secretName("/secret/bff-marvel-api_localstack")
+//                .secretStringValue(secretValue)
+//                .build();
+//
+//        Secret.Builder
+//                .create(this, "secretBffMarvelApi")
+//                .description("Segredos para acesso a API da Marvel")
+//                .secretName("/secret/bff-marvel-api")
+//                .secretStringValue(secretValue)
+//                .build();
+//
+//        Secret.Builder
+//                .create(this, "secretApplication")
+//                .description("Segredos para acesso a API da Marvel")
+//                .secretName("/secret/application")
+//                .secretStringValue(secretValue)
+//                .build();
+//
+//        Secret.Builder
+//                .create(this, "secretApplicationLocalstack")
+//                .description("Segredos para acesso a API da Marvel")
+//                .secretName("/secret/application_localstack")
+//                .secretStringValue(secretValue)
+//                .build();
+//    }
 
     private void createParameterStore() {
         // SSM Parameter Store
+        new StringParameter(this, "configBffMarvelApiLocalstackTs", StringParameterProps
+                .builder()
+                .parameterName("/config/bff-marvel-api_localstack/ts")
+                .stringValue("1")
+                .build());
+
+        new StringParameter(this, "configBffMarvelApiLocalstackApiKey", StringParameterProps
+                .builder()
+                .parameterName("/config/bff-marvel-api_localstack/apiKey")
+                .stringValue("f59dbe01285f1d360542b5c47a9516e3")
+                .build());
+
+        new StringParameter(this, "configBffMarvelApiLocalstackHash", StringParameterProps
+                .builder()
+                .parameterName("/config/bff-marvel-api_localstack/hash")
+                .stringValue("0ea6be79e04ac1b0400d65ffc11088f9")
+                .build());
+
         new StringParameter(this, "configBffMarvelApiLocalstackNotificationName", StringParameterProps
                 .builder()
                 .parameterName("/config/bff-marvel-api_localstack/notification.name")
