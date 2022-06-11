@@ -1,0 +1,291 @@
+Resources:
+  configBffMarvelApiLocalstackTsE05077BA:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "1"
+      Name: /config/bff-marvel-api_localstack/ts
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackTs/Resource
+  configBffMarvelApiLocalstackApiKeyAA084A9C:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: f59dbe01285f1d360542b5c47a9516e3
+      Name: /config/bff-marvel-api_localstack/apiKey
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackApiKey/Resource
+  configBffMarvelApiLocalstackHash838D7D0E:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: 0ea6be79e04ac1b0400d65ffc11088f9
+      Name: /config/bff-marvel-api_localstack/hash
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackHash/Resource
+  configBffMarvelApiLocalstackNotificationNameF28CFC57:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: marvelThumbnailImageNotification
+      Name: /config/bff-marvel-api_localstack/notification.name
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackNotificationName/Resource
+  configBffMarvelApiLocalstackQueueName91B10BE3:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: marvelThumbnailImageQueue
+      Name: /config/bff-marvel-api_localstack/queue.name
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackQueueName/Resource
+  configBffMarvelApiLocalstackDirectory061F4BAF:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: marvelcharacter
+      Name: /config/bff-marvel-api_localstack/directory
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackDirectory/Resource
+  configBffMarvelApiLocalstackProxyHost2E8AE1F8:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: localhost
+      Name: /config/bff-marvel-api_localstack/proxy.host
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackProxyHost/Resource
+  configBffMarvelApiLocalstackProxyPort6E1CC3C0:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "8081"
+      Name: /config/bff-marvel-api_localstack/proxy.port
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackProxyPort/Resource
+  configBffMarvelApiLocalstackProxyEnabled27C34290:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: "false"
+      Name: /config/bff-marvel-api_localstack/proxy.enabled
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackProxyEnabled/Resource
+  configBffMarvelApiLocalstackMarvelPublicAPIV1Url272BE0A5:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: http://gateway.marvel.com/v1/public
+      Name: /config/bff-marvel-api_localstack/marvelPublicAPIV1.url
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackMarvelPublicAPIV1Url/Resource
+  configBffMarvelApiLocalstackMarvelPublicAPIV1Name96540A2E:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: marvelPublicAPIV1
+      Name: /config/bff-marvel-api_localstack/marvelPublicAPIV1.name
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/configBffMarvelApiLocalstackMarvelPublicAPIV1Name/Resource
+  marvelCharacter44A3F0A2:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: marvelcharacter
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelCharacter/Resource
+  marvelThumbnailImageQueueBD99C7AF:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: marvelThumbnailImageQueue
+      VisibilityTimeout: 600
+    UpdateReplacePolicy: Delete
+    DeletionPolicy: Delete
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelThumbnailImageQueue/Resource
+  marvelThumbnailImageQueuePolicyAE898939:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action: sqs:SendMessage
+            Condition:
+              ArnEquals:
+                aws:SourceArn:
+                  Ref: marvelThumbnailImageNotificationA3A49848
+            Effect: Allow
+            Principal:
+              Service: sns.amazonaws.com
+            Resource:
+              Fn::GetAtt:
+                - marvelThumbnailImageQueueBD99C7AF
+                - Arn
+        Version: "2012-10-17"
+      Queues:
+        - Ref: marvelThumbnailImageQueueBD99C7AF
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelThumbnailImageQueue/Policy/Resource
+  marvelThumbnailImageQueueBffMarvelCdkStackmarvelThumbnailImageNotification78C42905AC02DC47:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Protocol: sqs
+      TopicArn:
+        Ref: marvelThumbnailImageNotificationA3A49848
+      Endpoint:
+        Fn::GetAtt:
+          - marvelThumbnailImageQueueBD99C7AF
+          - Arn
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelThumbnailImageQueue/BffMarvelCdkStackmarvelThumbnailImageNotification78C42905/Resource
+  marvelThumbnailImageNotificationA3A49848:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: marvelThumbnailImageNotification
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelThumbnailImageNotification/Resource
+  marvelWorkerFunctionRole98E7A5B0:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/AWSLambdaExecute
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/AmazonSQSFullAccess
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/AmazonS3FullAccess
+      RoleName: marvelWorkerFunctionRole
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelWorkerFunctionRole/Resource
+  marvelWorkerFunction98FB400A:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Fn::Sub: marvels3lambda
+        S3Key: aws-lambda-marvel-worker-1.0.0-SNAPSHOT.jar
+      Role:
+        Fn::GetAtt:
+          - marvelWorkerFunctionRole98E7A5B0
+          - Arn
+      Environment:
+        Variables:
+          ENV_TYPE: localstack
+      FunctionName: marvelWorkerFunction
+      Handler: br.com.thomasdacosta.handler.ApplicationHandler
+      MemorySize: 512
+      Runtime: java11
+      Timeout: 600
+    DependsOn:
+      - marvelWorkerFunctionRole98E7A5B0
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/marvelWorkerFunction/Resource
+      aws:asset:path: asset.2f73b6d82a3cff3bf06fe699389bc084fa0fe7bb197cfbe3c9003959b23f7dc0.jar
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  eventSourceMappingLambdaSQSE8A70952:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      FunctionName:
+        Ref: marvelWorkerFunction98FB400A
+      EventSourceArn:
+        Fn::GetAtt:
+          - marvelThumbnailImageQueueBD99C7AF
+          - Arn
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/eventSourceMappingLambdaSQS/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Analytics: v2:deflate64:H4sIAAAAAAAA/2VQTU/DMAz9LbunAbYDZzbBAQlptNwnNzWTaZuUOBlCUf87cToqIS55H36OE2/19l7fbuCLK9P11UCtTk0A06tsnRLzKNqTPR/Bw4gBvTq821XMinc67aPpMUjhyhbYA2MOfLJOrxEjSmAh5Ty6gcz3ai4y523ON7Fl42kK5Kwk/ug3N5ERt5BZEeRX1m4oAwRnNcDYdqDTU7Tm946VP17QhsZFb/AFpil/Tsr/XfncCZgxsH4QmFWBvKDztalGLh3CD852JANm9QwXuLnLm9W7zQcTVT7aQCPqesEfTp3KtHcBAAA=
+    Metadata:
+      aws:cdk:path: BffMarvelCdkStack/CDKMetadata/Default
+    Condition: CDKMetadataAvailable
+Conditions:
+  CDKMetadataAvailable:
+    Fn::Or:
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - af-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ca-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-northwest-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-3
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - sa-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-2
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-2

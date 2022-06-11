@@ -26,7 +26,7 @@ public class BffMarvelCdkStackTest {
 
         template.resourceCountIs("AWS::SQS::Queue", 1);
         template.hasResourceProperties("AWS::SQS::Queue", new HashMap<String, Number>() {{
-            put("VisibilityTimeout", 300);
+            put("VisibilityTimeout", 600);
         }});
 
         template.resourceCountIs("AWS::SNS::Topic", 1);

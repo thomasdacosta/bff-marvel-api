@@ -158,7 +158,7 @@ public class BffMarvelCdkStack extends Stack {
         // SQS
         return Queue.Builder.create(this, "marvelThumbnailImageQueue")
                 .queueName("marvelThumbnailImageQueue")
-                .visibilityTimeout(Duration.seconds(300))
+                .visibilityTimeout(Duration.seconds(600))
                 .build();
     }
 
