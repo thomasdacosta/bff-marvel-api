@@ -1,11 +1,10 @@
 package br.com.marvel;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 import org.junit.jupiter.api.Test;
 import software.amazon.awscdk.App;
 import software.amazon.awscdk.assertions.Template;
+
+import java.util.HashMap;
 
 public class BffMarvelCdkStackTest {
 
@@ -13,6 +12,7 @@ public class BffMarvelCdkStackTest {
     public void testStack() {
         App app = new App();
         BffMarvelCdkStack stack = new BffMarvelCdkStack(app, "BffMarvelCdkStack");
+        stack.create();
 
         Template template = Template.fromStack(stack);
 
@@ -30,6 +30,8 @@ public class BffMarvelCdkStackTest {
         }});
 
         template.resourceCountIs("AWS::SNS::Topic", 1);
+        template.resourceCountIs("AWS::IAM::Role", 1);
+        template.resourceCountIs("AWS::Lambda::Function", 1);
     }
 
 }

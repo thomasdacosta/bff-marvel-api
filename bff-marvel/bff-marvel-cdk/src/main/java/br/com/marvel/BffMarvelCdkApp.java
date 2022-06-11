@@ -6,7 +6,8 @@ public final class BffMarvelCdkApp {
 
     public static void main(final String[] args) {
         App app = new App();
-        new BffMarvelCdkStack(app, "BffMarvelCdkStack");
+        BffMarvelCdkStack bffMarvelCdkStack = new BffMarvelCdkStack(app, "BffMarvelCdkStack");
+        bffMarvelCdkStack.create();
         app.synth();
     }
 
